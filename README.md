@@ -24,7 +24,7 @@ clave81
 
 Clave para ingresar a psql:
 ```
-grupo81
+clave81
 ```
 
 Agregué la tabla boats
