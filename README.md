@@ -12,9 +12,19 @@ Repositorio para el ramo de bases de datos
 
 # Notas Entrega1
 
-Clave para ingresar:
+Dirección del servidor:
+```
+grupo81@codd.ing.puc.cl
+```
+
+Clave para ingresar al servidor:
 ```
 clave81
+```
+
+Clave para ingresar a psql:
+```
+grupo81
 ```
 
 Agregué la tabla boats
