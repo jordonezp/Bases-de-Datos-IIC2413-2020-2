@@ -9,3 +9,19 @@ Repositorio para el ramo de bases de datos
 [Wiki del curso](https://github.com/IIC2413/Syllabus-2020-2/wiki)
 
 [Link a esquema](https://app.diagrams.net/#G1e58pdGvJdMgvwCmyVqOr9i1E7js0U08Z)
+
+# Notas Entrega1
+
+Meti una tabla llamada boats en el servidor. 
+
+Para ver las tablas hay que ejecutar (en psql)
+```
+\dt
+```
+
+Agregué una entrada en la tabla también. 
+
+Para verla hay que ejecutar (en psql)
+```
+SELECT * FROM boats;
+```
