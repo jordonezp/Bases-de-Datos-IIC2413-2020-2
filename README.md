@@ -17,6 +17,8 @@ Clave para ingresar:
 clave81
 ```
 
+Agregué la tabla boats
+
 Para ver las tablas hay que ejecutar (en psql)
 ```
 \dt
