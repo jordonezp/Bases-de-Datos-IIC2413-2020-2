@@ -12,7 +12,10 @@ Repositorio para el ramo de bases de datos
 
 # Notas Entrega1
 
-Meti una tabla llamada boats en el servidor. 
+Clave para ingresar:
+```
+clave81
+```
 
 Para ver las tablas hay que ejecutar (en psql)
 ```
