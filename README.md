@@ -2,7 +2,7 @@
 
 Repositorio para el ramo de bases de datos
 
-# Links Útiles
+## Links Útiles
 
 [Repositorio del curso](https://github.com/IIC2413/Syllabus-2020-2)
 
@@ -10,7 +10,9 @@ Repositorio para el ramo de bases de datos
 
 [Link a esquema](https://app.diagrams.net/#G1e58pdGvJdMgvwCmyVqOr9i1E7js0U08Z)
 
-# Notas Entrega1
+[Link a diagrama E/R](https://app.diagrams.net/#G1vcTFUGnLlvgxuxi5TzU2fql6e1thKh_8)
+
+## Notas Entrega1
 
 Dirección del servidor:
 ```
