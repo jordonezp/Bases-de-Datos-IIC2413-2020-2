@@ -15,20 +15,35 @@ Repositorio para el ramo de bases de datos
 ## Notas Entrega1
 
 Dirección del servidor:
-$ grupo81@codd.ing.puc.cl
+
+``` bash
+grupo81@codd.ing.puc.cl
+```
 
 Clave para ingresar al servidor:
-$ clave81
+
+``` bash
+clave81
+```
 
 Clave para ingresar a psql:
-$ clave81
+
+``` bash
+clave81
+```
 
 Agregué la tabla boats
 
 Para ver las tablas hay que ejecutar (en psql)
-$ \dt
+
+``` sql
+\dt
+```
 
 Agregué una entrada en la tabla también.
 
 Para verla hay que ejecutar (en psql)
-$ SELECT * FROM boats;
+
+``` sql
+SELECT * FROM boats;
+```
