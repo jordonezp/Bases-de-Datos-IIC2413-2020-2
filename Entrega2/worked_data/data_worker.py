@@ -19,13 +19,15 @@ def read_employees(input_table):
 
 
 def read_ports(input_table):
-    ports = input_table[["nombre_puerto"]]
+    ports = input_table[["nombre_puerto", "ciudad_puerto"]]
     cities = input_table[["ciudad_puerto", "region_puerto"]]
     facilities = input_table[[
         "id_instalacion",
         "tipo_instalacion",
         "capacidad_instalacion",
-        "rut_jefe"
+        "rut_jefe",
+        "nombre_puerto",
+        "ciudad_puerto"
     ]]
     facility_history_entry = input_table[[
         "id_instalacion",
@@ -34,22 +36,22 @@ def read_ports(input_table):
         "rut_jefe_cierre"
     ]]
 
+    ports.drop_duplicates(inplace=True)
     ports.insert(0, 'pid', range(0, 0 + len(ports)))
     ports.insert(2, 'cid', 0)
     cities.insert(0, 'cid', range(0, 0 + len(cities)))
-    facilities.insert(4, 'pid', 0)
-
-    # Notar que para facilities, el id ya se da
-    # (importante para la conexion con empleados)
-    # facility_history_entry.insert(
-    #     0, 'fheid', range(0, 0 + len(facility_history_entry)))
+    facilities.insert(5, 'pid', 0)
 
     for index, p in ports.iterrows():
         ports.loc[index, 'cid'] = cities.loc[index, 'cid']
 
-    # TODO: this is not working!!
-    for index, f in facilities.iterrows():
-        facilities.loc[index, 'pid'] = ports.loc[index, 'pid']
+    for index_f, f in facilities.iterrows():
+        for index_p, p in ports.iterrows():
+            if (p.nombre_puerto == f.nombre_puerto and
+                    p.ciudad_puerto == f.ciudad_puerto):
+                facilities.loc[index_f, 'pid'] = ports.loc[index_p, 'pid']
+
+    ports = ports[["pid", "nombre_puerto", "cid"]]
 
     ports.drop_duplicates(inplace=True)
     cities.drop_duplicates(inplace=True)
