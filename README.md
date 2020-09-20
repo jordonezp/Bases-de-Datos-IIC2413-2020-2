@@ -12,6 +12,10 @@ Repositorio para el ramo de bases de datos
 
 [Link a diagrama E/R](https://app.diagrams.net/#G1vcTFUGnLlvgxuxi5TzU2fql6e1thKh_8)
 
+[Link a la pagina (http://codd.ing.puc.cl/~grupo81/web_page.html)](http://codd.ing.puc.cl/~grupo81/web_page.html)
+
+[Link a la pagina (http://codd.ing.puc.cl/~grupo81/index.php)](http://codd.ing.puc.cl/~grupo81/index.php)
+
 ## Notas Entrega1
 
 Dirección del servidor:
