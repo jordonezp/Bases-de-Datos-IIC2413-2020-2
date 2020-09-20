@@ -47,6 +47,7 @@ def read_ports(input_table):
     for index, p in ports.iterrows():
         ports.loc[index, 'cid'] = cities.loc[index, 'cid']
 
+    # TODO: this is not working!!
     for index, f in facilities.iterrows():
         facilities.loc[index, 'pid'] = ports.loc[index, 'pid']
 

@@ -36,7 +36,19 @@ Clave para ingresar a psql:
 clave81
 ```
 
-Agregué la tabla boats
+Para ver las bases de datos:
+
+``` sql
+\l
+```
+
+Para seleccionar la base de datos:
+
+``` sql
+\c <nombre base>
+```
+
+Para la entrega2: nombre base=grupo81e2
 
 Para ver las tablas hay que ejecutar (en psql)
 
