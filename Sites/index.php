@@ -1,7 +1,7 @@
 Hello World!
 
 <?php
-    require('./config/conection.php')
+    require('./config/conection.php');
 
     $query = "SELECT * FROM facilities;";
     $result = $db -> prepare($query);
@@ -10,6 +10,6 @@ Hello World!
 ?>
 <?php
     foreach ($facilities as $f) {
-        echo "f"
+        echo "f";
     }
 ?>
