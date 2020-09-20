@@ -153,6 +153,21 @@ if __name__ == "__main__":
         'descripcion_actividad': 'description',
     }, inplace=True)
 
+    for index, e in employees.iterrows():
+        if e.sex == 'hombre':
+            employees.loc[index, 'sex'] = 'male'
+        elif e.sex == 'mujer':
+            employees.loc[index, 'sex'] = 'female'
+        else:
+            employees.loc[index, 'sex'] = ''
+    for index, f in facilities.iterrows():
+        if f.type == 'astillero':
+            facilities.loc[index, 'type'] = 'shipyard'
+        elif f.type == 'muelle':
+            facilities.loc[index, 'type'] = 'dock'
+        else:
+            facilities.loc[index, 'type'] = ''
+
     employees.to_csv("employees.csv", index=False)
     ports.to_csv("ports.csv", index=False)
     cities.to_csv("cities.csv", index=False)
