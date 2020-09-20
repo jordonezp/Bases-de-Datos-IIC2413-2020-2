@@ -51,7 +51,18 @@ def read_ports(input_table):
                     p.ciudad_puerto == f.ciudad_puerto):
                 facilities.loc[index_f, 'pid'] = ports.loc[index_p, 'pid']
 
-    ports = ports[["pid", "nombre_puerto", "cid"]]
+    ports = ports[[
+        "pid",
+        "nombre_puerto",
+        "cid"
+    ]]
+    facilities = facilities[[
+        "id_instalacion",
+        "tipo_instalacion",
+        "capacidad_instalacion",
+        "rut_jefe",
+        "pid"
+    ]]
 
     ports.drop_duplicates(inplace=True)
     cities.drop_duplicates(inplace=True)
