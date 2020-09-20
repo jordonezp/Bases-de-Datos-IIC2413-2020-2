@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import numpy as np
 
 data_folder = "../data"
 
@@ -14,14 +15,7 @@ def read_data(data_folder):
 
 
 def read_employees(input_table):
-    employees = input_table.rename(columns={
-        'nombre': 'name',
-        'rut': 'rut',
-        'edad': 'age',
-        'sexo': 'sex',
-        'id_instalacion': 'fid'
-    }, inplace=False)
-    return employees
+    return input_table
 
 
 def read_ports(input_table):
@@ -35,22 +29,34 @@ def read_ports(input_table):
     ]]
     facility_history_entry = input_table[[
         "id_instalacion",
-        "tipo_instalacion",
-        "capacidad_instalacion",
+        "fecha_cierre",
+        "fecha_apertura",
         "rut_jefe_cierre"
     ]]
+
+    ports.insert(0, 'pid', range(0, 0 + len(ports)))
+    ports.insert(2, 'cid', 0)
+    cities.insert(0, 'cid', range(0, 0 + len(cities)))
+    facilities.insert(4, 'pid', 0)
+
+    # Notar que para facilities, el id ya se da
+    # (importante para la conexion con empleados)
+    # facility_history_entry.insert(
+    #     0, 'fheid', range(0, 0 + len(facility_history_entry)))
+
+    for index, p in ports.iterrows():
+        ports.loc[index, 'cid'] = cities.loc[index, 'cid']
+
+    for index, f in facilities.iterrows():
+        facilities.loc[index, 'pid'] = ports.loc[index, 'pid']
+
     ports.drop_duplicates(inplace=True)
     cities.drop_duplicates(inplace=True)
     facilities.drop_duplicates(inplace=True)
     facility_history_entry.drop_duplicates(inplace=True)
-    # ports.rename(
-    #     columns={"nombre_puerto": "name"},
-    #     inplace=True)
-    # cities.rename(
-    #     columns={"ciudad_puerto": "name", "region_puerto": "region"},
-    #     inplace=True)
-    # ports.index.name = "pid"
-    # cities.index.name = "cid"
+    facility_history_entry.insert(
+        0, 'fheid', range(0, 0 + len(facility_history_entry)))
+
     return ports, cities, facilities, facility_history_entry
 
 
@@ -64,6 +70,14 @@ def read_permits(input_table):
     ships.drop_duplicates(inplace=True)
     shipyard_permits.drop_duplicates(inplace=True)
     dock_permits.drop_duplicates(inplace=True)
+    shipyard_permits = shipyard_permits[
+        shipyard_permits["fecha_salida"].notnull()]
+    dock_permits = dock_permits[
+        dock_permits["descripcion_actividad"].notnull()]
+
+    shipyard_permits.insert(0, 'spid', range(0, 0 + len(shipyard_permits)))
+    dock_permits.insert(0, 'dpid', range(0, 0 + len(dock_permits)))
+
     return ships, shipyard_permits, dock_permits
 
 
@@ -75,16 +89,75 @@ if __name__ == "__main__":
         # print(table_dict[t])
         print(t)
     employees = read_employees(table_dict["personal_instalacion"])
-    employees.to_csv("employees.csv", index=False)
-    print(employees)
     ports, cities, facilities, facility_history_entry = read_ports(
         table_dict["puerto"])
+    ships, shipyard_permits, dock_permits = read_permits(
+        table_dict["permiso"])
+    print(employees)
     print(ports)
     print(cities)
     print(facilities)
     print(facility_history_entry)
-    ships, shipyard_permits, dock_permits = read_permits(
-        table_dict["permiso"])
     print(ships)
     print(shipyard_permits)
     print(dock_permits)
+
+    employees.rename(columns={
+        'nombre': 'name',
+        'rut': 'rut',
+        'edad': 'age',
+        'sexo': 'sex',
+        'id_instalacion': 'fid'
+    }, inplace=True)
+    ports.rename(columns={
+        'pid': 'pid',
+        'nombre_puerto': 'name',
+        'cid': 'cid',
+    }, inplace=True)
+    cities.rename(columns={
+        'cid': 'cid',
+        'ciudad_puerto': 'name',
+        'region_puerto': 'region',
+    }, inplace=True)
+    facilities.rename(columns={
+        'id_instalacion': 'fid',
+        'tipo_instalacion': 'type',
+        'capacidad_instalacion': 'capacity',
+        'rut_jefe': 'boss_rut',
+        'pid': 'pid',
+    }, inplace=True)
+    facility_history_entry.rename(columns={
+        'fheid': 'fheid',
+        'id_instalacion': 'fid',
+        'fecha_cierre': 'closed_on',
+        'fecha_apertura': 'opened_on',
+        'rut_jefe_cierre': 'close_boss_rut',
+    }, inplace=True)
+    ships.rename(columns={
+        'patente_barco': 'license_plate',
+        'nombre_barco': 'name',
+        'pais': 'country',
+    }, inplace=True)
+    shipyard_permits.rename(columns={
+        'spid': 'spid',
+        'id_instalacion': 'fid',
+        'patente_barco': 'license_plate',
+        'fecha_atraque': 'arrival_date',
+        'fecha_salida': 'depart_date',
+    }, inplace=True)
+    dock_permits.rename(columns={
+        'dpid': 'dpid',
+        'id_instalacion': 'fid',
+        'patente_barco': 'license_plate',
+        'fecha_atraque': 'arrival_date',
+        'descripcion_actividad': 'description',
+    }, inplace=True)
+
+    employees.to_csv("employees.csv", index=False)
+    ports.to_csv("ports.csv", index=False)
+    cities.to_csv("cities.csv", index=False)
+    facilities.to_csv("facilities.csv", index=False)
+    facility_history_entry.to_csv("facility_history_entry.csv", index=False)
+    ships.to_csv("ships.csv", index=False)
+    shipyard_permits.to_csv("shipyard_permits.csv", index=False)
+    dock_permits.to_csv("dock_permits.csv", index=False)
