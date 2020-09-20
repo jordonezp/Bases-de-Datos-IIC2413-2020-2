@@ -10,6 +10,6 @@ Hello World!
 ?>
 <?php
     foreach ($facilities as $f) {
-        echo "f";
+        echo f;
     }
 ?>
