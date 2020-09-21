@@ -2,8 +2,8 @@
     require('../config/conection.php');
 
     $input = $_POST["input"];
-    $query = "SELECT * FROM facilities;";
-    $result = $db -> prepare($query);
+    // $query = "SELECT * FROM facilities;";
+    $result = $db -> prepare($input);
     $result -> execute();
     $facilities = $result -> fetchAll();
 ?>
@@ -20,10 +20,13 @@
     </tr> -->
 <?php
     foreach ($facilities as $f) {
-        echo "<tr>";
+        $row = "<tr>";
+        // echo "<tr>";
         foreach ($f as $f_i){
-            echo "<td>$f_i</td>";
+            $row += "<td>$f_i</td>";
         }
-        echo "</tr>";
+        $row = "</tr>";
+        echo $row;
+        // echo "</tr>";
     }
 ?>
