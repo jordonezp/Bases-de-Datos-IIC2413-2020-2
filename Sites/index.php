@@ -8,6 +8,7 @@ Hello World!
     $result -> execute();
     $facilities = $result -> fetchAll();
 ?>
+Name: <input type="text" name="input" value="<?php echo $input;?>">
 <table>
     <tr>
         <th>fid</th>
