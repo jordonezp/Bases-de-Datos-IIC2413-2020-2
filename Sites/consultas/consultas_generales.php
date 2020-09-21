@@ -20,8 +20,9 @@
 <?php
     foreach ($facilities as $f) {
         echo "<tr>";
-        foreach ($f as $f_i)
-            echo "<td>$f_i</td>"
+        foreach ($f as $f_i){
+            echo "<td>$f_i</td>";
+        }
         echo "</tr>";
     }
 ?>
