@@ -7,9 +7,9 @@
     $facilities = $result -> fetchAll();
 ?>
 
-Hello World!
+<h1>Hello World!</h1>
 <br><br>
-<form>
+<form action="consultas/consultas_generales.php" method="post">
     Input: 
     <input type="text" name="input">
     <br>
