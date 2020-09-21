@@ -20,13 +20,10 @@
     </tr> -->
 <?php
     foreach ($facilities as $f) {
-        $row = "<tr>";
-        // echo "<tr>";
+        echo "<tr>";
         foreach ($f as $f_i){
-            $row += "<td>$f_i</td>";
+            echo "<td>$f_i</td>";
         }
-        $row = "</tr>";
-        echo $row;
-        // echo "</tr>";
+        echo "</tr>";
     }
 ?>
