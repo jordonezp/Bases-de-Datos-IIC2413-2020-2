@@ -9,14 +9,15 @@
 ?>
 
 <h1>Consultas Generales</h1>
+<h3>input: <?php echo $input?></h3>
 <table>
-    <tr>
+    <!-- <tr>
         <th>fid</th>
         <th>type</th>
         <th>capacity</th>
         <th>boss_rut</th>
         <th>pid</th>
-    </tr>
+    </tr> -->
 <?php
     foreach ($facilities as $f) {
         echo "<tr>";
