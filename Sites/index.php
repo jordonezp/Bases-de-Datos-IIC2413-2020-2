@@ -1,5 +1,3 @@
-Hello World!
-
 <?php
     require('./config/conection.php');
 
@@ -8,7 +6,17 @@ Hello World!
     $result -> execute();
     $facilities = $result -> fetchAll();
 ?>
-Name: <input type="text" name="input" value="<?php echo $input;?>">
+
+Hello World!
+<br><br>
+<form>
+    Input: 
+    <input type="text" name="input">
+    <br>
+    <input type="submit" name="submit" value="Submit"> 
+</form>
+<br>
+<br>
 <table>
     <tr>
         <th>fid</th>
