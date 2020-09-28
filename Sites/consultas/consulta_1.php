@@ -20,3 +20,4 @@ foreach ($tabla as $fila) {
     echo "<tr><td>$fila[0]</td><td>$fila[1]</td></tr>";
 }
 ?>
+</table>
