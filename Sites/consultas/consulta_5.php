@@ -1,7 +1,7 @@
 <?php
 require('../config/conection.php');
 
-$query = "SELECT name, cid FROM ports;";
+$query = "SELECT puertos.pid, AVG(employees.age) FROM (SELECT ports.pid, facilities.fid FROM ports, facilities) AS puertos, employees GROUP BY puertos.pid;";
 $result = $db -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
