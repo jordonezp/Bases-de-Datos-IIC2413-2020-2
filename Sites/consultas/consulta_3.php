@@ -1,7 +1,7 @@
 <?php
 require('../config/conection.php');
 
-$query = "SELECT name, cid FROM ports;";
+$query = " SELECT DISTINCT pid FROM facilities WHERE UPPER(type) LIKE '%SHIPYARD%';";
 $result = $db -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
@@ -16,8 +16,6 @@ $tabla = $result -> fetchAll();
 
 <?php
 foreach ($tabla as $fila) {
-    foreach ($fila as $entrada){
-        echo "<tr><td>$entrada[0]</td></tr>";
-    }
+    echo "<tr><td>$fila[0]</td></tr>";
 }
 ?>
