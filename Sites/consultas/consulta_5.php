@@ -7,16 +7,18 @@ $result -> execute();
 $tabla = $result -> fetchAll();
 ?>
 
-    <h1>Resultado</h1>
+<h1>Resultado</h1>
 
-    <table>
-        <tr>
-            <th>pid</th>
-            <th>promedio_edad</th>
-        </tr>
+<table>
+    <tr>
+        <th>pid</th>
+        <th>promedio_edad</th>
+    </tr>
 
 <?php
 foreach ($tabla as $fila) {
     echo "<tr><td>$fila[0]</td><td>$fila[1]</td></tr>";
 }
 ?>
+
+</table>

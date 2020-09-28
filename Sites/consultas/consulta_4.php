@@ -13,15 +13,17 @@ $result -> execute();
 $tabla = $result -> fetchAll();
 ?>
 
-    <h1>Resultado</h1>
+<h1>Resultado</h1>
 
-    <table>
-        <tr>
-            <th>arrival_date</th>
-        </tr>
+<table>
+    <tr>
+        <th>arrival_date</th>
+    </tr>
 
 <?php
 foreach ($tabla as $fila) {
     echo "<tr><td>$fila[0]</td></tr>";
 }
 ?>
+
+</table>
