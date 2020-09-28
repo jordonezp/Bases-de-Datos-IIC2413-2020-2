@@ -11,12 +11,12 @@ $tabla = $result -> fetchAll();
 
 <table>
     <tr>
-        <th>cid</th>
         <th>name</th>
+        <th>cid</th>
     </tr>
 
 <?php
 foreach ($tabla as $fila) {
-    echo "<tr><td>$fila[1]</td><td>$fila[0]</td></tr>";
+    echo "<tr><td>$fila[0]</td><td>$fila[1]</td></tr>";
 }
 ?>
