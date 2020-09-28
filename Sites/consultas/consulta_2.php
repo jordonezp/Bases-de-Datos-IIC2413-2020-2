@@ -20,6 +20,6 @@ $tabla = $result -> fetchAll();
 
     <?php
     foreach ($tabla as $fila) {
-        echo "<tr><td>$fila</td></tr>";
+        echo "<tr><td>$fila[0]</td></tr>";
     }
     ?>

@@ -18,7 +18,7 @@
     <br>
     <br>
 <form action="consultas/consulta_1.php" method="get">
-    Muestre todos los puertos junto la ciudad a la que son asignados.
+    Muestre todos los puertos junto la ciudad a la que son asignados. <br>
     <input type="submit" value="Buscar">
 </form>
     <br>
