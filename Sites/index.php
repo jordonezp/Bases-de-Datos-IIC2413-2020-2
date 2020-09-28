@@ -7,7 +7,6 @@
     $facilities = $result -> fetchAll();
 ?>
 
-<!--todo: Actualizar los nombres de la atributos en el esquema y diagrama-->
 <!--todo: Verificar que el procesamiento de datos esté bien-->
 <!--todo: Verificar resultados de consultas 4, 5 y 6-->
 <!--todo: Discutir que no haya dependencia funcional relación FacilityHistoryEntries-->
