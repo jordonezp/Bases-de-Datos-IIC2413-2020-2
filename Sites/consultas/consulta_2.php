@@ -15,14 +15,11 @@ $tabla = $result -> fetchAll();
 
 <table>
     <tr>
-        <th>name</th>
-        <th>cid</th>
+        <th>boss_rut</th>
     </tr>
 
     <?php
     foreach ($tabla as $fila) {
-        foreach ($fila as $entrada){
-            echo "<tr><td>$entrada[0]</td><td>$entrada[1]</td></tr>";
-        }
+        echo "<tr><td>$fila</td></tr>";
     }
     ?>
