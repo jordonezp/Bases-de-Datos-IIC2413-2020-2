@@ -4,7 +4,7 @@ require('../config/conection.php');
 $query = "SELECT name, cid FROM ports;";
 $result = $db -> prepare($query);
 $result -> execute();
-$facilities = $result -> fetchAll();
+$tabla = $result -> fetchAll();
 ?>
 
 <h1>Resultado</h1>
@@ -16,11 +16,9 @@ $facilities = $result -> fetchAll();
     </tr>
 
 <?php
-foreach ($facilities as $f) {
-    echo "<tr>";
-    foreach ($f as $f_i){
-        echo "<td>$f_i</td>";
+foreach ($tabla as $fila) {
+    foreach ($fila as $entrada){
+        echo "<tr><td>$entrada[0]</td><td>$entrada[1]</td></tr>";
     }
-    echo "</tr>";
 }
 ?>
