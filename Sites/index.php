@@ -7,6 +7,13 @@
     $facilities = $result -> fetchAll();
 ?>
 
+<!--todo: Actualizar los nombres de la atributos en el esquema y diagrama-->
+<!--todo: Verificar que el procesamiento de datos esté bien-->
+<!--todo: Verificar resultados de consultas 4, 5 y 6-->
+<!--todo: Discutir que no haya dependencia funcional relación FacilityHistoryEntries-->
+<!--todo: -->
+<!--todo: -->
+
 <!---->
 <!---->
 <!---->
@@ -37,8 +44,8 @@
     <br>
     <br>
 <form action="consultas/consulta_4.php" method="post">
-    Muestre todas las veces en que el barco <input type="text" name="input_4_1"> ha atracado en
-    <input type="text" name="input_4_2">. <br>
+    Muestre todas las veces en que el barco de nombre <input type="text" name="input_4_1"> ha
+    atracado en la ciudad de nombre <input type="text" name="input_4_2">. <br>
     <input type="submit" value="Buscar">
 </form>
     <br>
@@ -50,9 +57,9 @@
     <br>
     <br>
 <form action="consultas/consulta_6.php" method="post">
-    Muestre el puerto que ha recibido más barcos en <input type="text" name="input_6_1">
-    del
-    <input type="text" name="input_6_2">. <br>
+    Muestre el puerto que ha recibido más barcos en el mes (escribir en formato mm) <input
+            type="text" name="input_6_1"> del año (escribir en formato yyyy) <input type="text"
+                                                                                    name="input_6_2">. <br>
     <input type="submit" value="Buscar">
 </form>
 
