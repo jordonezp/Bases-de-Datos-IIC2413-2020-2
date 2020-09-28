@@ -17,10 +17,6 @@ $tabla = $result -> fetchAll();
 
 <?php
 foreach ($tabla as $fila) {
-    echo "<tb>";
-    foreach ($fila as $entrada){
-        echo "<td>$entrada[0]</td><td>$entrada[1]</td>";
-    }
-    echo "</tb>";
+    echo "<tr><td>$fila[0]</td><td>$fila[1]</td></tr>";
 }
 ?>
