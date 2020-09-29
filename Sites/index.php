@@ -54,7 +54,7 @@
     <br>
 <form action="consultas/consulta_6.php" method="post">
     Muestre el puerto que ha recibido más barcos en el mes (escribir en formato mm) <input
-            type="text" name="input_6_1"> del año (escribir en formato yyyy) <input type="text"
+            type="number" name="input_6_1"> del año (escribir en formato yyyy) <input type="number"
                                                                                     name="input_6_2">. <br>
     <input type="submit" value="Buscar">
 </form>
