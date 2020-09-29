@@ -15,7 +15,7 @@ $fechamin = date('Y-m-d', $min);
 $fechamax = date('Y-m-d', $max);
 
 
-$query = "SELECT pid FROM (SELECT COUNT(*), pid FROM (SELECT f.pid, t.license_plate FROM facilities as f, ((SELECT license_plate, fid FROM dock_permits WHERE arrival_date >= $fechamin AND arrival_date < $fechamax) UNION (SELECT license_plate, fid FROM shipyard_permits WHERE arrival_date >= $fechamin AND arrival_date < $fechamin)) as t WHERE f.fid=t.fid) AS t1 GROUP BY pid) as t4, (SELECT MAX(count) FROM (SELECT COUNT(*), pid FROM (SELECT f.pid, t.license_plate FROM facilities as f, ((SELECT license_plate, fid FROM dock_permits WHERE arrival_date >= $fechamin AND arrival_date < $fechamax) UNION (SELECT license_plate, fid FROM shipyard_permits WHERE arrival_date >= $fechamin AND arrival_date < $fechamax)) as t WHERE f.fid=t.fid) AS t1 GROUP BY pid) AS t3) AS t5 WHERE t4.count=t5.max;";
+$query = "SELECT pid FROM (SELECT COUNT(*), pid FROM (SELECT f.pid, t.license_plate FROM facilities as f, ((SELECT license_plate, fid FROM dock_permits WHERE arrival_date >= '$fechamin' AND arrival_date < '$fechamax') UNION (SELECT license_plate, fid FROM shipyard_permits WHERE arrival_date >= '$fechamin' AND arrival_date < '$fechamax')) as t WHERE f.fid=t.fid) AS t1 GROUP BY pid) as t4, (SELECT MAX(count) FROM (SELECT COUNT(*), pid FROM (SELECT f.pid, t.license_plate FROM facilities as f, ((SELECT license_plate, fid FROM dock_permits WHERE arrival_date >= '$fechamin' AND arrival_date < '$fechamax') UNION (SELECT license_plate, fid FROM shipyard_permits WHERE arrival_date >= '$fechamin' AND arrival_date < '$fechamax')) as t WHERE f.fid=t.fid) AS t1 GROUP BY pid) AS t3) AS t5 WHERE t4.count=t5.max;";
 $result = $db -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
