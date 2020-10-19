@@ -21,7 +21,7 @@ create table ships (
     name varchar(100),
     country varchar(100)
     primary key(license_plate)
-)
+);
 
 
 create table permits (
@@ -112,4 +112,4 @@ create table facility_history_entries (
         foreign key(close_boss_rut)
             references employees(rut)
             on delete cascade
-)
+);
