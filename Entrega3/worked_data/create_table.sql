@@ -19,7 +19,7 @@ CREATE TABLE cities (
 create table ships (
     license_plate varchar(50),
     name varchar(100),
-    country varchar(100)
+    country varchar(100),
     primary key(license_plate)
 );
 
@@ -32,7 +32,7 @@ create table permits (
     primary key(peid)
     constraint fk_ships
         foreign key(license_plate)
-            references permits(license_plate)
+            references ships(license_plate)
             on delete cascade
 );
 
