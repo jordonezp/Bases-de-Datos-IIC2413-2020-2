@@ -106,7 +106,7 @@ def extract_regions(cities, ports):
     new_ports = pd.DataFrame(
         data=new_ports_data, columns=['pid', 'name', 'cid'])
 
-    return new_cities, new_regions, new_ports
+    return new_cities_2, new_regions, new_ports
 
 
 if __name__ == "__main__":
