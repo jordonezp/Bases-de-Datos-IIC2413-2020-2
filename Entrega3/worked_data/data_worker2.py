@@ -87,17 +87,18 @@ def extract_regions(cities, ports):
                 found = True
                 new_ports_data.append(p)
                 break
-        for c in new_cities.values:
-            if c[0] == cid:
-                found = True
-                for c2 in new_cities_2.values:
-                    if str(c2[1:3]) == str(c[1:3]):
-                        print('to handle:', c2[1:3])
-                        new_p = p
-                        new_p[2] = c2[0]
-                        new_ports_data.append(new_p)
-                        break
-                break
+        if not found:
+            for c in new_cities.values:
+                if c[0] == cid:
+                    found = True
+                    for c2 in new_cities_2.values:
+                        if str(c2[1:3]) == str(c[1:3]):
+                            print('to handle:', c2[1:3])
+                            new_p = p
+                            new_p[2] = c2[0]
+                            new_ports_data.append(new_p)
+                            break
+                    break
         if not found:
             raise Exception('algo anda mal...')
 
