@@ -52,7 +52,7 @@ def extract_regions(cities):
     new_regions = cities[['region']]
     new_regions.rename(columns={
         'region': 'name'
-    })
+    }, inplace=True)
     new_regions.drop_duplicates(inplace=True)
     new_regions.insert(0, 'rid', range(0, 0 + len(new_regions)))
 

@@ -29,7 +29,7 @@ create table permits (
     fid int,
     license_plate varchar(50),
     arrival_date timestamp,
-    primary key(peid)
+    primary key(peid),
     constraint fk_ships
         foreign key(license_plate)
             references ships(license_plate)
@@ -87,7 +87,7 @@ create table employees (
     rut varchar(50),
     name varchar(100),
     age int,
-    sex, varchar(50),
+    sex varchar(50),
     fid int,
     primary key(rut),
     constraint fk_facilities
@@ -100,14 +100,14 @@ alter table facilities
     add constraint fk_boss
         foreign key(boss_rut)
             references employees(rut)
-            on delete set null
+            on delete set null;
 
 create table facility_history_entries (
     fheid int,
     closed_on timestamp,
     opened_on timestamp,
     close_boss_rut varchar(50),
-    primary key(fheid)
+    primary key(fheid),
     constraint fk_close_boss
         foreign key(close_boss_rut)
             references employees(rut)
