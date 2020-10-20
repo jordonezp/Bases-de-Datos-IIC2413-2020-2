@@ -106,10 +106,15 @@ create table facility_history_entries (
     fheid int,
     closed_on timestamp,
     opened_on timestamp,
+    fid int,
     close_boss_rut varchar(50),
     primary key(fheid),
     constraint fk_close_boss
         foreign key(close_boss_rut)
             references employees(rut)
+            on delete cascade,
+    constraint fk_facilities
+        foreign key(fid)
+            references facilities(fid)
             on delete cascade
 );
