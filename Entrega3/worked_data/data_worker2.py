@@ -46,7 +46,7 @@ def combine_permits(shipyard_permits, dock_permits):
     return new_permits, new_shipyard_permits, new_dock_permits
 
 
-def extract_regions(cities):
+def extract_regions(cities, ports):
     # print(cities)
 
     new_regions = cities[['region']]
@@ -71,7 +71,42 @@ def extract_regions(cities):
     new_cities = pd.DataFrame(
         data=new_cities_data, columns=['cid', 'name', 'rid'])
 
-    return new_cities, new_regions
+    new_cities_2 = new_cities.copy()
+
+    new_cities_2.drop_duplicates(
+        subset=['name', 'rid'], keep='first', inplace=True)
+
+    new_ports_data = []
+
+    for p in ports.values:
+        # print(p)
+        cid = p[2]
+        found = False
+        for c in new_cities_2.values:
+            if c[0] == cid:
+                found = True
+                new_ports_data.append(p)
+                break
+        for c in new_cities.values:
+            if c[0] == cid:
+                found = True
+                for c2 in new_cities_2.values:
+                    if str(c2[1:3]) == str(c[1:3]):
+                        print('to handle:', c2[1:3])
+                        new_p = p
+                        new_p[2] = c2[0]
+                        new_ports_data.append(new_p)
+                        break
+                break
+        if not found:
+            raise Exception('algo anda mal...')
+
+    # print(new_cities_2)
+
+    new_ports = pd.DataFrame(
+        data=new_ports_data, columns=['pid', 'name', 'cid'])
+
+    return new_cities, new_regions, new_ports
 
 
 if __name__ == "__main__":
@@ -88,14 +123,17 @@ if __name__ == "__main__":
     print(shipyard_permits)
     print(dock_permits)
 
-    cities, regions = extract_regions(
-        table_dict['cities']
+    cities, regions, ports = extract_regions(
+        table_dict['cities'],
+        table_dict['ports']
     )
     print(cities)
     print(regions)
+    print(ports)
 
     dock_permits.to_csv('dock_permits.csv', index=False)
     shipyard_permits.to_csv('shipyard_permits.csv', index=False)
     permits.to_csv('permits.csv', index=False)
     cities.to_csv('cities.csv', index=False)
     regions.to_csv('regions.csv', index=False)
+    ports.to_csv('ports.csv', index=False)
