@@ -34,7 +34,7 @@
     $uid = $last[0];
     $sql = "INSERT INTO usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
     $stmt = $dbp -> prepare($sql);
-    $stmt -> execute([$pasaporte, $pass, $nombre, $edad, $sexo, $nacio])
+    $stmt -> execute([$pasaporte, $pass, $nombre, $edad, $sexo, $nacio]);
 
     ?>
 
@@ -53,7 +53,7 @@ if (sizeof($nav) == 1) {
 ?>
 
 <div class="container is-max-desktop">
-    <h1 class="title">Cuenta</h1>
+    <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
     <p class="subtitle">Bienvenido: <?php echo "$name" ?> !</p>
     <table class="table is-striped is-hoverable">
         <tr>
@@ -64,7 +64,6 @@ if (sizeof($nav) == 1) {
             <th>Nacionalidad</th>
         </tr>
         <?php
-            foreach ($nav as $n) {
                 echo "<tr>
                     <td>$pasaporte</td>
                     <td>$pass</td>
@@ -74,7 +73,7 @@ if (sizeof($nav) == 1) {
                     <td>$nacio</td>
                     
                 </tr>";
-            }
+            
         ?>
     </table>
     </div>
