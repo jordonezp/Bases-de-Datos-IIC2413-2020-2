@@ -19,7 +19,7 @@ $tabla = $result -> fetchAll();
 
     <?php
     foreach ($tabla as $fila) {
-        echo "<tr><td><a href='consulta_navieras.php?nid=$fila[0]'> $fila[1] </a></td> </tr>";
+        echo "<tr><td><a href='consultas/consulta_navieras.php?nid=$fila[0]'> $fila[1] </a></td> </tr>";
     }
     ?>
 
