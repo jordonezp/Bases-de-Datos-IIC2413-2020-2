@@ -31,7 +31,7 @@
 	$result_all -> execute();
 	$all = $result_all -> fetchAll();
     $last = end($all);
-    $uid = $last[0];
+    $uid = (int)$last[0] + 1;
     $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?);";
     $stmt = $dbp -> prepare($sql);
     $stmt -> execute([$uid, $pasaporte, $pass, $nombre, $edad, $sexo, $nacio]);
