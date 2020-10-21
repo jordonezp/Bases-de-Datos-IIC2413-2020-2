@@ -6,7 +6,7 @@
 
 -- \copy employees(name,rut,age,sex,fid) FROM 'employees.csv' DELIMITER ',' CSV HEADER;
 
--- \copy facilities FROM 'facilities.csv' DELIMITER ',' CSV HEADER;
+-- \copy facilities(fid,capacity,boss_rut,pid) FROM 'facilities.csv' DELIMITER ',' CSV HEADER;
 
 -- \copy facility_history_entries(fheid,fid,closed_on,opened_on,close_boss_rut) FROM 'facility_history_entries.csv' DELIMITER ',' CSV HEADER;
 
@@ -18,3 +18,8 @@
 
 -- \copy shipyard_permits(peid,depart_date) FROM 'shipyard_permits.csv' DELIMITER ',' CSV HEADER;
 
+-- \copy facilities(fid,capacity,boss_rut,pid) FROM 'facilities.csv' DELIMITER ',' CSV HEADER;
+
+-- \copy shipyards(fid) FROM 'shipyards.csv' DELIMITER ',' CSV HEADER;
+
+-- \copy docks(fid) FROM 'docks.csv' DELIMITER ',' CSV HEADER;
