@@ -1,0 +1,877 @@
+cid,name,region
+0,Quintero,Valparaiso
+1,Puerto Montt,Los Lagos
+2,Penco,Biobio
+3,Ancud,Los Lagos
+4,La Serena,Coquimbo
+5,Aysen,Aysen del General Carlos Ibañez del Campo
+6,Castro,Los Lagos
+7,Talcahuano,Biobio
+8,Puerto Williams,Magallanes y de la Antartica chilena
+9,Mejillones,Antofagasta
+10,Aysen,Aysen del General Carlos Ibañez del Campo
+11,Quintero,Valparaiso
+12,Antofagasta,Antofagasta
+13,Caldera,Atacama
+14,Iquique,Tarapaca
+15,Castro,Los Lagos
+16,Caldera,Atacama
+17,Huasco,Atacama
+18,La Serena,Coquimbo
+19,Mejillones,Antofagasta
+20,Isla Guarello,Magallanes y de la Antartica chilena
+21,Chañaral,Atacama
+22,Caldera,Atacama
+23,Puerto Natales,Magallanes y de la Antartica chilena
+24,La Higuera,Coquimbo
+25,Coquimbo,Coquimbo
+26,Mejillones,Antofagasta
+27,Antofagasta,Antofagasta
+28,Caldera,Atacama
+29,Mejillones,Antofagasta
+30,Antofagasta,Antofagasta
+31,Arica,Arica y Parinacota
+32,Quintero,Valparaiso
+33,Quintero,Valparaiso
+34,Penco,Biobio
+35,Isla Guarello,Magallanes y de la Antartica chilena
+36,Chañaral,Atacama
+37,Aysen,Aysen del General Carlos Ibañez del Campo
+38,Antofagasta,Antofagasta
+39,La Serena,Coquimbo
+40,Caldera,Atacama
+41,Antofagasta,Antofagasta
+42,La Higuera,Coquimbo
+43,Quintero,Valparaiso
+44,Quintero,Valparaiso
+45,Punta Arenas,Magallanes y de la Antartica chilena
+46,Arica,Arica y Parinacota
+47,Ancud,Los Lagos
+48,Quintero,Valparaiso
+49,La Serena,Coquimbo
+50,Huasco,Atacama
+51,Talcahuano,Biobio
+52,Quemchi,Los Lagos
+53,Punta Arenas,Magallanes y de la Antartica chilena
+54,Talcahuano,Biobio
+55,Arica,Arica y Parinacota
+56,Caldera,Atacama
+57,Chañaral,Atacama
+58,Coquimbo,Coquimbo
+59,Quellon,Los Lagos
+60,Caldera,Atacama
+61,Coquimbo,Coquimbo
+62,Puerto Montt,Los Lagos
+63,Iquique,Tarapaca
+64,Arica,Arica y Parinacota
+65,Caldera,Atacama
+66,Mejillones,Antofagasta
+67,Ancud,Los Lagos
+68,Quintero,Valparaiso
+69,Mejillones,Antofagasta
+70,San Antonio,Valparaiso
+71,Aysen,Aysen del General Carlos Ibañez del Campo
+72,Valparaiso,Valparaiso
+73,Lota,Biobio
+74,Mejillones,Antofagasta
+75,Taltal,Antofagasta
+76,Arica,Arica y Parinacota
+77,Primavera,Magallanes y de la Antartica chilena
+78,Punta Arenas,Magallanes y de la Antartica chilena
+79,Antofagasta,Antofagasta
+80,Ancud,Los Lagos
+81,Lota,Biobio
+82,Talcahuano,Biobio
+83,Antofagasta,Antofagasta
+84,Mejillones,Antofagasta
+85,Aysen,Aysen del General Carlos Ibañez del Campo
+86,Arica,Arica y Parinacota
+87,Chañaral,Atacama
+88,La Serena,Coquimbo
+89,Corral,Los Rios
+90,Antofagasta,Antofagasta
+91,La Serena,Coquimbo
+92,Caldera,Atacama
+93,Chañaral,Atacama
+94,La Serena,Coquimbo
+95,Puerto Montt,Los Lagos
+96,Ancud,Los Lagos
+97,Valparaiso,Valparaiso
+98,Quellon,Los Lagos
+99,Arica,Arica y Parinacota
+100,Mejillones,Antofagasta
+101,Quemchi,Los Lagos
+102,Quemchi,Los Lagos
+103,Puerto Natales,Magallanes y de la Antartica chilena
+104,La Higuera,Coquimbo
+105,La Higuera,Coquimbo
+106,Taltal,Antofagasta
+107,Quintero,Valparaiso
+108,Coquimbo,Coquimbo
+109,Valparaiso,Valparaiso
+110,Isla Guarello,Magallanes y de la Antartica chilena
+111,Arica,Arica y Parinacota
+112,Penco,Biobio
+113,Coquimbo,Coquimbo
+114,Chañaral,Atacama
+115,Puerto Williams,Magallanes y de la Antartica chilena
+116,Ancud,Los Lagos
+117,Coquimbo,Coquimbo
+118,Cisnes,Aysen del General Carlos Ibañez del Campo
+119,La Higuera,Coquimbo
+120,San Antonio,Valparaiso
+121,Chañaral,Atacama
+122,Ancud,Los Lagos
+123,Aysen,Aysen del General Carlos Ibañez del Campo
+124,Penco,Biobio
+125,Mejillones,Antofagasta
+126,Puerto Williams,Magallanes y de la Antartica chilena
+127,La Serena,Coquimbo
+128,Puerto Montt,Los Lagos
+129,La Serena,Coquimbo
+130,Caldera,Atacama
+131,Lota,Biobio
+132,Iquique,Tarapaca
+133,Coronel,Biobio
+134,Cisnes,Aysen del General Carlos Ibañez del Campo
+135,Lota,Biobio
+136,Chañaral,Atacama
+137,Penco,Biobio
+138,Mejillones,Antofagasta
+139,Antofagasta,Antofagasta
+140,Coquimbo,Coquimbo
+141,Isla Guarello,Magallanes y de la Antartica chilena
+142,Chañaral,Atacama
+143,Iquique,Tarapaca
+144,Mejillones,Antofagasta
+145,Mejillones,Antofagasta
+146,Antofagasta,Antofagasta
+147,Quellon,Los Lagos
+148,Quintero,Valparaiso
+149,Quellon,Los Lagos
+150,Coronel,Biobio
+151,Chañaral,Atacama
+152,Lota,Biobio
+153,Corral,Los Rios
+154,Primavera,Magallanes y de la Antartica chilena
+155,Talcahuano,Biobio
+156,Caldera,Atacama
+157,Mejillones,Antofagasta
+158,La Higuera,Coquimbo
+159,Caldera,Atacama
+160,Valdivia,Los Rios
+161,Huasco,Atacama
+162,Iquique,Tarapaca
+163,Chañaral,Atacama
+164,La Higuera,Coquimbo
+165,Antofagasta,Antofagasta
+166,Ancud,Los Lagos
+167,Puerto Natales,Magallanes y de la Antartica chilena
+168,Mejillones,Antofagasta
+169,Mejillones,Antofagasta
+170,La Higuera,Coquimbo
+171,Castro,Los Lagos
+172,Iquique,Tarapaca
+173,Quemchi,Los Lagos
+174,Coquimbo,Coquimbo
+175,Mejillones,Antofagasta
+176,La Serena,Coquimbo
+177,Iquique,Tarapaca
+178,Ancud,Los Lagos
+179,La Serena,Coquimbo
+180,Puerto Natales,Magallanes y de la Antartica chilena
+181,La Higuera,Coquimbo
+182,Huasco,Atacama
+183,Mejillones,Antofagasta
+184,Caldera,Atacama
+185,Taltal,Antofagasta
+186,Primavera,Magallanes y de la Antartica chilena
+187,Quintero,Valparaiso
+188,Arica,Arica y Parinacota
+189,Quintero,Valparaiso
+190,Castro,Los Lagos
+191,La Higuera,Coquimbo
+192,Arica,Arica y Parinacota
+193,Mejillones,Antofagasta
+194,Puerto Williams,Magallanes y de la Antartica chilena
+195,Mejillones,Antofagasta
+196,San Vicente,O'Higgins
+197,Coronel,Biobio
+198,Chañaral,Atacama
+199,Caldera,Atacama
+200,Puerto Montt,Los Lagos
+201,Quintero,Valparaiso
+202,Chañaral,Atacama
+203,Coquimbo,Coquimbo
+204,Mejillones,Antofagasta
+205,La Serena,Coquimbo
+206,Coronel,Biobio
+207,Mejillones,Antofagasta
+208,Talcahuano,Biobio
+209,La Serena,Coquimbo
+210,Aysen,Aysen del General Carlos Ibañez del Campo
+211,Lota,Biobio
+212,Corral,Los Rios
+213,Ancud,Los Lagos
+214,Puerto Montt,Los Lagos
+215,Antofagasta,Antofagasta
+216,La Serena,Coquimbo
+217,Primavera,Magallanes y de la Antartica chilena
+218,Antofagasta,Antofagasta
+219,Antofagasta,Antofagasta
+220,Quemchi,Los Lagos
+221,Puerto Williams,Magallanes y de la Antartica chilena
+222,Penco,Biobio
+223,Mejillones,Antofagasta
+224,Lota,Biobio
+225,La Higuera,Coquimbo
+226,Puerto Williams,Magallanes y de la Antartica chilena
+227,Corral,Los Rios
+228,Cisnes,Aysen del General Carlos Ibañez del Campo
+229,Puerto Montt,Los Lagos
+230,Ancud,Los Lagos
+231,Mejillones,Antofagasta
+232,Corral,Los Rios
+233,Iquique,Tarapaca
+234,Iquique,Tarapaca
+235,Mejillones,Antofagasta
+236,Puerto Montt,Los Lagos
+237,Caldera,Atacama
+238,Mejillones,Antofagasta
+239,Aysen,Aysen del General Carlos Ibañez del Campo
+240,Caldera,Atacama
+241,Antofagasta,Antofagasta
+242,Antofagasta,Antofagasta
+243,Mejillones,Antofagasta
+244,Arica,Arica y Parinacota
+245,Quintero,Valparaiso
+246,Coquimbo,Coquimbo
+247,Chañaral,Atacama
+248,Huasco,Atacama
+249,Lota,Biobio
+250,Puerto Montt,Los Lagos
+251,Valparaiso,Valparaiso
+252,Huasco,Atacama
+253,Hanga Roa,Valparaiso
+254,Punta Arenas,Magallanes y de la Antartica chilena
+255,Lota,Biobio
+256,Mejillones,Antofagasta
+257,Penco,Biobio
+258,Puerto Montt,Los Lagos
+259,Primavera,Magallanes y de la Antartica chilena
+260,Chañaral,Atacama
+261,Aysen,Aysen del General Carlos Ibañez del Campo
+262,Talcahuano,Biobio
+263,Coronel,Biobio
+264,Tocopilla,Antofagasta
+265,Caldera,Atacama
+266,Mejillones,Antofagasta
+267,Taltal,Antofagasta
+268,Penco,Biobio
+269,Quellon,Los Lagos
+270,La Higuera,Coquimbo
+271,Mejillones,Antofagasta
+272,La Higuera,Coquimbo
+273,La Higuera,Coquimbo
+274,Hanga Roa,Valparaiso
+275,Iquique,Tarapaca
+276,Antofagasta,Antofagasta
+277,Mejillones,Antofagasta
+278,Taltal,Antofagasta
+279,Penco,Biobio
+280,Mejillones,Antofagasta
+281,Hanga Roa,Valparaiso
+282,Huasco,Atacama
+283,Castro,Los Lagos
+284,Coronel,Biobio
+285,Coquimbo,Coquimbo
+286,Coronel,Biobio
+287,Caldera,Atacama
+288,Arica,Arica y Parinacota
+289,Aysen,Aysen del General Carlos Ibañez del Campo
+290,Coquimbo,Coquimbo
+291,Tocopilla,Antofagasta
+292,Puerto Williams,Magallanes y de la Antartica chilena
+293,Talcahuano,Biobio
+294,Mejillones,Antofagasta
+295,Arica,Arica y Parinacota
+296,Aysen,Aysen del General Carlos Ibañez del Campo
+297,Penco,Biobio
+298,Puerto Williams,Magallanes y de la Antartica chilena
+299,Aysen,Aysen del General Carlos Ibañez del Campo
+300,Caldera,Atacama
+301,Puerto Montt,Los Lagos
+302,Castro,Los Lagos
+303,Caldera,Atacama
+304,Coquimbo,Coquimbo
+305,Punta Arenas,Magallanes y de la Antartica chilena
+306,Aysen,Aysen del General Carlos Ibañez del Campo
+307,Penco,Biobio
+308,Castro,Los Lagos
+309,Caldera,Atacama
+310,Corral,Los Rios
+311,Taltal,Antofagasta
+312,Iquique,Tarapaca
+313,Chañaral,Atacama
+314,Valdivia,Los Rios
+315,Mejillones,Antofagasta
+316,Mejillones,Antofagasta
+317,Arica,Arica y Parinacota
+318,Antofagasta,Antofagasta
+319,Arica,Arica y Parinacota
+320,Primavera,Magallanes y de la Antartica chilena
+321,Taltal,Antofagasta
+322,Puerto Montt,Los Lagos
+323,Valparaiso,Valparaiso
+324,Quintero,Valparaiso
+325,Arica,Arica y Parinacota
+326,Lota,Biobio
+327,Primavera,Magallanes y de la Antartica chilena
+328,Valparaiso,Valparaiso
+329,Chañaral,Atacama
+330,Penco,Biobio
+331,Corral,Los Rios
+332,Puerto Montt,Los Lagos
+333,Huasco,Atacama
+334,La Serena,Coquimbo
+335,Caldera,Atacama
+336,Quintero,Valparaiso
+337,Chañaral,Atacama
+338,Quintero,Valparaiso
+339,Caldera,Atacama
+340,Aysen,Aysen del General Carlos Ibañez del Campo
+341,Primavera,Magallanes y de la Antartica chilena
+342,La Serena,Coquimbo
+343,Taltal,Antofagasta
+344,Antofagasta,Antofagasta
+345,Isla Guarello,Magallanes y de la Antartica chilena
+346,Caldera,Atacama
+347,Tocopilla,Antofagasta
+348,Chañaral,Atacama
+349,Mejillones,Antofagasta
+350,Huasco,Atacama
+351,Ancud,Los Lagos
+352,Chañaral,Atacama
+353,Tocopilla,Antofagasta
+354,Mejillones,Antofagasta
+355,Antofagasta,Antofagasta
+356,Caldera,Atacama
+357,Caldera,Atacama
+358,Caldera,Atacama
+359,Chañaral,Atacama
+360,Coquimbo,Coquimbo
+361,La Serena,Coquimbo
+362,Puerto Montt,Los Lagos
+363,La Higuera,Coquimbo
+364,Talcahuano,Biobio
+365,Huasco,Atacama
+366,Lota,Biobio
+367,La Higuera,Coquimbo
+368,Arica,Arica y Parinacota
+369,Quintero,Valparaiso
+370,Caldera,Atacama
+371,La Serena,Coquimbo
+372,Valparaiso,Valparaiso
+373,Mejillones,Antofagasta
+374,Chañaral,Atacama
+375,Taltal,Antofagasta
+376,Caldera,Atacama
+377,Mejillones,Antofagasta
+378,Huasco,Atacama
+379,Quintero,Valparaiso
+380,La Serena,Coquimbo
+381,Arica,Arica y Parinacota
+382,La Higuera,Coquimbo
+383,Coquimbo,Coquimbo
+384,Huasco,Atacama
+385,Quintero,Valparaiso
+386,Mejillones,Antofagasta
+387,Isla Guarello,Magallanes y de la Antartica chilena
+388,Puerto Williams,Magallanes y de la Antartica chilena
+389,Antofagasta,Antofagasta
+390,Iquique,Tarapaca
+391,Coquimbo,Coquimbo
+392,Ancud,Los Lagos
+393,Aysen,Aysen del General Carlos Ibañez del Campo
+394,Huasco,Atacama
+395,Antofagasta,Antofagasta
+396,Castro,Los Lagos
+397,Arica,Arica y Parinacota
+398,Penco,Biobio
+399,Valdivia,Los Rios
+400,Antofagasta,Antofagasta
+401,Mejillones,Antofagasta
+402,Lota,Biobio
+403,Quintero,Valparaiso
+404,Puerto Williams,Magallanes y de la Antartica chilena
+405,Coquimbo,Coquimbo
+406,Coronel,Biobio
+407,Ancud,Los Lagos
+408,Caldera,Atacama
+409,Isla Guarello,Magallanes y de la Antartica chilena
+410,Chañaral,Atacama
+411,Arica,Arica y Parinacota
+412,Lota,Biobio
+413,Caldera,Atacama
+414,Caldera,Atacama
+415,Mejillones,Antofagasta
+416,Coquimbo,Coquimbo
+417,Talcahuano,Biobio
+418,Quintero,Valparaiso
+419,Puerto Williams,Magallanes y de la Antartica chilena
+420,Hanga Roa,Valparaiso
+421,Coquimbo,Coquimbo
+422,Coronel,Biobio
+423,Lota,Biobio
+424,Coquimbo,Coquimbo
+425,Lota,Biobio
+426,Quintero,Valparaiso
+427,Caldera,Atacama
+428,Caldera,Atacama
+429,Arica,Arica y Parinacota
+430,Ancud,Los Lagos
+431,Valdivia,Los Rios
+432,San Vicente,O'Higgins
+433,La Serena,Coquimbo
+434,Coquimbo,Coquimbo
+435,Puerto Montt,Los Lagos
+436,Ancud,Los Lagos
+437,Mejillones,Antofagasta
+438,Mejillones,Antofagasta
+439,La Higuera,Coquimbo
+440,Punta Arenas,Magallanes y de la Antartica chilena
+441,Caldera,Atacama
+442,Quellon,Los Lagos
+443,Puerto Natales,Magallanes y de la Antartica chilena
+444,Caldera,Atacama
+445,Iquique,Tarapaca
+446,Coronel,Biobio
+447,Mejillones,Antofagasta
+448,La Serena,Coquimbo
+449,Puerto Montt,Los Lagos
+450,Coronel,Biobio
+451,La Serena,Coquimbo
+452,Antofagasta,Antofagasta
+453,Mejillones,Antofagasta
+454,Valparaiso,Valparaiso
+455,Lota,Biobio
+456,La Higuera,Coquimbo
+457,Arica,Arica y Parinacota
+458,Coronel,Biobio
+459,Mejillones,Antofagasta
+460,Antofagasta,Antofagasta
+461,La Serena,Coquimbo
+462,San Antonio,Valparaiso
+463,Chañaral,Atacama
+464,Quintero,Valparaiso
+465,San Vicente,O'Higgins
+466,Coquimbo,Coquimbo
+467,Chañaral,Atacama
+468,Puerto Montt,Los Lagos
+469,Hanga Roa,Valparaiso
+470,Mejillones,Antofagasta
+471,Iquique,Tarapaca
+472,Coquimbo,Coquimbo
+473,Huasco,Atacama
+474,San Vicente,O'Higgins
+475,Mejillones,Antofagasta
+476,Iquique,Tarapaca
+477,Caldera,Atacama
+478,Penco,Biobio
+479,Caldera,Atacama
+480,Taltal,Antofagasta
+481,Aysen,Aysen del General Carlos Ibañez del Campo
+482,Puerto Williams,Magallanes y de la Antartica chilena
+483,Puerto Williams,Magallanes y de la Antartica chilena
+484,Taltal,Antofagasta
+485,Chañaral,Atacama
+486,Quintero,Valparaiso
+487,Quintero,Valparaiso
+488,Huasco,Atacama
+489,Coronel,Biobio
+490,Quemchi,Los Lagos
+491,Mejillones,Antofagasta
+492,Antofagasta,Antofagasta
+493,Caldera,Atacama
+494,Lota,Biobio
+495,Quemchi,Los Lagos
+496,Taltal,Antofagasta
+497,Primavera,Magallanes y de la Antartica chilena
+498,Mejillones,Antofagasta
+499,Puerto Natales,Magallanes y de la Antartica chilena
+500,Quintero,Valparaiso
+501,San Vicente,O'Higgins
+502,La Higuera,Coquimbo
+503,Quellon,Los Lagos
+504,Huasco,Atacama
+505,Quemchi,Los Lagos
+506,Quintero,Valparaiso
+507,Quellon,Los Lagos
+508,Iquique,Tarapaca
+509,Caldera,Atacama
+510,Puerto Montt,Los Lagos
+511,Mejillones,Antofagasta
+512,Coquimbo,Coquimbo
+513,Penco,Biobio
+514,La Serena,Coquimbo
+515,Ancud,Los Lagos
+516,Quintero,Valparaiso
+517,Penco,Biobio
+518,Huasco,Atacama
+519,Chañaral,Atacama
+520,La Serena,Coquimbo
+521,Caldera,Atacama
+522,Penco,Biobio
+523,Aysen,Aysen del General Carlos Ibañez del Campo
+524,Penco,Biobio
+525,Puerto Montt,Los Lagos
+526,Iquique,Tarapaca
+527,Mejillones,Antofagasta
+528,Valparaiso,Valparaiso
+529,Penco,Biobio
+530,Taltal,Antofagasta
+531,Mejillones,Antofagasta
+532,Chañaral,Atacama
+533,Quintero,Valparaiso
+534,Puerto Williams,Magallanes y de la Antartica chilena
+535,Castro,Los Lagos
+536,La Higuera,Coquimbo
+537,Mejillones,Antofagasta
+538,Caldera,Atacama
+539,La Serena,Coquimbo
+540,Iquique,Tarapaca
+541,Caldera,Atacama
+542,Lota,Biobio
+543,Antofagasta,Antofagasta
+544,Puerto Natales,Magallanes y de la Antartica chilena
+545,Caldera,Atacama
+546,Antofagasta,Antofagasta
+547,Puerto Montt,Los Lagos
+548,Valparaiso,Valparaiso
+549,San Vicente,O'Higgins
+550,Primavera,Magallanes y de la Antartica chilena
+551,Caldera,Atacama
+552,Antofagasta,Antofagasta
+553,Puerto Montt,Los Lagos
+554,Quellon,Los Lagos
+555,Hanga Roa,Valparaiso
+556,Caldera,Atacama
+557,Punta Arenas,Magallanes y de la Antartica chilena
+558,Chañaral,Atacama
+559,La Serena,Coquimbo
+560,Caldera,Atacama
+561,Coronel,Biobio
+562,Caldera,Atacama
+563,Puerto Montt,Los Lagos
+564,Mejillones,Antofagasta
+565,Aysen,Aysen del General Carlos Ibañez del Campo
+566,Puerto Williams,Magallanes y de la Antartica chilena
+567,Valdivia,Los Rios
+568,Puerto Montt,Los Lagos
+569,Taltal,Antofagasta
+570,Talcahuano,Biobio
+571,Puerto Williams,Magallanes y de la Antartica chilena
+572,Mejillones,Antofagasta
+573,Quintero,Valparaiso
+574,Valparaiso,Valparaiso
+575,Punta Arenas,Magallanes y de la Antartica chilena
+576,Quellon,Los Lagos
+577,Iquique,Tarapaca
+578,Primavera,Magallanes y de la Antartica chilena
+579,Castro,Los Lagos
+580,Aysen,Aysen del General Carlos Ibañez del Campo
+581,Puerto Montt,Los Lagos
+582,Quellon,Los Lagos
+583,Iquique,Tarapaca
+584,Quemchi,Los Lagos
+585,Corral,Los Rios
+586,Caldera,Atacama
+587,Mejillones,Antofagasta
+588,Lota,Biobio
+589,Huasco,Atacama
+590,Coquimbo,Coquimbo
+591,Quintero,Valparaiso
+592,Coquimbo,Coquimbo
+593,Puerto Montt,Los Lagos
+594,Corral,Los Rios
+595,Corral,Los Rios
+596,Huasco,Atacama
+597,Quintero,Valparaiso
+598,Coronel,Biobio
+599,Caldera,Atacama
+600,Antofagasta,Antofagasta
+601,San Vicente,O'Higgins
+602,Caldera,Atacama
+603,Huasco,Atacama
+604,Mejillones,Antofagasta
+605,Castro,Los Lagos
+606,Mejillones,Antofagasta
+607,Taltal,Antofagasta
+608,Puerto Williams,Magallanes y de la Antartica chilena
+609,Iquique,Tarapaca
+610,San Vicente,O'Higgins
+611,Antofagasta,Antofagasta
+612,Caldera,Atacama
+613,Caldera,Atacama
+614,Coronel,Biobio
+615,Puerto Natales,Magallanes y de la Antartica chilena
+616,Antofagasta,Antofagasta
+617,Taltal,Antofagasta
+618,Caldera,Atacama
+619,Chañaral,Atacama
+620,Arica,Arica y Parinacota
+621,Caldera,Atacama
+622,Quintero,Valparaiso
+623,Punta Arenas,Magallanes y de la Antartica chilena
+624,Ancud,Los Lagos
+625,Mejillones,Antofagasta
+626,La Higuera,Coquimbo
+627,Primavera,Magallanes y de la Antartica chilena
+628,Arica,Arica y Parinacota
+629,La Serena,Coquimbo
+630,Tocopilla,Antofagasta
+631,Isla Guarello,Magallanes y de la Antartica chilena
+632,Ancud,Los Lagos
+633,Puerto Montt,Los Lagos
+634,Huasco,Atacama
+635,Arica,Arica y Parinacota
+636,Quintero,Valparaiso
+637,Antofagasta,Antofagasta
+638,Caldera,Atacama
+639,Quemchi,Los Lagos
+640,Coronel,Biobio
+641,Arica,Arica y Parinacota
+642,La Serena,Coquimbo
+643,Valparaiso,Valparaiso
+644,Valdivia,Los Rios
+645,Antofagasta,Antofagasta
+646,Aysen,Aysen del General Carlos Ibañez del Campo
+647,Mejillones,Antofagasta
+648,Tocopilla,Antofagasta
+649,Caldera,Atacama
+650,Quintero,Valparaiso
+651,Caldera,Atacama
+652,Iquique,Tarapaca
+653,Quellon,Los Lagos
+654,Cisnes,Aysen del General Carlos Ibañez del Campo
+655,Arica,Arica y Parinacota
+656,Huasco,Atacama
+657,Antofagasta,Antofagasta
+658,Isla Guarello,Magallanes y de la Antartica chilena
+659,Huasco,Atacama
+660,Huasco,Atacama
+661,Mejillones,Antofagasta
+662,Chañaral,Atacama
+663,Caldera,Atacama
+664,Penco,Biobio
+665,San Vicente,O'Higgins
+666,Antofagasta,Antofagasta
+667,Quellon,Los Lagos
+668,Caldera,Atacama
+669,Iquique,Tarapaca
+670,Puerto Natales,Magallanes y de la Antartica chilena
+671,Taltal,Antofagasta
+672,Primavera,Magallanes y de la Antartica chilena
+673,Quintero,Valparaiso
+674,Aysen,Aysen del General Carlos Ibañez del Campo
+675,Primavera,Magallanes y de la Antartica chilena
+676,Iquique,Tarapaca
+677,Ancud,Los Lagos
+678,Coquimbo,Coquimbo
+679,Primavera,Magallanes y de la Antartica chilena
+680,Caldera,Atacama
+681,Quintero,Valparaiso
+682,La Serena,Coquimbo
+683,Corral,Los Rios
+684,Iquique,Tarapaca
+685,Taltal,Antofagasta
+686,Iquique,Tarapaca
+687,Aysen,Aysen del General Carlos Ibañez del Campo
+688,Lota,Biobio
+689,Lota,Biobio
+690,La Serena,Coquimbo
+691,Caldera,Atacama
+692,La Serena,Coquimbo
+693,Ancud,Los Lagos
+694,Isla Guarello,Magallanes y de la Antartica chilena
+695,Penco,Biobio
+696,Primavera,Magallanes y de la Antartica chilena
+697,Quellon,Los Lagos
+698,Arica,Arica y Parinacota
+699,Quintero,Valparaiso
+700,Coquimbo,Coquimbo
+701,Corral,Los Rios
+702,Antofagasta,Antofagasta
+703,Iquique,Tarapaca
+704,Antofagasta,Antofagasta
+705,Mejillones,Antofagasta
+706,Huasco,Atacama
+707,Iquique,Tarapaca
+708,La Serena,Coquimbo
+709,Caldera,Atacama
+710,Caldera,Atacama
+711,Caldera,Atacama
+712,Quintero,Valparaiso
+713,Quemchi,Los Lagos
+714,Coquimbo,Coquimbo
+715,Coquimbo,Coquimbo
+716,Quintero,Valparaiso
+717,Coquimbo,Coquimbo
+718,Caldera,Atacama
+719,Lota,Biobio
+720,Iquique,Tarapaca
+721,Penco,Biobio
+722,Iquique,Tarapaca
+723,Mejillones,Antofagasta
+724,Castro,Los Lagos
+725,Tocopilla,Antofagasta
+726,Iquique,Tarapaca
+727,La Higuera,Coquimbo
+728,Taltal,Antofagasta
+729,Valparaiso,Valparaiso
+730,Coronel,Biobio
+731,Mejillones,Antofagasta
+732,Mejillones,Antofagasta
+733,Arica,Arica y Parinacota
+734,San Antonio,Valparaiso
+735,Penco,Biobio
+736,Quellon,Los Lagos
+737,Talcahuano,Biobio
+738,Quintero,Valparaiso
+739,Caldera,Atacama
+740,Caldera,Atacama
+741,Aysen,Aysen del General Carlos Ibañez del Campo
+742,Puerto Williams,Magallanes y de la Antartica chilena
+743,La Serena,Coquimbo
+744,Mejillones,Antofagasta
+745,Iquique,Tarapaca
+746,Mejillones,Antofagasta
+747,Valparaiso,Valparaiso
+748,Antofagasta,Antofagasta
+749,La Serena,Coquimbo
+750,Coronel,Biobio
+751,Coquimbo,Coquimbo
+752,Antofagasta,Antofagasta
+753,Aysen,Aysen del General Carlos Ibañez del Campo
+754,Valparaiso,Valparaiso
+755,Punta Arenas,Magallanes y de la Antartica chilena
+756,Puerto Williams,Magallanes y de la Antartica chilena
+757,Puerto Williams,Magallanes y de la Antartica chilena
+758,Arica,Arica y Parinacota
+759,Isla Guarello,Magallanes y de la Antartica chilena
+760,Mejillones,Antofagasta
+761,Quellon,Los Lagos
+762,Valparaiso,Valparaiso
+763,Isla Guarello,Magallanes y de la Antartica chilena
+764,Caldera,Atacama
+765,Cisnes,Aysen del General Carlos Ibañez del Campo
+766,Antofagasta,Antofagasta
+767,Iquique,Tarapaca
+768,Huasco,Atacama
+769,San Vicente,O'Higgins
+770,Quintero,Valparaiso
+771,Quemchi,Los Lagos
+772,Quintero,Valparaiso
+773,Aysen,Aysen del General Carlos Ibañez del Campo
+774,Cisnes,Aysen del General Carlos Ibañez del Campo
+775,Ancud,Los Lagos
+776,Coquimbo,Coquimbo
+777,Ancud,Los Lagos
+778,Chañaral,Atacama
+779,Mejillones,Antofagasta
+780,Coronel,Biobio
+781,Penco,Biobio
+782,Arica,Arica y Parinacota
+783,Mejillones,Antofagasta
+784,Antofagasta,Antofagasta
+785,Penco,Biobio
+786,Quintero,Valparaiso
+787,Arica,Arica y Parinacota
+788,Caldera,Atacama
+789,Caldera,Atacama
+790,Talcahuano,Biobio
+791,Quintero,Valparaiso
+792,Taltal,Antofagasta
+793,Punta Arenas,Magallanes y de la Antartica chilena
+794,Puerto Montt,Los Lagos
+795,Quellon,Los Lagos
+796,Taltal,Antofagasta
+797,Arica,Arica y Parinacota
+798,Huasco,Atacama
+799,Caldera,Atacama
+800,Penco,Biobio
+801,Chañaral,Atacama
+802,Antofagasta,Antofagasta
+803,Coquimbo,Coquimbo
+804,Aysen,Aysen del General Carlos Ibañez del Campo
+805,Punta Arenas,Magallanes y de la Antartica chilena
+806,Arica,Arica y Parinacota
+807,Coronel,Biobio
+808,Huasco,Atacama
+809,Corral,Los Rios
+810,Mejillones,Antofagasta
+811,Quintero,Valparaiso
+812,Mejillones,Antofagasta
+813,Mejillones,Antofagasta
+814,Puerto Montt,Los Lagos
+815,Quellon,Los Lagos
+816,Caldera,Atacama
+817,Iquique,Tarapaca
+818,Ancud,Los Lagos
+819,La Higuera,Coquimbo
+820,Lota,Biobio
+821,Puerto Montt,Los Lagos
+822,Caldera,Atacama
+823,Arica,Arica y Parinacota
+824,Iquique,Tarapaca
+825,Coquimbo,Coquimbo
+826,La Higuera,Coquimbo
+827,Hanga Roa,Valparaiso
+828,Coquimbo,Coquimbo
+829,Quintero,Valparaiso
+830,Coquimbo,Coquimbo
+831,Chañaral,Atacama
+832,Puerto Montt,Los Lagos
+833,Quellon,Los Lagos
+834,Mejillones,Antofagasta
+835,Quintero,Valparaiso
+836,Antofagasta,Antofagasta
+837,Puerto Williams,Magallanes y de la Antartica chilena
+838,San Antonio,Valparaiso
+839,Talcahuano,Biobio
+840,Lota,Biobio
+841,La Higuera,Coquimbo
+842,Penco,Biobio
+843,Antofagasta,Antofagasta
+844,Caldera,Atacama
+845,Valparaiso,Valparaiso
+846,Chañaral,Atacama
+847,La Higuera,Coquimbo
+848,Penco,Biobio
+849,Quellon,Los Lagos
+850,Mejillones,Antofagasta
+851,Valparaiso,Valparaiso
+852,Iquique,Tarapaca
+853,Coquimbo,Coquimbo
+854,Tocopilla,Antofagasta
+855,Valparaiso,Valparaiso
+856,Taltal,Antofagasta
+857,La Serena,Coquimbo
+858,Caldera,Atacama
+859,Coronel,Biobio
+860,Puerto Natales,Magallanes y de la Antartica chilena
+861,Puerto Montt,Los Lagos
+862,Mejillones,Antofagasta
+863,Coquimbo,Coquimbo
+864,Iquique,Tarapaca
+865,Antofagasta,Antofagasta
+866,Puerto Montt,Los Lagos
+867,Quellon,Los Lagos
+868,Chañaral,Atacama
+869,Aysen,Aysen del General Carlos Ibañez del Campo
+870,La Higuera,Coquimbo
+871,Arica,Arica y Parinacota
+872,Ancud,Los Lagos
+873,Antofagasta,Antofagasta
+874,Castro,Los Lagos
+875,Penco,Biobio
