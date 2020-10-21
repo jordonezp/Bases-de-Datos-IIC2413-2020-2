@@ -2,7 +2,7 @@
     require('./config/conection.php');
 
     $query = "SELECT * FROM facilities;";
-    $result = $db -> prepare($query);
+    $result = $dbimp -> prepare($query);
     $result -> execute();
     $facilities = $result -> fetchAll();
 ?>
