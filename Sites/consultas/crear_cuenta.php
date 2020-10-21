@@ -32,7 +32,7 @@
 	$all = $result_all -> fetchAll();
     $last = end($all);
     $uid = $last[0];
-    $sql = "INSERT INTO usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
+    $sql = "INSERT usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
     $stmt = $dbp -> prepare($sql);
     $stmt -> execute([$pasaporte, $pass, $nombre, $edad, $sexo, $nacio]);
 
@@ -66,7 +66,6 @@ if (sizeof($nav) == 1) {
         <?php
                 echo "<tr>
                     <td>$pasaporte</td>
-                    <td>$pass</td>
                     <td>$nombre</td>
                     <td>$edad</td>
                     <td>$sexo</td>
