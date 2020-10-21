@@ -18,7 +18,7 @@
     $query = "SELECT usuarios.pasaporte
               FROM usuarios
               WHERE '$pasaporte' = usuarios.pasaporte;";
-    $result = $db -> prepare($query);
+    $result = $dbp -> prepare($query);
 	$result -> execute();
 	$nav = $result -> fetchAll();
 

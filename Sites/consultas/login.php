@@ -5,7 +5,7 @@
 
 <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-    require("../config/conexion.php");
+    require("../config/conection.php");
 
     $pasaporte = $_POST["pasaporte"];
     $clave = $_POST["clave"];
@@ -18,7 +18,6 @@
 	$result -> execute();
 	$nav = $result -> fetchAll();
     ?>
-
         <br>
     <br>
 
