@@ -3,7 +3,10 @@
 require('../config/conection.php');
 
 $nid = $_GET["nid"];
-$nnombre = $_GET["nnombre"]; 
+$nnombre = $_GET["nnombre"];
+
+echo $nid;
+echo $nnombre;
 
 $query_carga = "SELECT buque.bnombre, buque.patente FROM buque, carga WHERE nid = 'Snid' AND buque.patente = carga.patente;";
 $query_pesquero = "SELECT buque.bnombre, buque.patente FROM buque, pesquero WHERE nid = 'Snid' AND buque.patente = pesquero.patente;";
