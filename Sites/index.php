@@ -57,13 +57,16 @@
             type="number" name="input_6_1"> del año (escribir en formato yyyy) <input type="number"
                                                                                     name="input_6_2">. <br>
     <input type="submit" value="Buscar">
+</form>
     <br>
     <br>
+
 
 <!---->
 <!---->
 <!---->
 <!---->
+
 <form action="consultas/consulta_prueba.php" method="get">
     <input type="submit" value="Buscar">
 </form>
