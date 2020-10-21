@@ -61,14 +61,4 @@
     <br>
     <br>
 
-
-<!---->
-<!---->
-<!---->
-<!---->
-
-<form action="consultas/consulta_prueba.php" method="get">
-    <input type="submit" value="Buscar">
-</form>
-
 </form>
