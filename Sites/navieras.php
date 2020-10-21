@@ -1,27 +1,25 @@
 <?php
 require('./config/conection.php');
-$query = "SELECT DISTINCT nnombre FROM naviera;";
+$query = "SELECT * FROM naviera;";
 $result = $dbp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
 ?>
 
 <h1>Navieras</h1>
-<br>
 
-<p>Acá podrás revisar las navieras existentes y acceder a los barcos de cada una de estas</p>
-<br>
+<p>Acá podrás revisar las navieras existentes. Haciendo <i>clcik</i> sobre una naviera podrás
+    acceder a los barcos de esta.</p>
 <br>
 
 <table>
     <tr>
         <th>Nombre</th>
-        <th>Acción</th>
     </tr>
 
     <?php
     foreach ($tabla as $fila) {
-        echo "<tr><td>$fila[1]</td> </tr>";
+        echo "<tr><td><a href='consulta_navieras.php?nid=$fila[0]'> $fila[1] </a></td> </tr>";
     }
     ?>
 
