@@ -118,3 +118,21 @@ create table facility_history_entries (
             references facilities(fid)
             on delete cascade
 );
+
+create table docks (
+    fid int,
+    primary key(fid),
+    constraint fk_facilities
+        foreign key(fid)
+            references facilities(fid)
+            on delete cascade
+);
+
+create table shipyards (
+    fid int,
+    primary key(fid),
+    constraint fk_facilities
+        foreign key(fid)
+            references facilities(fid)
+            on delete cascade
+);
