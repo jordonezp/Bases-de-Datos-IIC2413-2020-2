@@ -8,7 +8,7 @@ $tabla = $result -> fetchAll();
 
 <h1>Puertos</h1>
 
-<p>Acá podrás revisar los puertos existentes. Haciendo <i>clcik</i> sobre un purto podrás
+<p>Acá podrás revisar los puertos existentes. Haciendo <i>clcik</i> sobre un puerto podrás
     realizar consultas sobre este puerto</p>
 <br>
 
