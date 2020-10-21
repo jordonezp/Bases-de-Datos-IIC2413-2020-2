@@ -32,7 +32,9 @@
 	$all = $result_all -> fetchAll();
     $last = end($all);
     $uid = $last[0];
-    $query = pg_query($dbp, "INSERT INTO usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES ('$uid', '$nombre', '$pasaporte', '$nacio', '$password', '$edad', '$sexo);");
+    $sql = "INSERT INTO usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
+    $stmt = $dbp -> prepare($sql);
+    $stmt -> execute([$pasaporte, $pass, $nombre, $edad, $sexo, $nacio])
 
     ?>
 
@@ -64,11 +66,13 @@ if (sizeof($nav) == 1) {
         <?php
             foreach ($nav as $n) {
                 echo "<tr>
-                    <td>$n[0]</td>
-                    <td>$n[1]</td>
-                    <td>$n[2]</td>
-                    <td>$n[3]</td>
-                    <td>$n[4]</td>
+                    <td>$pasaporte</td>
+                    <td>$pass</td>
+                    <td>$nombre</td>
+                    <td>$edad</td>
+                    <td>$sexo</td>
+                    <td>$nacio</td>
+                    
                 </tr>";
             }
         ?>
