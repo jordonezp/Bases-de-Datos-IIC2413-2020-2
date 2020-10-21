@@ -7,8 +7,8 @@
 
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo94/index.php?">
-            <img src="https://cdn6.aptoide.com/imgs/d/1/9/d1974004fcc5be6d9a298f039f1b2857_icon.png" width="70" height="120">
+        <a class="navbar-item" >
+            <img src="https://img2.freepng.es/20180320/qew/kisspng-database-server-computer-icons-clip-art-sql-server-save-icon-format-5ab0cc859a7d62.9198558515215361336328.jpg" width="70" height="120">
         </a>
     </div>
     <div class="navbar-brand">
