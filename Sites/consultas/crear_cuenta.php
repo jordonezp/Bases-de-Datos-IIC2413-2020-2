@@ -5,7 +5,7 @@
 
 <?php
     #Llama a conexión, crea el objeto PDO y obtiene la variable $db
-    require("../config/conexion.php");
+    require("../config/conection.php");
 
     $pasaporte = $_POST["pasaporte"];
     $pass = $_POST["pass"];
@@ -18,7 +18,7 @@
     $query = "SELECT usuarios.pasaporte
               FROM usuarios
               WHERE '$pasaporte' = usuarios.pasaporte;";
-    $result = $db -> prepare($query);
+    $result = $dbp -> prepare($query);
 	$result -> execute();
 	$nav = $result -> fetchAll();
 
@@ -27,24 +27,15 @@
 	$query_all = "SELECT *
               FROM usuarios;";
 
-    $result_all = $db -> prepare($query_all);
+    $result_all = $dbp -> prepare($query_all);
 	$result_all -> execute();
 	$all = $result_all -> fetchAll();
     $last = end($all);
     $uid = $last[0];
+    $sql = "INSERT usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
+    $stmt = $dbp -> prepare($sql);
+    $stmt -> execute([$pasaporte, $pass, $nombre, $edad, $sexo, $nacio]);
 
-	$data = [
-	'uid' => $uid,
-	'nombre' => $nombre,
-    'pasaporte' => $pasaporte,
-    'password' => $pass,
-    'edad' => $edad,
-    'sexo' => $sexo,
-    'nacionalidad' => $nacio
-    ];
-    $sql = "INSERT INTO usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (:uid, :nombre, :pasaporte, :nacionalidad, :password, :edad, :sexo)";
-    $stmt= $db->prepare($sql);
-    $stmt->execute($data);
     ?>
 
         <br>
@@ -62,7 +53,7 @@ if (sizeof($nav) == 1) {
 ?>
 
 <div class="container is-max-desktop">
-    <h1 class="title">Cuenta</h1>
+    <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
     <p class="subtitle">Bienvenido: <?php echo "$name" ?> !</p>
     <table class="table is-striped is-hoverable">
         <tr>
@@ -73,15 +64,15 @@ if (sizeof($nav) == 1) {
             <th>Nacionalidad</th>
         </tr>
         <?php
-            foreach ($nav as $n) {
                 echo "<tr>
-                    <td>$n[0]</td>
-                    <td>$n[1]</td>
-                    <td>$n[2]</td>
-                    <td>$n[3]</td>
-                    <td>$n[4]</td>
+                    <td>$pasaporte</td>
+                    <td>$nombre</td>
+                    <td>$edad</td>
+                    <td>$sexo</td>
+                    <td>$nacio</td>
+                    
                 </tr>";
-            }
+            
         ?>
     </table>
     </div>

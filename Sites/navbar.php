@@ -14,13 +14,13 @@
     <div class="navbar-brand">
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo94/crear_cuenta.php">
+                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/crear_cuenta.php">
                     Crear Cuenta
                 </a>
-                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo94/login.php">
+                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/login.php">
                     Iniciar Sesion
                 </a>
-                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo94/perfil.php">
+                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/perfil.php">
                     <?php
                         session_start();
                         if ($name == "") {
