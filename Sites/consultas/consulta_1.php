@@ -2,7 +2,7 @@
 require('../config/conection.php');
 
 $query = "SELECT name, cid FROM ports;";
-$result = $db -> prepare($query);
+$result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
 ?>

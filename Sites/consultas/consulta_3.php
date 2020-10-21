@@ -2,7 +2,7 @@
 require('../config/conection.php');
 
 $query = " SELECT DISTINCT pid FROM facilities WHERE UPPER(type) LIKE '%SHIPYARD%';";
-$result = $db -> prepare($query);
+$result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
 ?>

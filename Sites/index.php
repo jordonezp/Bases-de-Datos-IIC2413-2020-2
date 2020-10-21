@@ -2,7 +2,7 @@
     require('./config/conection.php');
 
     $query = "SELECT * FROM facilities;";
-    $result = $db -> prepare($query);
+    $result = $dbimp -> prepare($query);
     $result -> execute();
     $facilities = $result -> fetchAll();
 ?>
@@ -57,4 +57,8 @@
             type="number" name="input_6_1"> del año (escribir en formato yyyy) <input type="number"
                                                                                     name="input_6_2">. <br>
     <input type="submit" value="Buscar">
+</form>
+    <br>
+    <br>
+
 </form>
