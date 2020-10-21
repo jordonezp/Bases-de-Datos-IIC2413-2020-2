@@ -110,6 +110,31 @@ def extract_regions(cities, ports):
     return new_cities_2, new_regions, new_ports
 
 
+def split_facilities(facilites):
+    shipyards_data = []
+    docks_data = []
+    for f in facilites.values:
+        # print(f)
+        if f[1] == 'dock':
+            docks_data.append(f[0])
+        elif f[1] == 'shipyard':
+            shipyards_data.append(f[0])
+        else:
+            raise Exception('algo anda mal...')
+
+    new_shipyards = pd.DataFrame(
+        data=shipyards_data, columns=['fid']
+    )
+    new_docks = pd.DataFrame(
+        data=docks_data, columns=['fid']
+    )
+    new_facilities = facilites.filter(
+        items=['fid', 'capacity', 'boss_rut', 'pid'])
+    # print(new_facilities)
+
+    return new_facilities, new_shipyards, new_docks
+
+
 if __name__ == "__main__":
     table_dict = read_data(data_folder)
     for t in table_dict:
@@ -132,9 +157,14 @@ if __name__ == "__main__":
     print(regions)
     print(ports)
 
+    facilities, shipyards, docks = split_facilities(table_dict['facilities'])
+
     dock_permits.to_csv('dock_permits.csv', index=False)
     shipyard_permits.to_csv('shipyard_permits.csv', index=False)
     permits.to_csv('permits.csv', index=False)
     cities.to_csv('cities.csv', index=False)
     regions.to_csv('regions.csv', index=False)
     ports.to_csv('ports.csv', index=False)
+    facilities.to_csv('facilities.csv', index=False)
+    shipyards.to_csv('shipyards.csv', index=False)
+    docks.to_csv('docks.csv', index=False)
