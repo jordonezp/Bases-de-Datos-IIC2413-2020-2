@@ -7,13 +7,6 @@
     $facilities = $result -> fetchAll();
 ?>
 
-<!--todo: Modificar las consultas de php-->
-<!--todo: Verificar que el procesamiento de datos está bien-->
-
-<!---->
-<!---->
-<!---->
-<!---->
 
 <h1>Biblioteca Puertos, Astilleros y Gerencia</h1>
     <br>
