@@ -1,6 +1,7 @@
+<?php include('navbar.php'); ?>
 <?php include('templates/header.html');   ?>
 
-<?php include('navbar.php'); ?>
+
 <br>
   <br>
 
