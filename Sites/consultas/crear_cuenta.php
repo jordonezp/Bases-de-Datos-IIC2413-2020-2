@@ -32,9 +32,8 @@
 	$all = $result_all -> fetchAll();
     $last = end($all);
     $uid = $last[0];
-    $sql = "INSERT usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
-    $stmt = $dbp -> prepare($sql);
-    $stmt -> execute([$pasaporte, $pass, $nombre, $edad, $sexo, $nacio]);
+    $sql = "INSERT INTO usuarios VALUES ($pasaporte, $pass, $nombre, $edad, $sexo, $nacio)";
+    $result = pg_query($sql)
 
     ?>
 
