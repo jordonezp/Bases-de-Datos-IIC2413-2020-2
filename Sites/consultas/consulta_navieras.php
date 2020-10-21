@@ -5,12 +5,9 @@ require('../config/conection.php');
 $nid = $_GET["nid"];
 $nnombre = $_GET["nnombre"];
 
-echo $nid;
-echo $nnombre;
-
-$query_carga = "SELECT buque.bnombre, buque.patente FROM buque, carga WHERE nid = 'Snid' AND buque.patente = carga.patente;";
-$query_pesquero = "SELECT buque.bnombre, buque.patente FROM buque, pesquero WHERE nid = 'Snid' AND buque.patente = pesquero.patente;";
-$query_petrolero = "SELECT buque.bnombre, buque.patente FROM buque, petrolero WHERE nid = 'Snid' AND buque.patente = petrolero.patente;";
+$query_carga = "SELECT buque.bnombre, buque.patente FROM buque, carga WHERE nid = '$nid' AND buque.patente = carga.patente;";
+$query_pesquero = "SELECT buque.bnombre, buque.patente FROM buque, pesquero WHERE nid = '$nid' AND buque.patente = pesquero.patente;";
+$query_petrolero = "SELECT buque.bnombre, buque.patente FROM buque, petrolero WHERE nid = '$nid' AND buque.patente = petrolero.patente;";
 $result_carga = $dbp->prepare($query_carga);
 $result_pesquero = $dbp->prepare($query_pesquero);
 $result_petrolero = $dbp->prepare($query_petrolero);
@@ -45,6 +42,7 @@ if (count($tabla_carga) >= 1) {
     foreach ($tabla_carga as $fila) {
         echo "<tr> <td> $fila[0] </td> <td> $fila[1] </td> </tr>";
     }
+    echo "</table>";
 }
 
 if (count($tabla_pesquero) >= 1) {
@@ -57,6 +55,7 @@ if (count($tabla_pesquero) >= 1) {
     foreach ($tabla_pesquero as $fila) {
         echo "<tr> <td> $fila[0] </td> <td> $fila[1] </td> </tr>";
     }
+    echo "</table>";
 }
 
 if (count($tabla_petrolero) >= 1) {
@@ -69,6 +68,7 @@ if (count($tabla_petrolero) >= 1) {
     foreach ($tabla_petrolero as $fila) {
         echo "<tr> <td> $fila[0] </td> <td> $fila[1] </td> </tr>";
     }
+    echo "</table>";
 }
 
 ?>
