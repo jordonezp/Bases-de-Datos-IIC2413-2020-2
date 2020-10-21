@@ -32,9 +32,13 @@
 	$all = $result_all -> fetchAll();
     $last = end($all);
     $uid = (int)$last[0] + 1;
-    $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?);";
+    echo "El id es:";
+    echo $uid;
+    $edad2 = (int)$edad;
+    
+    $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
     $stmt = $dbp -> prepare($sql);
-    $stmt -> execute([$uid, $pasaporte, $pass, $nombre, $edad, $sexo, $nacio]);
+    $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
 
 
     ?>

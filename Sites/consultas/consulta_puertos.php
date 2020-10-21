@@ -14,7 +14,7 @@ $name = $_GET["name"];
 <form action="" method="post">
     Muestre todos los días en que todas las instalaciones del puerto <?php echo $name ?>
     estuvieron libres desde el día  <input type="" name="fecha_inicio">, hasta el día
-     <input type="" name="fecha_termino"> 
+     <input type="" name="fecha_termino"> <br>
     <input type="submit" value="Consultar">
 </form>
 
@@ -25,7 +25,7 @@ $name = $_GET["name"];
 
 <form action="" method="post">
     Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun muelle del puerto <?php echo $name ?>
-    el día  <input type="" name="fecha_atraco">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
+    el día  <input type="" name="fecha_atraco">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada. <br>
     <input type="submit" value="Consultar">
  </form>
 
@@ -33,6 +33,6 @@ $name = $_GET["name"];
 
 <form action="" method="post">  
     Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun astillero del puerto <?php echo $name ?>
-   desde el día  <input type="" name="fecha_atraco"> hasta el día <input type="" name="fecha_atraco">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
+   desde el día  <input type="" name="fecha_atraco"> hasta el día <input type="" name="fecha_atraco">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada. <br>
     <input type="submit" value="Consultar"
 </form>
