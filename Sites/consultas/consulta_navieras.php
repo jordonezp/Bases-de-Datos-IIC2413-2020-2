@@ -26,6 +26,12 @@ $tabla_petrolero = $result_petrolero->fetchAll();
     $nnombre ?> por tipo de buque. </p>
 
 <?php
+foreach ($tabla_carga as $fila) {
+    echo "<tr> <td> $fila[0] </td> <td> $fila[1] </td> </tr>";
+}
+?>
+
+<?php
 if (count($tabla_carga) >= 1) {
     echo "<h2> Buques de Carga </h2>";
     echo "<table>";
