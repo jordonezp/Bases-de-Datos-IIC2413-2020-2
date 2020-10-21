@@ -14,7 +14,7 @@
     $query = "SELECT usuarios.pasaporte, usuarios.nombre, usuarios.edad, usuarios.sexo, usuarios.nacionalidad
               FROM usuarios
               WHERE '$pasaporte' = usuarios.pasaporte and usuarios.password = '$clave';";
-    $result = $db -> prepare($query);
+    $result = $dbp -> prepare($query);
 	$result -> execute();
 	$nav = $result -> fetchAll();
     ?>
@@ -27,7 +27,6 @@
 if (sizeof($nav) == 1) {
     echo "Existe";
     $name = $nav[0][1];
-    /*session is started if you don't write this line can't use $_Session  global variable*/
     $_SESSION['name']=$name;
     $_SESSION['pasaporte']=$nav[0][0];
     echo '$_SESSION["name"]';

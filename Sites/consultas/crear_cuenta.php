@@ -27,24 +27,13 @@
 	$query_all = "SELECT *
               FROM usuarios;";
 
-    $result_all = $db -> prepare($query_all);
+    $result_all = $dbp -> prepare($query_all);
 	$result_all -> execute();
 	$all = $result_all -> fetchAll();
     $last = end($all);
     $uid = $last[0];
+    $query = pg_query($dbp, "INSERT INTO usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES ('$uid', '$nombre', '$pasaporte', '$nacio', '$password', '$edad', '$sexo);");
 
-	$data = [
-	'uid' => $uid,
-	'nombre' => $nombre,
-    'pasaporte' => $pasaporte,
-    'password' => $pass,
-    'edad' => $edad,
-    'sexo' => $sexo,
-    'nacionalidad' => $nacio
-    ];
-    $sql = "INSERT INTO usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (:uid, :nombre, :pasaporte, :nacionalidad, :password, :edad, :sexo)";
-    $stmt= $db->prepare($sql);
-    $stmt->execute($data);
     ?>
 
         <br>
