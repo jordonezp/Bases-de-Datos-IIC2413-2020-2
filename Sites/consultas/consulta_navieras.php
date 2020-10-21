@@ -1,6 +1,6 @@
 <?php
 
-require('./config/conection.php');
+require('../config/conection.php');
 
 $nid = $_GET["nid"];
 $nnombre = $_GET["nnombre"]; 
