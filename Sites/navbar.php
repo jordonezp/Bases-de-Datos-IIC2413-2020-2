@@ -8,7 +8,7 @@
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" >
-            <img src="https://img2.freepng.es/20180320/qew/kisspng-database-server-computer-icons-clip-art-sql-server-save-icon-format-5ab0cc859a7d62.9198558515215361336328.jpg" width="70" height="120">
+            <img src="https://w7.pngwing.com/pngs/13/363/png-transparent-computer-icons-database-table-sql-others-blue-data-big-data.png" width="70" height="120">
         </a>
     </div>
     <div class="navbar-brand">
