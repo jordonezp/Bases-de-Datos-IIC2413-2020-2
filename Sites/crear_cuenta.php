@@ -5,10 +5,9 @@
 <br>
   <br>
 
-<head>
-  <title> Creacion de Cuenta </title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-</head>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
 
 <body>
   <h1 class="title">Creador de cuenta</h1>
