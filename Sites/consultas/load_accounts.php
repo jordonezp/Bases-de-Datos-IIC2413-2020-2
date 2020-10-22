@@ -37,8 +37,7 @@ foreach ($caps as $cap) {
         $result2 = $dbp -> prepare($query_2);
         $result2 -> execute();
         $data_q2 = $result2 -> fetchAll();
-        if (sizeof($data_q2) > 0{
-
+        if (sizeof($data_q2) > 0){
         }
         else{
         $stmt = $dbp -> prepare($sql);
