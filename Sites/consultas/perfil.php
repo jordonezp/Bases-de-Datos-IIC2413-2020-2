@@ -104,7 +104,7 @@ elseif(sizeof($jefe) == 1) {
         echo "Jefe de un Shipyard";
         $tipo_inst_jefe = "Shipyard";
         
-    } elseif (sizeof($nav) == 0) {
+    } elseif (sizeof($tipo_jefe) == 0) {
         echo "Jefe de un Dock";
         $tipo_inst_jefe = "Dock";
 
