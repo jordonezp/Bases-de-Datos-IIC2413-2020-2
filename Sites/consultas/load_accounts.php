@@ -49,7 +49,9 @@ foreach ($caps as $cap) {
 
 
 echo 1;
-$query_boss = "SELECT personal.rut, personal.name, personal.age, personal.sex FROM personal, facilities WHERE personal.rut = facilities.boss_rut;";
+$query_boss = "SELECT employees.rut, employees.name, employees.age, employees.sex
+                FROM employees, facilities
+                WHERE employees.rut = facilities.boss_rut;";
 $result = $dbimp -> prepare($query_boss);
 $result -> execute();
 $bosses = $result -> fetchAll();
