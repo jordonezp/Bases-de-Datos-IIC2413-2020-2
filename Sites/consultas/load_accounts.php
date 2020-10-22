@@ -44,11 +44,11 @@ foreach ($caps as $cap) {
         $stmt -> execute([$uid, $cap[2], $cap[0], $cap[5], $pass, $edad2, $cap[4]]);
         }
         }
+        }
 
 
 
-
-
+echo 1;
 $query_boss = "SELECT personal.rut, personal.name, personal.age, personal.sex FROM personal, facilities WHERE personal.rut = facilities.boss_rut;";
 $result = $dbimp -> prepare($query_boss);
 $result -> execute();
