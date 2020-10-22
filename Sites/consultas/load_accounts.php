@@ -38,7 +38,7 @@ foreach ($caps as $cap) {
         $result2 -> execute();
         $data_q2 = $result2 -> fetchAll();
 
-        echo $data_q2;
+        echo $data_q2[0];
         if (sizeof($data_q2) > 0){
         }
         else{
