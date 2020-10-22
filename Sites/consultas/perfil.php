@@ -4,12 +4,24 @@
 <?php
 require("../config/conection.php");
 
-$pasaporte = $_POST["pasaporte"];
-$pass = $_POST["pass"];
-$nombre = $_POST["nombre"];
-$edad = $_POST["edad"];
-$sexo = $_POST["sexo"];
-$nacio = $_POST["nacio"];
+if ($_SESSION["pasaporte"] == "") {
+    $pasaporte = $_POST["pasaporte"];
+    $pass = $_POST["pass"];
+    $nombre = $_POST["nombre"];
+    $edad = $_POST["edad"];
+    $sexo = $_POST["sexo"];
+    $nacio = $_POST["nacio"];
+
+}else {
+    $pasaporte = $_SESSION["pasaporte"];
+    $pass = $_SESSION["pass"];
+    $nombre = $_SESSION["nombre"];
+    $edad = $_SESSION["edad"];
+    $sexo = $_SESSION["sexo"];
+    $nacio = $_SESSION["nacio"];
+}
+
+
 
 // querys para clasificar tipo de persona
 $query = "SELECT personal.pasaporte FROM personal
