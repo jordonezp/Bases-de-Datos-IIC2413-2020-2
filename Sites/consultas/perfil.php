@@ -107,7 +107,7 @@ else{
 ?>
 <div class="container is-max-desktop">
     <h1 class="title">Cuenta</h1>
-    <p class="subtitle">Bienvenido: <?php echo "$name" ?> !</p>
+    <p class="subtitle">Bienvenido: <?php echo "$nombre" ?> !</p>
     <table class="table is-striped is-hoverable">
         <tr>
             <th>Pasaporte</th>
