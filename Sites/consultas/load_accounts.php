@@ -1,8 +1,8 @@
-<?php include('./templates/header.html');   ?>
+<?php include('../templates/header.html');   ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
 <?php
-require("./config/conection.php");
+require("../config/conection.php");
 
 $items = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", 
             "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
@@ -102,5 +102,5 @@ $query = "SELECT * FROM usuarios;";
 
 
 
-<?php include('./templates/footer.html'); ?>
+<?php include('../templates/footer.html'); ?>
 
