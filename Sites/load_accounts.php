@@ -1,4 +1,4 @@
-<?php include('../templates/header.html');   ?>
+<?php include('./templates/header.html');   ?>
 <?php
 require("./config/conection.php");
 
