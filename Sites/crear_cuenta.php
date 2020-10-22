@@ -13,7 +13,7 @@
 <body>
   <h1 class="title">Creador de cuenta</h1>
   <p class="subtitle">Ingresa tu informacion.</p>
-
+<body/>
 
   <br/>
   <div class="container is-max-desktop">
