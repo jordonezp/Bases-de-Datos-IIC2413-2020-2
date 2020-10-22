@@ -16,17 +16,15 @@
 
 
     $query = "SELECT usuarios.pasaporte
-              FROM usuarios
-              WHERE '$pasaporte' = usuarios.pasaporte;";
+                FROM usuarios
+                WHERE '$pasaporte' = usuarios.pasaporte;";
     $result = $dbp -> prepare($query);
 	$result -> execute();
 	$nav = $result -> fetchAll();
 
 
 
-	$query_all = "SELECT *
-              FROM usuarios;";
-
+	$query_all = "SELECT * FROM usuarios;";
     $result_all = $dbp -> prepare($query_all);
 	$result_all -> execute();
 	$all = $result_all -> fetchAll();
@@ -40,11 +38,10 @@
     $stmt = $dbp -> prepare($sql);
     $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
 
-
     ?>
-
-        <br>
     <br>
+    <br>
+
 <?php
 
 if (sizeof($nav) == 1) {
@@ -71,11 +68,10 @@ if (sizeof($nav) == 1) {
         <?php
                 echo "<tr>
                     <td>$pasaporte</td>
-                    <t</td>
                     <td>$nombre</td>
                     <td>$edad</td>
                     <td>$sexo</td>
-       o</td>
+                    <td>$nacio</td>
                     
                 </tr>";
             

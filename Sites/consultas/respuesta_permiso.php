@@ -17,7 +17,9 @@ if ($tipo == "port") {
     echo "<h1> Permiso muelle puerto '$nombre_puerto' </h1>";
 }
 else {
-    echo "<h1> Permiso astillero puerto '$nombre_puerto' </h1>";
+    echo "<h1> Permiso astillero puerto";
+    echo $nombre_puerto;
+    echo "</h1>";
     $fecha_salida = $_POST["fecha_salida"];
 }
 
