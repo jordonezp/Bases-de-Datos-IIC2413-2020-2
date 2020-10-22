@@ -1,7 +1,5 @@
-
-
 <?php
-require("../config/conection.php");
+require("config/conection.php");
 
 $pasaporte = $_POST["pasaporte"];
 $pass = $_POST["pass"];
