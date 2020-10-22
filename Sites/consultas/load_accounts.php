@@ -55,6 +55,7 @@ $result -> execute();
 $bosses = $result -> fetchAll();
 echo $bosses[0][0];
 foreach ($bosses as $boss) {
+    echo "1";
     $query_all = "SELECT * FROM usuarios;";
     $result_all = $dbp -> prepare($query_all);
     $result_all -> execute();
