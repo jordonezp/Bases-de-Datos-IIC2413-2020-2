@@ -68,11 +68,20 @@ foreach ($bosses as $boss) {
     $edad2 = (int)$boss[2];
 
     $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
-    $stmt = $dbp -> prepare($sql);
-    $stmt -> execute([$uid, $boss[1], $boss[0], "", $pass, $edad2, $boss[3]]);
+    $query_2 = "SELECT pasaporte FROM usuarios WHERE pasaporte='$cap[0]'";
+        $result2 = $dbp -> prepare($query_2);
+        $result2 -> execute();
+        $data_q2 = $result2 -> fetchAll();
+
+        if (sizeof($data_q2) > 0){
+        }
+        else{
+        $stmt = $dbp -> prepare($sql);
+        $stmt -> execute([$uid, $boss[1], $boss[0], "", $pass, $edad2, $boss[3]]);
+        }
+        }
 
 
-}
 ?>
 <?php
 $query = "SELECT * FROM usuarios;";
