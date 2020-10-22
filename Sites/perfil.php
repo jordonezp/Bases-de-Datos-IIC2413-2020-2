@@ -26,6 +26,7 @@ $jefe = $result -> fetchAll();
 
 if (sizeof($capitan) == 1) {
 //CAPITAN
+    $tipo_usuario = "capitan";
 
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
@@ -62,6 +63,9 @@ if (sizeof($capitan) == 1) {
 } 
 //JEFE
 elseif(sizeof($jefe) == 1) {
+
+    $tipo_usuario = "jefe";
+
     $query = "SELECT ports.name FROM ports, employees e, facilities f
                 WHERE f.boss_rut = '$pasaporte' AND f.pid = ports.pid 
                 GROUP BY ports.name;";
@@ -88,4 +92,7 @@ elseif(sizeof($jefe) == 1) {
     }
     }
 
+else{
+    $tipo_usuario = "otro";
+}
 ?>

@@ -14,6 +14,7 @@ $result -> execute();
 $tabla = $result -> fetchAll();
 
 if ($tipo == "port") {
+    echo $nombre_puerto;
     echo "<h1> Permiso muelle puerto '$nombre_puerto' </h1>";
 }
 else {

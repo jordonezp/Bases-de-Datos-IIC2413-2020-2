@@ -35,7 +35,7 @@ foreach ($caps as $cap) {
 
 
 
-$query_boss = "SELECT pasaporte, capitan, penombre, edad, genero, nacionalidad FROM personal";
+$query_boss = "SELECT pasaporte, capitan, penombre, edad, genero, nacionalidad FROM personal, facilities WHERE personal.";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $bosses = $result -> fetchAll();
