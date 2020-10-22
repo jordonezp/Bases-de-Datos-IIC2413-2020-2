@@ -43,8 +43,8 @@ foreach ($caps as $cap) {
         $stmt = $dbp -> prepare($sql);
         $stmt -> execute([$uid, $cap[2], $cap[0], $cap[5], $pass, $edad2, $cap[4]]);
         }
-    }
-}
+        }
+        }
 
 
 
