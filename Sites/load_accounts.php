@@ -65,9 +65,9 @@ $query = "SELECT * FROM usuarios;";
     $result -> execute();
     $dataCollected = $result -> fetchAll();
 
+?>
 
-
-<div class="container is-max-desktop">
+    <div class="container is-max-desktop">
     <h1 class="title">Cuentas</h1>
     <p class="subtitle">Informacion cuentas cargadas </p>
     <table class="table is-striped is-hoverable">
