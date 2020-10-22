@@ -30,7 +30,7 @@
                         ?>
                    <?php  ?>
                 </a>
-                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/load_accounts.php">
+                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/consultas/load_accounts.php">
                     Cargar Cuentas Capitanes/Jefes
 
             </div>
