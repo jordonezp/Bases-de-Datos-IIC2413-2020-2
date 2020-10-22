@@ -48,7 +48,7 @@ foreach ($caps as $cap) {
 
 
 
-echo 1;
+
 $query_boss = "SELECT employees.rut, employees.name, employees.age, employees.sex
                 FROM employees, facilities
                 WHERE employees.rut = facilities.boss_rut;";
@@ -56,9 +56,7 @@ $result = $dbimp -> prepare($query_boss);
 $result -> execute();
 $bosses = $result -> fetchAll();
 echo $bosses[0];
-echo "1";
 foreach ($bosses as $boss) {
-    echo "1";
     $query_all = "SELECT * FROM usuarios;";
     $result_all = $dbp -> prepare($query_all);
     $result_all -> execute();
