@@ -100,5 +100,5 @@ $query = "SELECT * FROM usuarios;";
 
 
 
-<?php include('../templates/footer.html'); ?>
+<?php include('./templates/footer.html'); ?>
 
