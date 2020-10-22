@@ -19,7 +19,7 @@
                 <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/consultas/perfil.php">
                     <?php
                         session_start();
-                        if ($name == "") {
+                        if ($_SESSION['name'] == "") {
                         } else {
                             echo "$name";
                         }
