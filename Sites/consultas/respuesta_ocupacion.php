@@ -1,5 +1,5 @@
 <?php
-require('./config/conection.php');
+require('../config/conection.php');
 
 ?>
 

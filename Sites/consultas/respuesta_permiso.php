@@ -1,6 +1,6 @@
 <?php
 
-require('./config/conection.php');
+require('../config/conection.php');
 
 $tipo = $_POST["tipo"];
 $patente = $_POST["patente_barco"];
