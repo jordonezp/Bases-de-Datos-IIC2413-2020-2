@@ -14,7 +14,7 @@ $name = $_GET["name"];
 <form action="" method="post">
     Muestre todos los días en que todas las instalaciones del puerto <?php echo $name ?>
     estuvieron libres desde el día  <input type="" name="fecha_inicio">, hasta el día
-     <input type="" name="fecha_termino"> <br>
+    <input type="" name="fecha_termino"> <br>
     <input type="submit" value="Consultar">
 </form>
 

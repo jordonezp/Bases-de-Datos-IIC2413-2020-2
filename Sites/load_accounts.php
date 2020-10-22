@@ -35,7 +35,7 @@ foreach ($caps as $cap) {
 
 
 
-$query_boss = "SELECT pasaporte, capitan, penombre, edad, genero, nacionalidad FROM personal, facilities WHERE personal.";
+$query_boss = "SELECT personal.rut, personal.name, personal.age, personal.sex FROM personal, facilities WHERE personal.rut = facilities.boss_rut";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $bosses = $result -> fetchAll();
@@ -48,13 +48,12 @@ foreach ($bosses as $boss) {
     $last = end($all);
     $uid = (int)$last[0] + 1;
     
-    
     $pass = $items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)];
-    $edad2 = (int)$cap[3];
+    $edad2 = (int)$boss[2];
 
     $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
     $stmt = $dbp -> prepare($sql);
-    $stmt -> execute([$uid, $cap[2], $cap[0], $cap[5], $pass, $edad2, $cap[4]]);
+    $stmt -> execute([$uid, $boss[1], $boss[0], "", $pass, $edad2, $boss[3]]);
 
 
 }

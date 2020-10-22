@@ -27,12 +27,16 @@ $jefe = $result -> fetchAll();
 if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "capitan";
+    echo "<h2> Perfil capital</h2>";
 
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
     $result = $dbp -> prepare($query);
     $result -> execute();
     $patente_capitan = $result -> fetchAll();
+
+    echo "<h3>Patente del buque:</h3>";
+    echo "<p>'$patente_capitan'</p>";
 
     $query = "SELECT buque.bnombre FROM buque 
     WHERE buque.patente 
@@ -42,6 +46,9 @@ if (sizeof($capitan) == 1) {
     $result -> execute();
     $bnombre_capitan = $result -> fetchAll();
 
+    echo "<h3>Nombre del buque:</h3>";
+    echo "<p>'$bnombre_capitan'</p>";
+
     $query = "SELECT naviera.nnombre FROM naviera 
     WHERE naviera.nid IN (SELECT buque.nid FROM buque 
     WHERE buque.patente IN (SELECT personal.patente AS patente FROM personal 
@@ -49,6 +56,9 @@ if (sizeof($capitan) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $naviera_capitan = $result -> fetchAll();
+
+    echo "<h3>Naviera:</h3>";
+    echo "<p>$naviera_capitan</p>";
 
     $query = "SELECT puerto.punombre FROM puerto 
     WHERE puerto.puid IN (SELECT historialatraque.puid AS puertos FROM historialatraque 
@@ -59,7 +69,6 @@ if (sizeof($capitan) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puertos_capitan = $result -> fetchAll();
-
 } 
 //JEFE
 elseif(sizeof($jefe) == 1) {
@@ -91,6 +100,8 @@ elseif(sizeof($jefe) == 1) {
         echo "Hay 2 ????";
     }
     }
+
+//OTRO
 
 else{
     $tipo_usuario = "otro";
