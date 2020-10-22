@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $name = $_SESSION["name"];
 
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">

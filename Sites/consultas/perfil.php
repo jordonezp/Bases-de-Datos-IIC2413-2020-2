@@ -1,5 +1,5 @@
 <?php
-require("./config/conection.php");
+require("../config/conection.php");
 
 $pasaporte = $_POST["pasaporte"];
 $pass = $_POST["pass"];
@@ -105,3 +105,19 @@ else{
     $tipo_usuario = "otro";
 }
 ?>
+<div class="container is-max-desktop">
+    <h1 class="title">Cuenta</h1>
+    <p class="subtitle">Bienvenido: <?php echo "$name" ?> !</p>
+    <table class="table is-striped is-hoverable">
+        <tr>
+            <th>Pasaporte</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Nacionalidad</th>
+        </tr>
+
+    </table>
+    </div>
+</body>
+<?php include('../templates/footer.html'); ?>
