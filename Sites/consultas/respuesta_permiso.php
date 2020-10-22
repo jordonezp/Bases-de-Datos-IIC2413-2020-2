@@ -1,26 +1,26 @@
 <?php
+
 require('./config/conection.php');
-$query = "SELECT * FROM ports;";
+
+$tipo = $_POST["tipo"];
+$patente = $_POST["patente_barco"];
+$fecha_atraco = $_POST["fecha_atraco"];
+$nombre_puerto = $_POST["nombre_puerto"];
+$pid = $_POST["pid"];
+
+$query = "SELECT ;";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
+
+if ($tipo == "port") {
+    echo "<h1> Permiso muelle puerto $nombre_puerto </h1>";
+}
+else {
+    echo "<h1> Permiso astillero puerto $nombre_puerto </h1>";
+    $fecha_salida = $_POST["fecha_salida"];
+}
+
+// Acá el resultado depende de si es que existen instalaciones disponibles o no. En caso de haber más de una disponible se utiliza la instalación de menor id
+
 ?>
-
-<h1>Puertos</h1>
-
-<p>Acá podrás revisar los puertos existentes. Haciendo <i>clcik</i> sobre un puertos podrás
-    realizar consultas sobre este puerto</p>
-<br>
-
-<table>
-    <tr>
-        <th>Nombre</th>
-    </tr>
-
-    <?php
-    foreach ($tabla as $fila) {
-        echo "<tr> <td> <a href='consultas/consulta_puertos.php?pid=$fila[0]&name=$fila[1]'> $fila[1] </a> </td> </tr>";
-    }
-    ?>
-
-</table
