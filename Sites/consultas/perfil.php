@@ -4,23 +4,10 @@
 <?php
 require("../config/conection.php");
 
-if ($_SESSION["pasaporte"] == "") {
-    $pasaporte = $_POST["pasaporte"];
-    $pass = $_POST["pass"];
-    $nombre = $_POST["nombre"];
-    $edad = $_POST["edad"];
-    $sexo = $_POST["sexo"];
-    $nacio = $_POST["nacio"];
-
-}else {
-    $pasaporte = $_SESSION["pasaporte"];
-    $pass = $_SESSION["pass"];
-    $nombre = $_SESSION["nombre"];
-    $edad = $_SESSION["edad"];
-    $sexo = $_SESSION["sexo"];
-    $nacio = $_SESSION["nacio"];
-}
-echo $pasaporte;
+$pasaporte = $_POST["pasaporte"];
+$clave = $_POST["clave"];
+$_SESSION["pasaporte"] = $_POST["pasaporte"];
+$_SESSION["pass"] = $_POST["clave"];
 
 
 // querys para clasificar tipo de persona
