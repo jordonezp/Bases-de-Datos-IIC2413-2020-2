@@ -20,8 +20,9 @@
                     <?php
                         session_start();
                         if ($_SESSION['name'] == "") {
+                         echo "Perfil";
                         } else {
-                            echo "nani";
+                            echo "Perfil";
                         }
                         ?>
                    <?php  ?>
