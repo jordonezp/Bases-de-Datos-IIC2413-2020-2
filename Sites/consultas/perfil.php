@@ -4,7 +4,6 @@
 <?php
 require("../config/conection.php");
 
-echo $_POST["pasaporte"];
 $pasaporte = $_POST["pasaporte"];
 $clave = $_POST["clave"];
 
