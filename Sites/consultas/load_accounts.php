@@ -32,8 +32,21 @@ foreach ($caps as $cap) {
         $edad2 = (int)$cap[3];
 
         $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
+
+        $query_2 = "SELECT pasaporte FROM usuarios WHERE pasaporte='$cap[2]'"
+        $result2 = $dbp -> prepare($query_2);
+        $result2 -> execute();
+        $data_q2 = $result2 -> fetchAll();
+        if (sizeof($data_q2) > 0{
+
+        }
+        else{
         $stmt = $dbp -> prepare($sql);
         $stmt -> execute([$uid, $cap[2], $cap[0], $cap[5], $pass, $edad2, $cap[4]]);
+        }
+
+
+
     }
 }
 
