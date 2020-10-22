@@ -12,10 +12,11 @@
 
 
 <body>
-  <h1 class="title">Ingresa a tu cuenta</h1>
+
 
   <br/>
   <div class="container is-max-desktop">
+  <h1 class="title">Ingresa a tu cuenta</h1>
     <h2 class="title"> Login </h2>
         <form align="center" action="consultas/perfil.php" method="post">
             Pasaporte:
