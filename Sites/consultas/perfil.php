@@ -72,10 +72,13 @@ if (sizeof($capitan) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puertos_capitan = $result -> fetchAll();
-    $p = $puertos_capitan[0][0];
-
     echo "<h3>Puertos:</h3>";
-    echo "<p>$p</p>";
+    $p = $puertos_capitan;
+    foreach ($p as $p2) {
+        echo "<tr> <td>$p2[0]</td>
+            </tr>";
+    }
+
 } 
 //JEFE
 elseif(sizeof($jefe) == 1) {
