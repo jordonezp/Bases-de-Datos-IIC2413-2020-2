@@ -21,7 +21,7 @@
                         session_start();
                         if ($_SESSION['name'] == "") {
                         } else {
-                            echo "$_SESSION['name']";
+                            echo "nani";
                         }
                         ?>
                    <?php  ?>
