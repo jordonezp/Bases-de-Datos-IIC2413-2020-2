@@ -38,8 +38,8 @@ foreach ($caps as $cap) {
         $result2 -> execute();
         $data_q2 = $result2 -> fetchAll();
 
-        echo sizeof($data_q2);
-        if (sizeof($data_q2[0]) > 0){
+        echo $data_q2;
+        if (sizeof($data_q2) > 0){
         }
         else{
         $stmt = $dbp -> prepare($sql);
