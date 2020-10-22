@@ -27,7 +27,6 @@ foreach ($caps as $cap) {
         $last = end($all);
         $uid = (int)$last[0] + 1;
         
-        
         $pass = $items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)].$items[rand(0, count($items) - 1)];
         $edad2 = (int)$cap[3];
 
@@ -38,19 +37,14 @@ foreach ($caps as $cap) {
         $result2 -> execute();
         $data_q2 = $result2 -> fetchAll();
 
-        echo $data_q2[0];
         if (sizeof($data_q2) > 0){
         }
         else{
         $stmt = $dbp -> prepare($sql);
         $stmt -> execute([$uid, $cap[2], $cap[0], $cap[5], $pass, $edad2, $cap[4]]);
         }
-
-
-
     }
 }
-
 
 
 
@@ -59,7 +53,7 @@ $query_boss = "SELECT personal.rut, personal.name, personal.age, personal.sex FR
 $result = $dbimp -> prepare($query_boss);
 $result -> execute();
 $bosses = $result -> fetchAll();
-
+echo $bosses[0][0];
 foreach ($bosses as $boss) {
     $query_all = "SELECT * FROM usuarios;";
     $result_all = $dbp -> prepare($query_all);
