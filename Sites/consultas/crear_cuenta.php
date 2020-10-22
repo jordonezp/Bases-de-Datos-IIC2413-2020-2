@@ -16,31 +16,33 @@
 
 
     $query = "SELECT usuarios.pasaporte
-              FROM usuarios
-              WHERE '$pasaporte' = usuarios.pasaporte;";
+                FROM usuarios
+                WHERE '$pasaporte' = usuarios.pasaporte;";
     $result = $dbp -> prepare($query);
 	$result -> execute();
 	$nav = $result -> fetchAll();
 
 
 
-	$query_all = "SELECT *
-              FROM usuarios;";
-
+	$query_all = "SELECT * FROM usuarios;";
     $result_all = $dbp -> prepare($query_all);
 	$result_all -> execute();
 	$all = $result_all -> fetchAll();
     $last = end($all);
-    $uid = $last[0];
-    $sql = "INSERT usuarios (uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
+    $uid = (int)$last[0] + 1;
+    echo "El id es:";
+    echo $uid;
+    $edad2 = (int)$edad;
+    
+    $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
     $stmt = $dbp -> prepare($sql);
-    $stmt -> execute([$pasaporte, $pass, $nombre, $edad, $sexo, $nacio]);
+    $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
 
     ?>
-
-        <br>
     <br>
-<?php
+    <br>
+
+?php
 
 if (sizeof($nav) == 1) {
     echo "Existe";

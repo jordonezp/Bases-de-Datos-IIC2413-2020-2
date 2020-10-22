@@ -17,7 +17,7 @@
   <br/>
   <div class="container is-max-desktop">
     <h2 class="title"> Login </h2>
-        <form align="center" action="consultas/login.php" method="post">
+        <form align="center" action="consultas/perfil.php" method="post">
             Pasaporte:
             <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
             <br/><br/>

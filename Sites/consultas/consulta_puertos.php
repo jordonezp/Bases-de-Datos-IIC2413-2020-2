@@ -13,20 +13,30 @@ $name = $_GET["name"];
 
 <form action="" method="post">
     Muestre todos los días en que todas las instalaciones del puerto <?php echo $name ?>
-    estuvieron libres desde el día (escribir en formato dd) <input type="number" name="dia_inicio">
-    del mes (escribir en formato mm) <input type="number" name="mes_inicio"> del año (escribir en
-    formato yyyy) <input type="number" name="año_inicio">, hasta el día (escribir en formato dd)
-    <input type="number" name="dia_termino"> del mes (escribir en formato mm) <input
-        type="number" name="mes_termino"> del año (escribir en formato yyyy) <input type="number"
-                                                                                    name="año_termino"> <br>
-    <input type="submit" value="Buscar">
+    estuvieron libres desde el día  <input type="" name="fecha_inicio">, hasta el día
+    <input type="" name="fecha_termino"> <br>
+    <input type="submit" value="Consultar">
 </form>
+
 
 <h2>Generar permiso</h2>
 
-    <form action="" method="post">
-        Muestre todas las veces en que el barco de nombre <input type="text" name="input_4_1"> ha
-        atracado en la ciudad de nombre <input type="text" name="input_4_2">. <br>
-        <input type="submit" value="Buscar">
-    </form>
+<h3> Muelle </h3>
 
+<form action="respuesta_permiso.php" method="post">
+    Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun muelle del puerto <?php echo $name ?>
+    el día  <input type="" name="fecha_atraco">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
+    <input type="hidden" name="tipo"  value="port"> <input type="hidden" name="nombre_puerto"  value= "<?php echo $name; ?>"> 
+    <input type="hidden" name="pid"  value= "<?php echo $pid; ?>">  <br>
+    <input type="submit" value="Consultar">
+ </form>
+
+<h3> Astillero </h3>
+
+<form action="respuesta_permiso.php" method="post">  
+    Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun astillero del puerto <?php echo $name ?>
+   desde el día  <input type="" name="fecha_atraco"> hasta el día <input type="" name="fecha_salida">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
+   <input type="hidden" name="tipo"  value="shipyard"> <input type="hidden" name="nombre_puerto"  value= "<?php echo $name; ?>"" > 
+   <input type="hidden" name="pid"  value= "<?php echo $pid; ?>"> <br>
+   <input type="submit" value="Consultar">
+</form>

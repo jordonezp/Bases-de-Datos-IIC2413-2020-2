@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $name = $_SESSION["name"];
 
 ?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
@@ -30,7 +29,9 @@
                         ?>
                    <?php  ?>
                 </a>
-
+                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/consultas/load_accounts.php">
+                    Cargar Cuentas Capitanes/Jefes
+                </a>
             </div>
         </div>
     </div>
