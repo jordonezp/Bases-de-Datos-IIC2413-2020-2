@@ -20,7 +20,7 @@ if ($_SESSION["pasaporte"] == "") {
     $sexo = $_SESSION["sexo"];
     $nacio = $_SESSION["nacio"];
 }
-
+echo $pasaporte;
 
 
 // querys para clasificar tipo de persona
