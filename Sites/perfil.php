@@ -25,7 +25,7 @@ $jefe = $result -> fetchAll();
 
 
 if (sizeof($capitan) == 1) {
-    //CAPITAN
+//CAPITAN
 
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
@@ -60,36 +60,32 @@ if (sizeof($capitan) == 1) {
     $puertos_capitan = $result -> fetchAll();
 
 } 
-
-
-
-
-
 //JEFE
-$query = "SELECT ports.name FROM ports, employees e, facilities f
-            WHERE f.boss_rut = '$pasaporte' AND f.pid = ports.pid 
-            GROUP BY ports.name;";
-$result = $dbp -> prepare($query);
-$result -> execute();
-$puerto_jefe = $result -> fetchAll();
+elseif(sizeof($jefe) == 1) {
+    $query = "SELECT ports.name FROM ports, employees e, facilities f
+                WHERE f.boss_rut = '$pasaporte' AND f.pid = ports.pid 
+                GROUP BY ports.name;";
+    $result = $dbp -> prepare($query);
+    $result -> execute();
+    $puerto_jefe = $result -> fetchAll();
 
-$query = "SELECT s.fid FROM shipyards s, facilities fa 
-            WHERE fa.boss_rut ='$pasaporte' AND s.fid = fa.fid;";
-$result = $dbp -> prepare($query);
-$result -> execute();
-$tipo_jefe = $result -> fetchAll();
+    $query = "SELECT s.fid FROM shipyards s, facilities fa 
+                WHERE fa.boss_rut ='$pasaporte' AND s.fid = fa.fid;";
+    $result = $dbp -> prepare($query);
+    $result -> execute();
+    $tipo_jefe = $result -> fetchAll();
 
-if (sizeof($tipo_jefe) == 1) {
-    echo "Jefe de un Shipyard";
-    $tipo_inst_jefe = "Shipyard";
-    
-} elseif (sizeof($nav) == 0) {
-    echo "Jefe de un Dock";
-    $tipo_inst_jefe = "Dock";
+    if (sizeof($tipo_jefe) == 1) {
+        echo "Jefe de un Shipyard";
+        $tipo_inst_jefe = "Shipyard";
+        
+    } elseif (sizeof($nav) == 0) {
+        echo "Jefe de un Dock";
+        $tipo_inst_jefe = "Dock";
 
-} else {
-    echo "Hay 2 ????";
-}
-
+    } else {
+        echo "Hay 2 ????";
+    }
+    }
 
 ?>

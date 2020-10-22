@@ -1,5 +1,5 @@
 <?php
-require('./config/conection.php');
+require('../config/conection.php');
 $query = "SELECT * FROM ports;";
 $result = $dbimp -> prepare($query);
 $result -> execute();
@@ -8,7 +8,7 @@ $tabla = $result -> fetchAll();
 
 <h1>Puertos</h1>
 
-<p>Acá podrás revisar los puertos existentes. Haciendo <i>clcik</i> sobre un puertos podrás
+<p>Acá podrás revisar los puertos existentes. Haciendo <i>clcik</i> sobre un puerto podrás
     realizar consultas sobre este puerto</p>
 <br>
 

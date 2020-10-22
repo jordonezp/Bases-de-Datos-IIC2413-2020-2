@@ -12,8 +12,8 @@
 
 
     $query = "SELECT usuarios.pasaporte, usuarios.nombre, usuarios.edad, usuarios.sexo, usuarios.nacionalidad
-              FROM usuarios
-              WHERE '$pasaporte' = usuarios.pasaporte and usuarios.password = '$clave';";
+                FROM usuarios
+                WHERE '$pasaporte' = usuarios.pasaporte and usuarios.password = '$clave';";
     $result = $dbp -> prepare($query);
 	$result -> execute();
 	$nav = $result -> fetchAll();
