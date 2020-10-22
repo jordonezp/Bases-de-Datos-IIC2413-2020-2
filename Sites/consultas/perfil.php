@@ -20,7 +20,7 @@ $capitan = $result -> fetchAll();
 
 $query = "SELECT f.boss_rut FROM facilities f
             WHERE f.boss_rut = '$pasaporte';";
-$result = $dbp -> prepare($query);
+$result = $dbimp -> prepare($query);
 $result -> execute();
 $jefe = $result -> fetchAll();
 
