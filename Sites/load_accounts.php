@@ -8,7 +8,7 @@ $items = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
 
 
 $query_cap = "SELECT pasaporte, capitan, penombre, edad, genero, nacionalidad FROM personal;";
-$result = $dbp -> prepare($query);
+$result = $dbp -> prepare($query_cap);
 $result -> execute();
 $caps = $result -> fetchAll();
 
@@ -36,7 +36,7 @@ foreach ($caps as $cap) {
 
 
 $query_boss = "SELECT personal.rut, personal.name, personal.age, personal.sex FROM personal, facilities WHERE personal.rut = facilities.boss_rut;";
-$result = $dbimp -> prepare($query);
+$result = $dbimp -> prepare($query_boss);
 $result -> execute();
 $bosses = $result -> fetchAll();
 
