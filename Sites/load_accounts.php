@@ -57,10 +57,47 @@ foreach ($bosses as $boss) {
 
 
 }
+?>
+<?php
+$query = "SELECT * FROM usuarios;";
+
+    $result = $dbp -> prepare($query);
+    $result -> execute();
+    $dataCollected = $result -> fetchAll();
 
 
 
+<div class="container is-max-desktop">
+    <h1 class="title">Cuentas</h1>
+    <p class="subtitle">Informacion cuentas cargadas </p>
+    <table class="table is-striped is-hoverable">
+        <tr>
+        <th>uid</th>
+        <th>Nombre</th>
+        <th>Pasaporte</th>
+        <th>Contraseña</th>
+        <th>Nacionalidad</th>
+        <th>Edad</th>
+        <th>Sexo</th>
+        </tr>
 
+
+    <?php
+    foreach ($dataCollected as $p) {
+        echo "<tr> <td>$p[0]</td>
+                    <td>$p[1]</td>
+                    <td>$p[2]</td>
+                    <td>$p[4]</td>
+                    <td>$p[3]</td>
+                    <td>$p[5]</td>
+                    <td>$p[6]</td>
+            </tr>";
+    }
+    ?>
+    </table>
+</div>
 
 
 ?>
+<?php include('../templates/footer.html'); ?>
+
