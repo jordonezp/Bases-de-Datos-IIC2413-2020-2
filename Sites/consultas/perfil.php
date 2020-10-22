@@ -24,7 +24,7 @@ $result = $dbp -> prepare($query);
 $result -> execute();
 $jefe = $result -> fetchAll();
 
-
+echo $jefe[0][0];
 if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "capitan";
@@ -114,7 +114,6 @@ elseif(sizeof($jefe) == 1) {
     }
 
 //OTRO
-
 else{
     $tipo_usuario = "otro";
 }
