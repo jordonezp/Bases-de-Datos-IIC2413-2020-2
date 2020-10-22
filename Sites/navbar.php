@@ -21,7 +21,7 @@
                         session_start();
                         if ($_SESSION['name'] == "") {
                         } else {
-                            echo "$name";
+                            echo "$_SESSION['name']";
                         }
                         ?>
                    <?php  ?>
