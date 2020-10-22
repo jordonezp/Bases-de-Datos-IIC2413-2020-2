@@ -95,11 +95,11 @@ $query = "SELECT * FROM usuarios;";
                     <td>$p[6]</td>
             </tr>";
     }
-
+        ?>
     </table>
 </div>
 
 
-?>
+
 <?php include('../templates/footer.html'); ?>
 
