@@ -33,7 +33,7 @@ foreach ($caps as $cap) {
 
         $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
 
-        $query_2 = "SELECT pasaporte FROM usuarios WHERE pasaporte='$cap[2]'";
+        $query_2 = "SELECT pasaporte FROM usuarios WHERE pasaporte='$cap[0]'";
         $result2 = $dbp -> prepare($query_2);
         $result2 -> execute();
         $data_q2 = $result2 -> fetchAll();
