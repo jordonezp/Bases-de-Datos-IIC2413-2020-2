@@ -12,7 +12,7 @@ $sexo = $_POST["sexo"];
 $nacio = $_POST["nacio"];
 
 // querys para clasificar tipo de persona
-$query = "SELECT personal.pasaporte FROM personal 
+$query = "SELECT personal.pasaporte FROM personal
             WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
 $result = $dbp -> prepare($query);
 $result -> execute();
@@ -116,19 +116,5 @@ else{
     $tipo_usuario = "otro";
 }
 ?>
-<div class="container is-max-desktop">
-    <h1 class="title">Cuenta</h1>
-    <p class="subtitle">Bienvenido: <?php echo "$nombre" ?> !</p>
-    <table class="table is-striped is-hoverable">
-        <tr>
-            <th>Pasaporte</th>
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Sexo</th>
-            <th>Nacionalidad</th>
-        </tr>
-
-    </table>
-    </div>
 </body>
 <?php include('../templates/footer.html'); ?>
