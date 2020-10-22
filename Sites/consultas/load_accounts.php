@@ -55,7 +55,6 @@ $query_boss = "SELECT employees.rut, employees.name, employees.age, employees.se
 $result = $dbimp -> prepare($query_boss);
 $result -> execute();
 $bosses = $result -> fetchAll();
-echo $bosses[0];
 foreach ($bosses as $boss) {
     $query_all = "SELECT * FROM usuarios;";
     $result_all = $dbp -> prepare($query_all);
