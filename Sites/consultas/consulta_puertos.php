@@ -23,7 +23,7 @@ $name = $_GET["name"];
 
 <h3> Muelle </h3>
 
-<form action="" method="post">
+<form action="respuesta_permiso.php" method="post">
     Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun muelle del puerto <?php echo $name ?>
     el día  <input type="" name="fecha_atraco">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
     <input type="hidden" name="tipo"  value="port"> <input type="hidden" name="nombre_puerto"  value= <?php $name ?>> 
@@ -33,7 +33,7 @@ $name = $_GET["name"];
 
 <h3> Astillero </h3>
 
-<form action="" method="post">  
+<form action="respuesta_permiso.php" method="post">  
     Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun astillero del puerto <?php echo $name ?>
    desde el día  <input type="" name="fecha_atraco"> hasta el día <input type="" name="fecha_salida">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
    <input type="hidden" name="tipo"  value="shipyard"> <input type="hidden" name="nombre_puerto"  value= <?php $name ?> > 
