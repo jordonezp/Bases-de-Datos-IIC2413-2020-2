@@ -53,7 +53,8 @@ $query_boss = "SELECT personal.rut, personal.name, personal.age, personal.sex FR
 $result = $dbimp -> prepare($query_boss);
 $result -> execute();
 $bosses = $result -> fetchAll();
-echo $bosses[0][0];
+echo $bosses[0];
+echo "1";
 foreach ($bosses as $boss) {
     echo "1";
     $query_all = "SELECT * FROM usuarios;";
