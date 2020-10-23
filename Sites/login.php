@@ -28,3 +28,6 @@
             <input class="button is-link" type="submit" value="Ingresar">
         </form>
   </div>
+
+
+<?php include('./templates/footer.html'); ?>
