@@ -3,7 +3,7 @@
 
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" >
+        <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/index.php">
             <img src="https://c0.klipartz.com/pngpicture/459/215/gratis-png-base-de-datos-de-iconos-de-computadora-del-almacen-de-datos-extraer-transformar-cargar-icono-de-datos.png" width="70" height="120">
         </a>
     </div>
