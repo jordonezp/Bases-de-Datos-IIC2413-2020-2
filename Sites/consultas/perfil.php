@@ -126,4 +126,13 @@ else{
 }
 ?>
 </body>
+<div class="container is-max-desktop">
+
+  <h2 class="title">Log-Out</h2>
+
+  <form align="center" action="consultas/logout.php" method="post">
+    <br/><br/>
+    <input class="button is-link" type="submit" value="Log-Out">
+  </form>
+ </div>
 <?php include('../templates/footer.html'); ?>
