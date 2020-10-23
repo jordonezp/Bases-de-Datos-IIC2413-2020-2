@@ -127,7 +127,7 @@ else{
 ?>
 </body>
 <div class="container is-max-desktop">
-  <form align="center" action="consultas/logout.php" method="post">
+  <form align="center" action="./logout.php" method="post">
     <br/><br/>
     <input class="button is-link" type="submit" value="Log-Out">
   </form>
