@@ -35,7 +35,7 @@ if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "Perfil Capitan";
 
-    echo '<div class="container is-max-desktop"> <h2>'.$tipo_usuario.'</h2></div>';
+    echo '<div class="container is-max-desktop"> <Title>'.$tipo_usuario.'</Title></div>';
 
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
@@ -43,8 +43,8 @@ if (sizeof($capitan) == 1) {
     $result -> execute();
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
-    $pat = "Patente del Buque";
-    echo '<div class="container is-max-desktop"> <h3>'.$pat.'/h3><h3>'.$p.'</h3></div>';
+    $pat = "Patente del Buque:";
+    echo '<div class="container is-max-desktop"> <h3>'.$pat.'</h3><h3>'.$p.'</h3></div>';
 
     $query = "SELECT buque.bnombre FROM buque 
     WHERE buque.patente 
