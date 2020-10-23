@@ -34,7 +34,7 @@ echo $jefe[0][0];
 if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "capitan";
-    echo '<div class="container is-max-desktop"> <h2> Perfil capital</h2></div>';
+    echo '<div class="container is-max-desktop"> <h2>'.Perfil capital.'</h2></div>';
 
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
