@@ -43,7 +43,7 @@ if (sizeof($capitan) == 1) {
     $result -> execute();
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
-    $pat = "Patente del Buque"
+    $pat = "Patente del Buque";
     echo '<div class="container is-max-desktop"> <h3>'.$pat.'/h3><h3>'.$p.'</h3></div>';
 
     $query = "SELECT buque.bnombre FROM buque 
