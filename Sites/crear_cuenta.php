@@ -14,22 +14,22 @@
   <h1 class="title">Creador de cuenta</h1>
   <p class="subtitle">Ingresa tu informacion.</p>
         <form align="center" action="consultas/crear_cuenta.php" method="post">
-            pasaporte:
+            Pasaporte:
             <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
             <br><br> <br>
-            contraseña:
+            Contraseña:
             <input class="input is-rounded" style="width: 33%;" type="text" name="pass">
             <br><br> <br>
-            nombre:
+            Nombre:
             <input class="input is-rounded" style="width: 33%;" type="text" name="nombre">
             <br><br> <br>
-            edad:
+            Edad:
             <input class="input is-rounded" style="width: 33%;" type="text" name="edad">
             <br><br> <br>
-            sexo:
+            Sexo:
             <input class="input is-rounded" style="width: 33%;" type="text" name="sexo">
             <br><br> <br>
-            nacionalidad:
+            Nacionalidad:
             <input class="input is-rounded" style="width: 33%;" type="text" name="nacio">
             <br/><br/>
             <input class="button is-link" type="submit" value="Buscar">
