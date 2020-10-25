@@ -17,7 +17,7 @@ $patente = $_GET["patente_barco"];
 // $query = "SELECT * FROM search_dock_permit_availability(
 //     '$pid, '$fecha', '$patente');";
 $query = "SELECT * FROM search_dock_permit_availability(
-    $pid, $fecha, $patente);";
+    '$pid', '$fecha', '$patente');";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $table = $result -> fetchAll();
