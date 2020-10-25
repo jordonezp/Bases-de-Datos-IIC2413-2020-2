@@ -46,7 +46,7 @@ if (sizeof($capitan) == 1) {
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
     $pat = "Patente del Buque:";
-    echo '<div class="container is-max-desktop"> <h4 class="title">'.$pat.'</h4><p>'.$p.'</p></div>';
+    echo '<div class="container is-max-desktop"> <h4 class="sub-title">'.$pat.'</h4><p>'.$p.'</p></div>';
 
     $query = "SELECT buque.bnombre FROM buque 
     WHERE buque.patente 
@@ -57,7 +57,7 @@ if (sizeof($capitan) == 1) {
     $bnombre_capitan = $result -> fetchAll();
     $b = $bnombre_capitan[0][0];
 
-    echo '<div class="container is-max-desktop"><h4 class="title">Nombre del buque:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="sub-title">Nombre del buque:</h4>';
     echo '<div class="container is-max-desktop"><p>'.$b.'</p>';
 
     $query = "SELECT naviera.nnombre FROM naviera 
@@ -69,7 +69,7 @@ if (sizeof($capitan) == 1) {
     $naviera_capitan = $result -> fetchAll();
     $n = $naviera_capitan[0][0];
 
-    echo '<div class="container is-max-desktop"><h4 class="title">Naviera:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="sub-title">Naviera:</h4>';
     echo '<div class="container is-max-desktop"><p>'.$n.'</p>';
 
     $query = "SELECT puerto.punombre FROM puerto 
@@ -81,11 +81,13 @@ if (sizeof($capitan) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puertos_capitan = $result -> fetchAll();
-    echo '<div class="container is-max-desktop"><h4 class="title">Puertos:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="sub-title">Puertos:</h4>';
     $p = $puertos_capitan;
     foreach ($p as $p2) {
         echo '<div class="container is-max-desktop">
-                <tr><td><p>' .$p2[0].'</p></td></tr>';
+                <table class="table">
+                <tr><td><p>' .$p2[0].'</p></td></tr>
+                </table></div>';
     }
 
 } 
