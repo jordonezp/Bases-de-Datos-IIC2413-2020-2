@@ -47,7 +47,7 @@ if (sizeof($capitan) == 1) {
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
     $pat = "Patente del Buque:";
-    echo '<div class="container is-max-desktop"> <h4 class="subtitle">'.$pat.'</h4><p>'.$p.'</p></div>';
+    echo '<div class="container is-max-desktop"> <h4 class="<subtitle-strong-weight">'.$pat.'</h4><p>'.$p.'</p></div>';
     echo '<br>';
 
     $query = "SELECT buque.bnombre FROM buque 
