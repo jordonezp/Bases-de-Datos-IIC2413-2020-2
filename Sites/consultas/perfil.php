@@ -143,7 +143,15 @@ echo '<div class="container is-max-desktop">
         <br/><br/>
         <input class="button is-link" type="submit" value="Log-Out">
     </form>
-</div>';
+</div>
+<br/><br/>
+<div class="container is-max-desktop">
+    <form align="center" action="./change_pass.php" method="post">
+        <br/><br/>
+        <input class="button is-link" type="submit" value="Cambiar Contraseña">
+    </form>
+</div>
+';
 }
 
 
