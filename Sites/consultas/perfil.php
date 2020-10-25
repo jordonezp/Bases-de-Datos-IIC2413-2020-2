@@ -131,6 +131,22 @@ else{
 
 <?php
 if ($pasaporte == ""){
+echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No hay sesion iniciada</h3></div>
+<br/><br/>
+<div class="container is-max-desktop">
+  <h1 class="title">Login</h1>
+    <h2 class="subtitle">Ingresa a tu cuenta</h2>
+        <form align="center" action="consultas/perfil.php" method="post">
+            Pasaporte:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
+            <br/><br/>
+            Contraseña:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="clave">
+            <br/><br/>
+            <input class="button is-link" type="submit" value="Ingresar">
+        </form>
+  </div>';
+
 }else{
 echo '<div class="container is-max-desktop">
     <form align="center" action="./logout.php" method="post">

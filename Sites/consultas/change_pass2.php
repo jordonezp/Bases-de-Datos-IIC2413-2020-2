@@ -16,13 +16,14 @@ $result -> execute();
 $len = $result -> fetchAll();
 
 if (sizeof($len) > 0){
-echo '<div class="container is-max-desktop"> Clave Cambiada correctamente :) </div>';
+
+echo '<br/><br/><div class="container is-max-desktop"><h3 class="subtitle"> Clave Cambiada correctamente :) </h3></div>';
     $sql = "UPDATE usuarios SET password='$new' WHERE pasaporte='$pas' AND password='$old';";
     $stmt = $dbimp -> prepare($sql);
     $stmt -> execute();
 }
 else{
-echo '<div class="container is-max-desktop"> Clave incorrecta :( </div>';
+echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Clave incorrecta :( </h3></div>';
 }
 
 ?>
