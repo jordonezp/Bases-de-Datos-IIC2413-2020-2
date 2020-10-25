@@ -26,6 +26,7 @@ $name = $_GET["name"];
         <input type="" name="fecha_termino"> <br>
         <?php
             echo "<input type = 'hidden' name = 'pid' value = $pid />";
+            echo "<input type = 'hidden' name = 'name' value = $name />";
         ?>
         <input class="button is-link" type="submit" value="Consultar">
     </form>
