@@ -7,5 +7,5 @@ $old = $_POST["old"];
 $new = $_POST["new"];
 $pas = $_POST["pas"];
 
-echo $pas;
+echo '$pas';
 ?>
