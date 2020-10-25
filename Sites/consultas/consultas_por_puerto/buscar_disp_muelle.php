@@ -53,7 +53,7 @@ $tabla = $result -> fetchAll();
     <div class='container is-max-desktop'>
         <h2> Consulta de muelles disponibles en el puerto $name para la fecha $fecha. </h2>
     ";
-    echo "<h3> El resultado es: $result </h3>";
+    // echo "<h3> El resultado es: $result </h3>";
     foreach ($tabla as $fila) {
         echo "<h3> El resultado es: $fila </h3>";
     }
