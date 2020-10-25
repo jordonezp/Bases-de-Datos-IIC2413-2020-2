@@ -33,7 +33,7 @@ $jefe = $result -> fetchAll();
 
 //echo $jefe[0][0];
 
-echo '<div class="column is-centered">'
+echo '<div class="column is-centered">';
 if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "Perfil Capitan";
