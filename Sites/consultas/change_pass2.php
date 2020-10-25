@@ -5,9 +5,22 @@
 <?php
 $old = $_POST["old"];
 $new = $_POST["new"];
-$pas = $_POST["pas"];
+$pas = $_SESSION["pasaporte"];
 
 
-echo $old;
+$query = "SELECT pasaporte, password FROM usuarios WHERE pasaporte='$pas' AND password='$old';";
+$result = $dbimp -> prepare($query);
+$result -> execute();
+$len = $result -> fetchAll();
+
+if sizeof($len) > 0{
+echo "Clave Cambiada correctamente :)";
+    $sql = "UPDATE usuarios SET password='$new' WHERE pasaporte='$pas' AND password='$old';";
+    $stmt = $dbimp -> prepare($sql);
+    $stmt -> execute();
+}
+else{
+echo "Clave incorrecta :(";
+}
 
 ?>
