@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION
 get_available_days_for_facility_for_port_for_day_range(pid_input INT, day_start DATE, day_end DATE)
-RETURNS TABLE (fid INT, available_day DATE) AS $$ 
+RETURNS TABLE (fid INT, available_day DATE) AS $(fid INT, available_day DATE)$ 
 DECLARE 
     curr_permit_count INT;
     curr_date DATE;
@@ -45,5 +45,5 @@ BEGIN
 
     RETURN QUERY SELECT * FROM available_days_for_facility_for_port_for_day_range_cache;
 END;
-$$
+$(fid INT, available_day DATE)$
 LANGUAGE plpgsql;
