@@ -122,7 +122,7 @@ elseif(sizeof($jefe) == 1) {
         echo "Hay 2 ????";
     }
     }
-echo '</div>'
+echo '</div>';
 
 //OTRO
 else{
