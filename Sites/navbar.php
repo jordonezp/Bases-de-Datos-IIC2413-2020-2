@@ -5,7 +5,7 @@
     <div class="navbar-brand">
         <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/index.php">
         <figure class="image is-48x48">
-            <img src="https://c0.klipartz.com/pngpicture/459/215/gratis-png-base-de-datos-de-iconos-de-computadora-del-almacen-de-datos-extraer-transformar-cargar-icono-de-datos.png" >
+            <img src="https://img2.freepng.es/20181206/oxv/kisspng-wind-wave-image-portable-network-graphics-illustra-5c093f8c0a5362.4396725915441099640423.jpg">
         </figure>
         </a>
     </div>
