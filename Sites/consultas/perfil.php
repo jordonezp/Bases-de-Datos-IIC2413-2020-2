@@ -86,7 +86,7 @@ if (sizeof($capitan) == 1) {
     $p = $puertos_capitan;
     foreach ($p as $p2) {
         echo '<div class="container is-max-desktop">
-                <tr><td><p>' .$p2[0].'</p></td></tr>';
+                <tr><td><p>'.$p2[0].'</p></td></tr></div>';
     }
     echo '<br>';
 } 
@@ -102,27 +102,28 @@ elseif(sizeof($jefe) == 1) {
     $result -> execute();
     $puerto_jefe = $result -> fetchAll();
     $p = $puerto_jefe[0][0];
-    echo '<br>';
+    echo '<br/>';
     $query = "SELECT s.fid FROM shipyards s, facilities fa 
                 WHERE fa.boss_rut ='$pasaporte' AND s.fid = fa.fid;";
     $result = $dbp -> prepare($query);
     $result -> execute();
     $tipo_jefe = $result -> fetchAll();
     $t = $tipo_jefe[0][0];
-    echo '<br>';
+    echo '<br/>';
     if (sizeof($tipo_jefe) == 1) {
         echo "Jefe de un Shipyard";
         $tipo_inst_jefe = "Shipyard";
-        
+        echo '<br/>';
     } elseif (sizeof($tipo_jefe) == 0) {
         echo "Jefe de un Dock";
         $tipo_inst_jefe = "Dock";
-
+        echo '<br/>';
     } else {
         echo "Hay 2 ????";
     }
+    
     }
-    echo '<br>';
+    
 //OTRO
 else{
     $tipo_usuario = "otro";
