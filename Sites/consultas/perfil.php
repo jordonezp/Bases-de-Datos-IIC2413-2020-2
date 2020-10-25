@@ -47,7 +47,7 @@ if (sizeof($capitan) == 1) {
     $p = $patente_capitan[0][0];
     $pat = "Patente del Buque:";
     echo '<div class="container is-max-desktop"> <h4 class="sub-title">'.$pat.'</h4><p>'.$p.'</p></div>';
-    echo '<br>'
+    echo '<br>';
 
     $query = "SELECT buque.bnombre FROM buque 
     WHERE buque.patente 
@@ -60,7 +60,7 @@ if (sizeof($capitan) == 1) {
 
     echo '<div class="container is-max-desktop"><h4 class="sub-title">Nombre del buque:</h4>';
     echo '<div class="container is-max-desktop"><p>'.$b.'</p>';
-
+    echo '<br>';
     $query = "SELECT naviera.nnombre FROM naviera 
     WHERE naviera.nid IN (SELECT buque.nid FROM buque 
     WHERE buque.patente IN (SELECT personal.patente AS patente FROM personal 
@@ -72,7 +72,7 @@ if (sizeof($capitan) == 1) {
 
     echo '<div class="container is-max-desktop"><h4 class="sub-title">Naviera:</h4>';
     echo '<div class="container is-max-desktop"><p>'.$n.'</p>';
-
+    echo '<br>';
     $query = "SELECT puerto.punombre FROM puerto 
     WHERE puerto.puid IN (SELECT historialatraque.puid AS puertos FROM historialatraque 
     WHERE historialatraque.patente IN (SELECT personal.patente FROM personal 
@@ -88,7 +88,7 @@ if (sizeof($capitan) == 1) {
         echo '<div class="container is-max-desktop">
                 <tr><td><p>' .$p2[0].'</p></td></tr>';
     }
-
+    echo '<br>';
 } 
 //JEFE
 elseif(sizeof($jefe) == 1) {
@@ -102,14 +102,14 @@ elseif(sizeof($jefe) == 1) {
     $result -> execute();
     $puerto_jefe = $result -> fetchAll();
     $p = $puerto_jefe[0][0];
-
+    echo '<br>';
     $query = "SELECT s.fid FROM shipyards s, facilities fa 
                 WHERE fa.boss_rut ='$pasaporte' AND s.fid = fa.fid;";
     $result = $dbp -> prepare($query);
     $result -> execute();
     $tipo_jefe = $result -> fetchAll();
     $t = $tipo_jefe[0][0];
-
+    echo '<br>';
     if (sizeof($tipo_jefe) == 1) {
         echo "Jefe de un Shipyard";
         $tipo_inst_jefe = "Shipyard";
@@ -122,7 +122,7 @@ elseif(sizeof($jefe) == 1) {
         echo "Hay 2 ????";
     }
     }
-
+    echo '<br>';
 //OTRO
 else{
     $tipo_usuario = "otro";
