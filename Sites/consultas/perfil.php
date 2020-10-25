@@ -31,7 +31,9 @@ $result = $dbimp -> prepare($query);
 $result -> execute();
 $jefe = $result -> fetchAll();
 
-echo $jefe[0][0];
+//echo $jefe[0][0];
+
+echo '<div class="column is-centered">'
 if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "Perfil Capitan";
@@ -120,6 +122,7 @@ elseif(sizeof($jefe) == 1) {
         echo "Hay 2 ????";
     }
     }
+echo '</div>'
 
 //OTRO
 else{
@@ -128,9 +131,10 @@ else{
 ?>
 </body>
 <div class="container is-max-desktop">
-  <form align="center" action="./logout.php" method="post">
-    <br/><br/>
-    <input class="button is-link" type="submit" value="Log-Out">
-  </form>
- </div>
+    <form align="center" action="./logout.php" method="post">
+        <br/><br/>
+        <input class="button is-link" type="submit" value="Log-Out">
+    </form>
+</div>
 <?php include('../templates/footer.html'); ?>
+
