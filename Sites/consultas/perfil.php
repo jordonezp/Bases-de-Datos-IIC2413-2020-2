@@ -131,6 +131,7 @@ else{
 
 
 <?php
+echo '$pasaporte'
 if ($pasaporte == ""){
 }else{
 
@@ -141,6 +142,7 @@ echo '<div class="container is-max-desktop">
         <input class="button is-link" type="submit" value="Log-Out">
     </form>
 </div>';
+
 ?>
 
 
