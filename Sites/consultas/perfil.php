@@ -122,19 +122,33 @@ elseif(sizeof($jefe) == 1) {
         echo "Hay 2 ????";
     }
     }
+<<<<<<< HEAD
 </div>
+=======
+>>>>>>> dd19a8a0276eb4d05ed7c3ec9c19ad6944a1f9e7
 
 //OTRO
 else{
     $tipo_usuario = "otro";
 }
 ?>
-</body>
-<div class="container is-max-desktop">
+
+
+<?php
+echo $pasaporte;
+if ($pasaporte == ""){
+}else{
+echo '<div class="container is-max-desktop">
     <form align="center" action="./logout.php" method="post">
         <br/><br/>
         <input class="button is-link" type="submit" value="Log-Out">
     </form>
-</div>
+</div>';
+}
+
+
+?>
+
+
 <?php include('../templates/footer.html'); ?>
 
