@@ -16,8 +16,8 @@ $result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
 ?>
-<?php include('templates/header.html');   ?>
-<?php include('navbar.php'); ?>
+<?php include('./../templates/header.html');   ?>
+<?php include('./../navbar.php'); ?>
 <br/><br/><br/>
 
 <?php
@@ -35,7 +35,7 @@ $tabla = $result -> fetchAll();
     ";
 
     foreach ($tabla as $fila) {
-        echo "<tr> <td> $fila[0] </td> <td> $fila[1] </td> </tr>";
+        echo "<tr> <td> $fila[0][0] </td> <td> $fila[0][1] </td> </tr>";
     }
 
     echo "
