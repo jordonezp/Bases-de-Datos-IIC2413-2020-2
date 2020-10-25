@@ -13,7 +13,7 @@ $fecha_termino = $_GET["fecha_termino"];
 // echo $pid;
 // echo $fecha_inicio;
 // echo $fecha_termino;
-$query = "SELECT get_available_days_for_facility_for_port_for_day_range(
+$query = "SELECT * FROM  get_available_days_for_facility_for_port_for_day_range(
     '$pid', '$fecha_inicio', '$fecha_termino');";
 $result = $dbimp -> prepare($query);
 $result -> execute();
@@ -27,6 +27,7 @@ $tabla = $result -> fetchAll();
 
     echo "<h2> Días disponibles en rango:  </h2>";
     echo "
+    <div class='container is-max-desktop'>
         <table class='table'>
             <thead>
                 <tr>
@@ -38,12 +39,13 @@ $tabla = $result -> fetchAll();
     ";
 
     foreach ($tabla as $fila) {
-        echo "<tr> <td> $fila[0][0] </td> <td> $fila[0][1] </td> </tr>";
+        echo "<tr> <td> $fila[0] </td> <td> $fila[1] </td> </tr>";
     }
 
     echo "
             </tbody>
         </table>
+    </div>
     ";
 
 ?>
