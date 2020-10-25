@@ -21,7 +21,7 @@ $caps = $result -> fetchAll();
 foreach ($caps as $cap) {
     if ($cap[1] == "t") {
         $query_all = "SELECT * FROM usuarios;";
-        $result_all = $dbp -> prepare($query_all);
+        $result_all = $dbimp -> prepare($query_all);
         $result_all -> execute();
         $all = $result_all -> fetchAll();
         $last = end($all);
@@ -57,7 +57,7 @@ $result -> execute();
 $bosses = $result -> fetchAll();
 foreach ($bosses as $boss) {
     $query_all = "SELECT * FROM usuarios;";
-    $result_all = $dbp -> prepare($query_all);
+    $result_all = $dbimp -> prepare($query_all);
     $result_all -> execute();
     $all = $result_all -> fetchAll();
     $last = end($all);
@@ -68,7 +68,7 @@ foreach ($bosses as $boss) {
 
     $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
     $query_2 = "SELECT pasaporte FROM usuarios WHERE pasaporte='$cap[0]'";
-        $result2 = $dbp -> prepare($query_2);
+        $result2 = $dbimp -> prepare($query_2);
         $result2 -> execute();
         $data_q2 = $result2 -> fetchAll();
 
