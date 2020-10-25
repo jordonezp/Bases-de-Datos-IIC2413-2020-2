@@ -4,7 +4,7 @@
 <?php include('../templates/header.html');   ?>
 
 <br/><br/><br/>
-$pas = $_POST["pas"];
+<?php $pas = $_POST["pas"]; ?>
 <div class="container is-max-desktop">
         <head>
           <h1 class="title"> Cambio de contraseña </h1>
