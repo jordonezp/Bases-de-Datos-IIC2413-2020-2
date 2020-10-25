@@ -149,8 +149,6 @@ echo '<div class="container is-max-desktop">
 </div>
 ';
 }
-
-
 ?>
 
 
