@@ -40,7 +40,7 @@ foreach ($caps as $cap) {
         if (sizeof($data_q2) > 0){
         }
         else{
-        $stmt = $dbp -> prepare($sql);
+        $stmt = $dbimp -> prepare($sql);
         $stmt -> execute([$uid, $cap[2], $cap[0], $cap[5], $pass, $edad2, $cap[4]]);
         }
         }
@@ -75,7 +75,7 @@ foreach ($bosses as $boss) {
         if (sizeof($data_q2) > 0){
         }
         else{
-        $stmt = $dbp -> prepare($sql);
+        $stmt = $dbimp -> prepare($sql);
         $stmt -> execute([$uid, $boss[1], $boss[0], "", $pass, $edad2, $boss[3]]);
         }
         }
@@ -85,7 +85,7 @@ foreach ($bosses as $boss) {
 <?php
 $query = "SELECT * FROM usuarios;";
 
-    $result = $dbp -> prepare($query);
+    $result = $dbimp -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
 

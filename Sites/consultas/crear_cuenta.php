@@ -35,7 +35,7 @@
     $edad2 = (int)$edad;
     
     $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
-    $stmt = $dbp -> prepare($sql);
+    $stmt = $dbimp -> prepare($sql);
     $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
 
     ?>
