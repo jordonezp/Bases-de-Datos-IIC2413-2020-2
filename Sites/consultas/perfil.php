@@ -144,7 +144,7 @@ echo '<div class="container is-max-desktop">
 <div class="container is-max-desktop">
     <form align="center" action="./change_pass.php" method="post">
         <br/><br/>
-        <input class="button is-link" type="submit" value="Log-Out">
+        <input class="button is-link" type="submit" value="Cambiar_contraseña">
     </form>
 </div>
 ';
