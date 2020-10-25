@@ -14,11 +14,12 @@ $patente = $_GET["patente_barco"];
 // echo $pid;
 // echo $fecha_inicio;
 // echo $fecha_termino;
-$query = "SELECT * FROM search_dock_permit_availability(
-    '$pid, '$fecha', '$patente');";
+// $query = "SELECT * FROM search_dock_permit_availability(
+//     '$pid, '$fecha', '$patente');";
+$query = "SELECT * FROM search_dock_permit_availability(3, '2020-01-01', 'DK4889');"
 $result = $dbimp -> prepare($query);
 $result -> execute();
-$value = $result -> fetchAll();
+$table = $result -> fetchAll();
 ?>
 <?php include('./../../templates/header.html');   ?>
 <?php include('./../../navbar.php'); ?>
@@ -26,36 +27,13 @@ $value = $result -> fetchAll();
 
 <?php
 
-    // echo "<h2> Días disponibles en rango:  </h2>";
-    // echo "
-    // <div class='container is-max-desktop'>
-    //     <h2> Porcentajes de ocupacion en el puerto '$name' entre las fechas '$fecha_inicio' y '$fecha_termino' </h2>
-    //     <table class='table'>
-    //         <thead>
-    //             <tr>
-    //                 <th>fid</th>
-    //                 <th>ocupacion (%)</th>
-    //             </tr>
-    //         </thead>
-    //         <tbody>
-    // ";
-
-    // foreach ($tabla as $fila) {
-    //     echo "<tr> <td> $fila[0] </td> <td> $fila[1] % </td> </tr>";
-    // }
-
-    // echo "
-    //         </tbody>
-    //     </table>
-    // </div>
-    // ";
     echo "
     <div class='container is-max-desktop'>
         <h2> Consulta de muelles disponibles en el puerto $name para la fecha $fecha. </h2>
     ";
-    echo "<h3> El resultado es: $value </h3>";
-    echo count($value);
-    foreach ($value as $fila) {
+    echo "<h3> El resultado es: $table </h3>";
+    echo count($table);
+    foreach ($table as $fila) {
         echo "<h3> El resultado es: $fila[0] </h3>";
     }
     echo "</div>";
