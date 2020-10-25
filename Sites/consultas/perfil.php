@@ -18,7 +18,8 @@ $pasaporte = $_SESSION["pasaporte"];
 $clave = $_SESSION["clave"];
 }
 
-// querys para clasificar tipo de persona
+
+// querys para clasificar tipo de persona (capitan, jefe, otro)
 $query = "SELECT personal.pasaporte FROM personal
             WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
 $result = $dbp -> prepare($query);
@@ -31,8 +32,15 @@ $result = $dbimp -> prepare($query);
 $result -> execute();
 $jefe = $result -> fetchAll();
 
-//echo $jefe[0][0];
+//INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
+// nombre
+//edad
+//sexo
+//nro de pasaporte
+//nacionalidad
 
+
+//echo $jefe[0][0];
 if (sizeof($capitan) == 1) {
 //CAPITAN
 
@@ -40,6 +48,8 @@ if (sizeof($capitan) == 1) {
     echo '<br>';
     echo '<div class="container is-max-desktop"> <h3 class="title">'.$tipo_usuario.'</h3></div>';
     echo '<br>';
+
+    //patente
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
     $result = $dbp -> prepare($query);
@@ -47,9 +57,10 @@ if (sizeof($capitan) == 1) {
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
     $pat = "Patente del Buque:";
-    echo '<div class="container is-max-desktop"> <h4 class="<subtitle-strong-weight">'.$pat.'</h4><p>'.$p.'</p></div>';
+    echo '<div class="container is-max-desktop"> <h4 class="<subtitle"><strong>'.$pat.'</strong></h4><p>'.$p.'</p></div>';
     echo '<br>';
 
+    //nombre de buque
     $query = "SELECT buque.bnombre FROM buque 
     WHERE buque.patente 
     IN (SELECT personal.patente AS patente FROM personal 
@@ -58,10 +69,11 @@ if (sizeof($capitan) == 1) {
     $result -> execute();
     $bnombre_capitan = $result -> fetchAll();
     $b = $bnombre_capitan[0][0];
-
-    echo '<div class="container is-max-desktop"><h4 class="subtitle">Nombre del buque:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre del buque:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$b.'</p>';
     echo '<br>';
+
+    //nombre naviera
     $query = "SELECT naviera.nnombre FROM naviera 
     WHERE naviera.nid IN (SELECT buque.nid FROM buque 
     WHERE buque.patente IN (SELECT personal.patente AS patente FROM personal 
@@ -70,10 +82,16 @@ if (sizeof($capitan) == 1) {
     $result -> execute();
     $naviera_capitan = $result -> fetchAll();
     $n = $naviera_capitan[0][0];
-
-    echo '<div class="container is-max-desktop"><h4 class="subtitle">Naviera:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Naviera:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$n.'</p>';
     echo '<br>';
+
+    //próximo itinerario (con fecha)
+    // FALTA!! NO LO HABÍAMOS ANOTADO
+
+
+
+    //ultimos 5 lugares en que ha estado
     $query = "SELECT puerto.punombre FROM puerto 
     WHERE puerto.puid IN (SELECT historialatraque.puid AS puertos FROM historialatraque 
     WHERE historialatraque.patente IN (SELECT personal.patente FROM personal 
@@ -83,7 +101,7 @@ if (sizeof($capitan) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puertos_capitan = $result -> fetchAll();
-    echo '<div class="container is-max-desktop"><h4 class="subtitle">Puertos:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Puertos:</strong></h4>';
     $p = $puertos_capitan;
     foreach ($p as $p2) {
         echo '<div class="container is-max-desktop">
@@ -91,11 +109,15 @@ if (sizeof($capitan) == 1) {
     }
     echo '<br>';
 } 
+
+
 //JEFE
+
 elseif(sizeof($jefe) == 1) {
 
-    $tipo_usuario = "jefe";
+    $tipo_usuario = "Jefe";
 
+    //puerto en el que trabaja
     $query = "SELECT ports.name FROM ports, employees e, facilities f
                 WHERE f.boss_rut = '$pasaporte' AND f.pid = ports.pid 
                 GROUP BY ports.name;";
@@ -103,26 +125,33 @@ elseif(sizeof($jefe) == 1) {
     $result -> execute();
     $puerto_jefe = $result -> fetchAll();
     $p = $puerto_jefe[0][0];
+    echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre de puerto:</strong></h4>';
+    echo '<div class="container is-max-desktop"><p>'.$p.'</p>';
     echo '<br/>';
+
+    //jefe de qué tipo de instalación:
     $query = "SELECT s.fid FROM shipyards s, facilities fa 
                 WHERE fa.boss_rut ='$pasaporte' AND s.fid = fa.fid;";
     $result = $dbp -> prepare($query);
     $result -> execute();
     $tipo_jefe = $result -> fetchAll();
     $t = $tipo_jefe[0][0];
-    echo '<br/>';
+        
     if (sizeof($tipo_jefe) == 1) {
-        echo "Jefe de un Shipyard";
         $tipo_inst_jefe = "Shipyard";
-        echo '<br/>';
+        
     } elseif (sizeof($tipo_jefe) == 0) {
-        echo "Jefe de un Dock";
         $tipo_inst_jefe = "Dock";
-        echo '<br/>';
+
     } else {
         echo "Hay 2 ????";
     }
-    
+
+    echo '<div class="container is-max-desktop"><h4 class="subtitle">
+            <strong>Tipo de instalación:</strong></h4></div>';
+    echo '<div class="container is-max-desktop">
+    <p>Jefe de un '.$tipo_inst_jefe.'</p></div>';
+    echo '<br/>';
     }
     
 //OTRO
