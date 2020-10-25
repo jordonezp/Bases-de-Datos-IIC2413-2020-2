@@ -58,7 +58,7 @@ if (sizeof($capitan) == 1) {
     $b = $bnombre_capitan[0][0];
 
     echo '<h3 class="title">Nombre del buque:</h3>';
-    echo '<p>'$b'</p>';
+    echo "<p>$b</p>";
 
     $query = "SELECT naviera.nnombre FROM naviera 
     WHERE naviera.nid IN (SELECT buque.nid FROM buque 
@@ -70,7 +70,7 @@ if (sizeof($capitan) == 1) {
     $n = $naviera_capitan[0][0];
 
     echo '<h3 class="title">Naviera:</h3>';
-    echo '<p>'$n'</p>';
+    echo "<p>$n</p>";
 
     $query = "SELECT puerto.punombre FROM puerto 
     WHERE puerto.puid IN (SELECT historialatraque.puid AS puertos FROM historialatraque 
