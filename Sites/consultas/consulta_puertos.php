@@ -32,6 +32,22 @@ $name = $_GET["name"];
     </form>
 </div>
 <br/><br/><br/>
+
+<div class="container is-max-desktop">
+    <h2>Consulte la ocupación de las instalaciones por fecha</h2>
+
+    <form action="consultas_por_puerto/ocupacion_promedio.php" method="get">
+        Muestre el promedio de ocupación de todas las instalaciones del puerto <?php echo $name ?>
+        entre los días <input type="" name="fecha_inicio"> y 
+        <input type="" name="fecha_termino"> <br>
+        <?php
+            echo "<input type = 'hidden' name = 'pid' value = $pid />";
+            echo "<input type = 'hidden' name = 'name' value = $name />";
+        ?>
+        <input class="button is-link" type="submit" value="Consultar">
+    </form>
+</div>
+<br/><br/><br/>
 <div class="container is-max-desktop">
     <h2 class="subtitle">Generar permiso</h2>
 
