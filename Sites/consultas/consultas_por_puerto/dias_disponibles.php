@@ -16,8 +16,8 @@ $result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
 ?>
-<?php include('./../templates/header.html');   ?>
-<?php include('./../navbar.php'); ?>
+<?php include('./../../templates/header.html');   ?>
+<?php include('./../../navbar.php'); ?>
 <br/><br/><br/>
 
 <?php
