@@ -29,6 +29,7 @@ $tabla = $result -> fetchAll();
 
 </table>
 </div>
+<br/><br/><br/>
 <div class="container is-max-desktop">
 
 <form action="index.php" method="get">
