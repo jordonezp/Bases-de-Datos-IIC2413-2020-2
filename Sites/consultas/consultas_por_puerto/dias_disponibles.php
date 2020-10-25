@@ -27,6 +27,7 @@ $tabla = $result -> fetchAll();
 
     echo "<h2> Días disponibles en rango:  </h2>";
     echo "
+    <div class='container is-max-desktop'>
         <table class='table'>
             <thead>
                 <tr>
@@ -44,6 +45,7 @@ $tabla = $result -> fetchAll();
     echo "
             </tbody>
         </table>
+    </div>
     ";
 
 ?>
