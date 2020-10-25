@@ -6,7 +6,7 @@
 require('./../../config/conection.php');
 
 $pid = $_GET["pid"];
-$name = $_GET["nombre_puerto"];
+$name = $_GET["name"];
 $fecha = $_GET["fecha_atraco"];
 $patente = $_GET["patente_barco"];
 
