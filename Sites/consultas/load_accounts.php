@@ -33,7 +33,7 @@ foreach ($caps as $cap) {
         $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
 
         $query_2 = "SELECT pasaporte FROM usuarios WHERE pasaporte='$cap[0]'";
-        $result2 = $dbp -> prepare($query_2);
+        $result2 = $dbimp -> prepare($query_2);
         $result2 -> execute();
         $data_q2 = $result2 -> fetchAll();
 
@@ -67,7 +67,7 @@ foreach ($bosses as $boss) {
     $edad2 = (int)$boss[2];
 
     $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
-    $query_2 = "SELECT pasaporte FROM usuarios WHERE pasaporte='$cap[0]'";
+    $query_2 = "SELECT pasaporte FROM usuarios WHERE pasaporte='$boss[0]'";
         $result2 = $dbimp -> prepare($query_2);
         $result2 -> execute();
         $data_q2 = $result2 -> fetchAll();
