@@ -13,7 +13,7 @@ $fecha_termino = $_GET["fecha_termino"];
 // echo $pid;
 // echo $fecha_inicio;
 // echo $fecha_termino;
-$query = "SELECT get_available_days_for_facility_for_port_for_day_range(
+$query = "SELECT * FROM  get_available_days_for_facility_for_port_for_day_range(
     '$pid', '$fecha_inicio', '$fecha_termino');";
 $result = $dbimp -> prepare($query);
 $result -> execute();
