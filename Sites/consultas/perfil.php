@@ -136,7 +136,7 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No h
 <div class="container is-max-desktop">
   <h1 class="title">Login</h1>
     <h2 class="subtitle">Ingresa a tu cuenta</h2>
-        <form align="center" action="consultas/perfil.php" method="post">
+        <form align="center" action="perfil.php" method="post">
             Pasaporte:
             <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
             <br/><br/>
@@ -145,7 +145,39 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No h
             <br/><br/>
             <input class="button is-link" type="submit" value="Ingresar">
         </form>
-  </div>';
+  </div>
+  <br/><br/>
+
+  <div class="container is-max-desktop">
+  <h1 class="title">Creador de cuenta</h1>
+  <p class="subtitle">Ingresa tu informacion.</p>
+        <form align="center" action="crear_cuenta.php" method="post">
+            Pasaporte:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
+            <br><br> <br>
+            Contraseña:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="pass">
+            <br><br> <br>
+            Nombre:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="nombre">
+            <br><br> <br>
+            Edad:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="edad">
+            <br><br> <br>
+            Sexo:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="sexo">
+            <br><br> <br>
+            Nacionalidad:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="nacio">
+            <br/><br/>
+            <input class="button is-link" type="submit" value="Buscar">
+        </form>
+  </div>
+  '
+
+
+
+  ;
 
 }else{
 echo '<div class="container is-max-desktop">
