@@ -5,7 +5,7 @@ DECLARE
     permit_count INT;
 BEGIN
     IF EXISTS (SELECT 1 FROM docks WHERE docks.fid = fid_input) THEN 
-        RAISE NOTICE 'is dock';
+        -- RAISE NOTICE 'is dock';
         RETURN QUERY EXECUTE 
             'SELECT permits.peid, DATE(permits.arrival_date) FROM permits 
             NATURAL JOIN get_permits_for_facility($1) 
@@ -13,7 +13,7 @@ BEGIN
             WHERE DATE(permits.arrival_date) = $2'
             USING fid_input, day_input;
     ELSIF EXISTS (SELECT 1 FROM shipyards WHERE shipyards.fid = fid_input) THEN
-        RAISE NOTICE 'is shipyard';
+        -- RAISE NOTICE 'is shipyard';
         RETURN QUERY EXECUTE 
             'SELECT permits.peid, DATE(permits.arrival_date) FROM permits 
             NATURAL JOIN get_permits_for_facility($1) 

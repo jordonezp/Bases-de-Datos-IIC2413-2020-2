@@ -32,10 +32,10 @@ BEGIN
             FROM get_permits_for_facility_for_date(fid_input, curr_date);
 
             IF curr_ocupied < f_capacity THEN
-                RAISE NOTICE 'available_day';
+                -- RAISE NOTICE 'available_day';
                 INSERT INTO available_days_for_facility_for_port_for_day_range_cache VALUES (fid_input, curr_date);
             ELSE 
-                RAISE NOTICE 'occupied day';
+                -- RAISE NOTICE 'occupied day';
             END IF;
             
             curr_date := curr_date + 1;
