@@ -33,7 +33,7 @@ $jefe = $result -> fetchAll();
 
 //echo $jefe[0][0];
 
-echo '<div class="column is-centered">';
+<div class="column is-centered">
 if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "Perfil Capitan";
@@ -122,6 +122,10 @@ elseif(sizeof($jefe) == 1) {
         echo "Hay 2 ????";
     }
     }
+<<<<<<< HEAD
+</div>
+=======
+>>>>>>> dd19a8a0276eb4d05ed7c3ec9c19ad6944a1f9e7
 
 //OTRO
 else{
