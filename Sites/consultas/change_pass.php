@@ -5,6 +5,8 @@
 
 <br/><br/><br/>
 <?php $pas = $_POST["pas"]; ?>
+<p>$pass</p>
+<?php echo "<h2> $pass </h2>"; ?>
 <div class="container is-max-desktop">
         <head>
           <h1 class="title"> Cambio de contraseña </h1>
