@@ -68,3 +68,8 @@ if (count($tabla_petrolero) >= 1) {
 }
 
 ?>
+
+
+<form action="../navieras.php" method="get">
+    <input class="button is-link" type="submit" value="Volver">
+</form>

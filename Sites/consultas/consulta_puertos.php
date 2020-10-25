@@ -43,3 +43,8 @@ $name = $_GET["name"];
        <input class="button is-link" type="submit" value="Consultar">
     </form>
 </div>
+
+
+<form action="../puertos.php" method="get">
+    <input class="button is-link" type="submit" value="Volver">
+</form>
