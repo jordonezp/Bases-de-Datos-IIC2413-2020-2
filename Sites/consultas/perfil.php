@@ -131,7 +131,7 @@ else{
 
 
 <?php
-echo '$pasaporte';
+echo $pasaporte;
 if ($pasaporte == ""){
 }else{
 
