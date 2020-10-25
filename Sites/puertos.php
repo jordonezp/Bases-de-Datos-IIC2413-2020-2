@@ -30,3 +30,6 @@ $tabla = $result -> fetchAll();
 </table>
 </div>
 
+<form action="../index.php" method="get">
+    <input class="button is-link" type="submit" value="Volver">
+</form>
