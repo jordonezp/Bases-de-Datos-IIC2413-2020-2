@@ -4,9 +4,7 @@
 <?php include('../templates/header.html');   ?>
 
 <br/><br/><br/>
-<?php $pas = $_POST["pas"];
- echo $pas;
- ?>
+
 
 <?php echo "<h2> $pass </h2>"; ?>
 <div class="container is-max-desktop">
@@ -21,7 +19,6 @@
                 <br/><br/>
                 Contraseña Nueva:
                 <input class="input is-rounded" style="width: 33%;" type="text" name="new">
-                <input type = "hidden" name = "rut" value = '$pas' />
                 <br/><br/>
                 <input class="button is-link" type="submit" value="Cambiar">
             </form>

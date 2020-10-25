@@ -37,7 +37,7 @@ if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "Perfil Capitan";
 
-    echo '<div class="container is-max-desktop"> <tittle>'.$tipo_usuario.'</tittle></div>';
+    echo '<div class="container is-max-desktop"> <h3 class="title">'.$tipo_usuario.'</h3></div>';
 
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
@@ -46,7 +46,7 @@ if (sizeof($capitan) == 1) {
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
     $pat = "Patente del Buque:";
-    echo '<div class="container is-max-desktop"> <h3>'.$pat.'</h3><h3>'.$p.'</h3></div>';
+    echo '<div class="container is-max-desktop"> <h3 class="title">'.$pat.'</h3><p>'.$p.'</p></div>';
 
     $query = "SELECT buque.bnombre FROM buque 
     WHERE buque.patente 
@@ -57,8 +57,8 @@ if (sizeof($capitan) == 1) {
     $bnombre_capitan = $result -> fetchAll();
     $b = $bnombre_capitan[0][0];
 
-    echo "<h3>Nombre del buque:</h3>";
-    echo $b;
+    echo '<h3 class="title">Nombre del buque:</h3>';
+    echo "<p>$b</p>";
 
     $query = "SELECT naviera.nnombre FROM naviera 
     WHERE naviera.nid IN (SELECT buque.nid FROM buque 
@@ -69,7 +69,7 @@ if (sizeof($capitan) == 1) {
     $naviera_capitan = $result -> fetchAll();
     $n = $naviera_capitan[0][0];
 
-    echo "<h3>Naviera:</h3>";
+    echo '<h3 class="title">Naviera:</h3>';
     echo "<p>$n</p>";
 
     $query = "SELECT puerto.punombre FROM puerto 
@@ -81,10 +81,10 @@ if (sizeof($capitan) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puertos_capitan = $result -> fetchAll();
-    echo "<h3>Puertos:</h3>";
+    echo '<h3 class="title">Puertos:</h3>';
     $p = $puertos_capitan;
     foreach ($p as $p2) {
-        echo "<tr> <td>$p2[0]</td>
+        echo "<tr> <td><p> $p2[0]</p></td>
             </tr>";
     }
 
@@ -130,7 +130,6 @@ else{
 
 
 <?php
-echo $pasaporte;
 if ($pasaporte == ""){
 }else{
 echo '<div class="container is-max-desktop">
@@ -143,7 +142,7 @@ echo '<div class="container is-max-desktop">
 <div class="container is-max-desktop">
     <form align="center" action="./change_pass.php" method="post">
         <br/><br/>
-        <input type = "hidden" name = "pas" value = $pasaporte />
+
         <input class="button is-link" type="submit" value="Cambiar Contraseña">
     </form>
 </div>
