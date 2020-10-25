@@ -35,10 +35,11 @@ $jefe = $result -> fetchAll();
 
 if (sizeof($capitan) == 1) {
 //CAPITAN
+
     $tipo_usuario = "Perfil Capitan";
-
+    echo '<br>';
     echo '<div class="container is-max-desktop"> <h3 class="title">'.$tipo_usuario.'</h3></div>';
-
+    echo '<br>';
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
     $result = $dbp -> prepare($query);
@@ -46,7 +47,7 @@ if (sizeof($capitan) == 1) {
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
     $pat = "Patente del Buque:";
-    echo '<div class="container is-max-desktop"> <h4 class="sub-title">'.$pat.'</h4><p>'.$p.'</p></div>';
+    echo '<div class="container is-max-desktop"> <h4 class="subtitle">'.$pat.'</h4><p>'.$p.'</p></div>';
     echo '<br>';
 
     $query = "SELECT buque.bnombre FROM buque 
@@ -58,7 +59,7 @@ if (sizeof($capitan) == 1) {
     $bnombre_capitan = $result -> fetchAll();
     $b = $bnombre_capitan[0][0];
 
-    echo '<div class="container is-max-desktop"><h4 class="sub-title">Nombre del buque:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="subtitle">Nombre del buque:</h4>';
     echo '<div class="container is-max-desktop"><p>'.$b.'</p>';
     echo '<br>';
     $query = "SELECT naviera.nnombre FROM naviera 
@@ -70,7 +71,7 @@ if (sizeof($capitan) == 1) {
     $naviera_capitan = $result -> fetchAll();
     $n = $naviera_capitan[0][0];
 
-    echo '<div class="container is-max-desktop"><h4 class="sub-title">Naviera:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="subtitle">Naviera:</h4>';
     echo '<div class="container is-max-desktop"><p>'.$n.'</p>';
     echo '<br>';
     $query = "SELECT puerto.punombre FROM puerto 
@@ -82,7 +83,7 @@ if (sizeof($capitan) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puertos_capitan = $result -> fetchAll();
-    echo '<div class="container is-max-desktop"><h4 class="sub-title">Puertos:</h4>';
+    echo '<div class="container is-max-desktop"><h4 class="subtitle">Puertos:</h4>';
     $p = $puertos_capitan;
     foreach ($p as $p2) {
         echo '<div class="container is-max-desktop">
