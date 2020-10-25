@@ -136,7 +136,7 @@ if ($pasaporte == ""){
 echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No hay sesion iniciada</h3></div>
 <br/><br/>
 <div class="container is-max-desktop">
-  <h1 class="title">Login</h1>
+<h1 class="title">Login</h1>
     <h2 class="subtitle">Ingresa a tu cuenta</h2>
         <form align="center" action="consultas/perfil.php" method="post">
             Pasaporte:
@@ -147,9 +147,10 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No h
             <br/><br/>
             <input class="button is-link" type="submit" value="Ingresar">
         </form>
-  </div>';
+    </div>';
 
-}else{
+}
+else{
 echo '<div class="container is-max-desktop">
     <form align="center" action="./logout.php" method="post">
         <br/><br/>
