@@ -18,7 +18,7 @@ $query = "SELECT * FROM search_dock_permit_availability(
     '$pid, '$fecha', '$patente');";
 $result = $dbimp -> prepare($query);
 $result -> execute();
-$value = $result -> fetch();
+$value = $result -> fetchAll();
 ?>
 <?php include('./../../templates/header.html');   ?>
 <?php include('./../../navbar.php'); ?>
