@@ -16,7 +16,8 @@ $patente = $_GET["patente_barco"];
 // echo $fecha_termino;
 // $query = "SELECT * FROM search_dock_permit_availability(
 //     '$pid, '$fecha', '$patente');";
-$query = "SELECT * FROM search_dock_permit_availability(3, '2020-01-01', 'DK4889');";
+$query = "SELECT * FROM search_dock_permit_availability(
+    $pid, $fecha, $patente);";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $table = $result -> fetchAll();
