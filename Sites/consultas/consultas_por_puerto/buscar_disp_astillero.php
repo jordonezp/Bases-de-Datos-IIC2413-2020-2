@@ -33,9 +33,6 @@ $table = $result -> fetchAll();
     } else {
         echo "<h3> La instalación disponible es: $fid_disp </h3>";
     }
-    foreach ($table as $fila) {
-        echo "<h3> El resultado es: $fila[0] </h3>";
-    }
     echo "</div>";
 
 ?>
