@@ -1,5 +1,5 @@
 <?php
-require('../config/conection.php');
+require('./config/conection.php');
 $query = "SELECT * FROM ports;";
 $result = $dbimp -> prepare($query);
 $result -> execute();
