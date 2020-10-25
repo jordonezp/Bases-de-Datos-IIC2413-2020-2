@@ -1,3 +1,8 @@
+<?php session_start();?>
+<?php include('templates/header.html');   ?>
+<?php include('navbar.php'); ?>
+
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
 <?php
@@ -68,3 +73,8 @@ if (count($tabla_petrolero) >= 1) {
 }
 
 ?>
+
+
+<form action="../navieras.php" method="get">
+    <input class="button is-link" type="submit" value="Volver">
+</form>

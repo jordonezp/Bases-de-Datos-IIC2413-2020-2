@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <?php
 require('./config/conection.php');
 $query = "SELECT * FROM naviera;";
@@ -5,14 +7,16 @@ $result = $dbp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
 ?>
+<?php include('templates/header.html');   ?>
+<?php include('navbar.php'); ?>
+<br/><br/><br/>
 
-<h1>Navieras</h1>
+<div class="container is-max-desktop">
 
-<p>Acá podrás revisar las navieras existentes. Haciendo <i>clcik</i> sobre una naviera podrás
-    acceder a los barcos de esta.</p>
-<br>
-
-<table>
+  <h1 class="title">Navieras</h1>
+    <h2 class="subtitle">Acá podrás revisar las navieras existentes. Haciendo <i>click</i> sobre una naviera podrás
+    acceder a los barcos de esta.</h2>
+  <table>
     <tr>
         <th>Nombre</th>
     </tr>
@@ -24,3 +28,11 @@ $tabla = $result -> fetchAll();
     ?>
 
 </table>
+</div>
+
+<form action="../index.php" method="get">
+    <input class="button is-link" type="submit" value="Volver">
+</form>
+
+
+

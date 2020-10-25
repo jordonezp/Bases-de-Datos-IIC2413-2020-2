@@ -1,18 +1,22 @@
+<?php session_start();?>
+
 <?php
-require('../config/conection.php');
+require('./config/conection.php');
 $query = "SELECT * FROM ports;";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
 ?>
+<?php include('templates/header.html');   ?>
+<?php include('navbar.php'); ?>
+<br/><br/><br/>
 
-<h1>Puertos</h1>
+<div class="container is-max-desktop">
 
-<p>Acá podrás revisar los puertos existentes. Haciendo <i>clcik</i> sobre un puerto podrás
-    realizar consultas sobre este puerto</p>
-<br>
-
-<table>
+  <h1 class="title">Puertos</h1>
+    <h2 class="subtitle">Acá podrás revisar los puertos existentes. Haciendo <i>click</i> sobre un puerto podrás
+    realizar consultas sobre este puerto</h2>
+  <table>
     <tr>
         <th>Nombre</th>
     </tr>
@@ -24,3 +28,8 @@ $tabla = $result -> fetchAll();
     ?>
 
 </table>
+</div>
+
+<form action="../index.php" method="get">
+    <input class="button is-link" type="submit" value="Volver">
+</form>

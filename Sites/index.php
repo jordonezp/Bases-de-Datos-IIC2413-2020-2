@@ -17,7 +17,7 @@ if (!isset($_SESSION['name']))
 
   <h2 class="title">Consulta Navieras</h2>
 
-  <form align="center" action="consultas/consulta_navieras.php" method="post">
+  <form align="center" action="navieras.php" method="post">
     <br/><br/>
     <input class="button is-link" type="submit" value="Buscar">
   </form>
@@ -27,7 +27,7 @@ if (!isset($_SESSION['name']))
 
   <h2 class="title">Consulta Puertos</h2>
 
-  <form align="center" action="consultas/consulta_puertos.php" method="post">
+  <form align="center" action="puertos.php" method="post">
     <br/><br/>
     <input class="button is-link" type="submit" value="Buscar">
   </form>
