@@ -53,7 +53,7 @@ $result -> execute();
     <div class='container is-max-desktop'>
         <h2> Consulta de muelles disponibles en el puerto '$name' para la fecha '$fecha'. </h2>
     ";
-    echo $result;
+    echo "<h3> El resultado es: '$result'</h3>";
     echo "</div>";
 
 ?>
