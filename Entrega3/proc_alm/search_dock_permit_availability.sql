@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION
 search_dock_permit_availability(pid_input INT, day_in DATE, plate_in VARCHAR)
-RETURNS VARCHAR AS $avbty$ 
+RETURNS INT AS $avbty$ 
 DECLARE 
     d_capacity INT;
     occupancy INT;
@@ -29,9 +29,9 @@ BEGIN
 
     IF available_fid >= 0 THEN
         PERFORM insert_dock_permit(available_fid, plate_in, day_in, '-');
-        RETURN 'available';
+        RETURN available_fid;
     ELSE 
-        RETURN 'unavailable';
+        RETURN -1;
     END IF;
 
 END;

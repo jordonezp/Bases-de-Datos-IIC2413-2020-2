@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION
 search_shipyard_permit_availability(pid_input INT, day_in DATE, day_out DATE, plate_in VARCHAR)
-RETURNS VARCHAR AS $avbty$ 
+RETURNS INT AS $avbty$ 
 DECLARE 
     s_capacity INT;
     occupancy INT;
@@ -40,9 +40,9 @@ BEGIN
 
     IF available_fid >= 0 THEN
         PERFORM insert_shipyard_permit(available_fid, plate_in, day_in, day_out);
-        RETURN 'available';
+        RETURN available_fid;
     ELSE 
-        RETURN 'unavailable';
+        RETURN -1;
     END IF;
 
 END;
