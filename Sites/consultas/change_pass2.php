@@ -13,7 +13,7 @@ $result = $dbimp -> prepare($query);
 $result -> execute();
 $len = $result -> fetchAll();
 
-if sizeof($len) > 0{
+if (sizeof($len) > 0){
 echo "Clave Cambiada correctamente :)";
     $sql = "UPDATE usuarios SET password='$new' WHERE pasaporte='$pas' AND password='$old';";
     $stmt = $dbimp -> prepare($sql);
