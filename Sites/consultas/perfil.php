@@ -37,7 +37,7 @@ if (sizeof($capitan) == 1) {
 //CAPITAN
     $tipo_usuario = "Perfil Capitan";
 
-    echo '<div class="container is-max-desktop"> <h2>'.$tipo_usuario.'</h2></div>';
+    echo '<div class="container is-max-desktop"> <tittle>'.$tipo_usuario.'</tittle></div>';
 
     $query = "SELECT personal.patente FROM personal 
     WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
@@ -46,7 +46,7 @@ if (sizeof($capitan) == 1) {
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
     $pat = "Patente del Buque:";
-    echo '<div class="container is-max-desktop"> <h3 class="title">'.$pat.'</h3><h3>'.$p.'</h3></div>';
+    echo '<div class="container is-max-desktop"> <h3>'.$pat.'</h3><h3>'.$p.'</h3></div>';
 
     $query = "SELECT buque.bnombre FROM buque 
     WHERE buque.patente 
@@ -130,6 +130,7 @@ else{
 
 
 <?php
+echo $pasaporte;
 if ($pasaporte == ""){
 }else{
 echo '<div class="container is-max-desktop">
@@ -142,9 +143,7 @@ echo '<div class="container is-max-desktop">
 <div class="container is-max-desktop">
     <form align="center" action="./change_pass.php" method="post">
         <br/><br/>
-        <?php
-            echo "<input type = 'hidden' name = 'pid' value = $pas />";
-        ?>
+        <input type = "hidden" name = "pas" value = $pasaporte />
         <input class="button is-link" type="submit" value="Cambiar Contraseña">
     </form>
 </div>
