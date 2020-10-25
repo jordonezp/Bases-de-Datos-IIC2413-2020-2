@@ -4,8 +4,10 @@
 <?php include('../templates/header.html');   ?>
 
 <br/><br/><br/>
-<?php $pas = $_POST["pas"]; ?>
-<p>$pass</p>
+<?php $pas = $_POST["pas"];
+ echo $pas;
+ ?>
+
 <?php echo "<h2> $pass </h2>"; ?>
 <div class="container is-max-desktop">
         <head>

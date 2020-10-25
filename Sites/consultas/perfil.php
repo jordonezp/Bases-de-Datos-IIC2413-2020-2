@@ -143,7 +143,7 @@ echo '<div class="container is-max-desktop">
 <div class="container is-max-desktop">
     <form align="center" action="./change_pass.php" method="post">
         <br/><br/>
-        <input type = "hidden" name = "pas" value = $pasaporte />
+        <input type = "hidden" name = "pas" value = "<?php echo "$pas";?>" />
         <input class="button is-link" type="submit" value="Cambiar Contraseña">
     </form>
 </div>
