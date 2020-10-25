@@ -6,7 +6,7 @@
 require('./../../config/conection.php');
 
 $pid = $_GET["pid"];
-$name = $_GET["nombre_puerto"];
+$name = $_GET["name"];
 $fecha = $_GET["fecha_atraco"];
 $patente = $_GET["patente_barco"];
 
@@ -18,7 +18,7 @@ $query = "SELECT search_dock_permit_availability(
     '$pid, '$fecha', '$patente');";
 $result = $dbimp -> prepare($query);
 $result -> execute();
-// $tabla = $result -> fetchAll();
+$tabla = $result -> fetchAll();
 ?>
 <?php include('./../../templates/header.html');   ?>
 <?php include('./../../navbar.php'); ?>
@@ -51,9 +51,11 @@ $result -> execute();
     // ";
     echo "
     <div class='container is-max-desktop'>
-        <h2> Consulta de muelles disponibles en el puerto '$name' para la fecha '$fecha'. </h2>
+        <h2> Consulta de muelles disponibles en el puerto $name para la fecha $fecha. </h2>
     ";
-    echo "<h3> El resultado es: '$result'</h3>";
+    foreach ($tabla as $fila) {
+        echo "<h3> El resultado es: $result </h3>";
+    }
     echo "</div>";
 
 ?>
