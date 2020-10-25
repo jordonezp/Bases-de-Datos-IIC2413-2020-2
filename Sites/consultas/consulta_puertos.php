@@ -27,6 +27,7 @@ $name = $_GET["name"];
         <input type="submit" value="Consultar">
     </form>
 </div>
+<br/><br/><br/>
 <div class="container is-max-desktop">
     <h2 class="subtitle">Generar permiso</h2>
 
@@ -39,6 +40,8 @@ $name = $_GET["name"];
         <input type="hidden" name="pid"  value= "<?php echo $pid; ?>">  <br>
         <input class="button is-link" type="submit" value="Consultar">
      </form>
+</div>
+<br/><br/><br/>
 <div class="container is-max-desktop">
     <h3 class="subtitle"> Astillero </h3>
 
@@ -51,7 +54,7 @@ $name = $_GET["name"];
     </form>
 </div>
 
-
+<br/><br/><br/>
 <form action="../puertos.php" method="get">
     <input class="button is-link" type="submit" value="Volver">
 </form>
