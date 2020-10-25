@@ -55,6 +55,8 @@ $name = $_GET["name"];
 </div>
 
 <br/><br/><br/>
+<div class="container is-max-desktop">
 <form action="../puertos.php" method="get">
     <input class="button is-link" type="submit" value="Volver">
 </form>
+</div>

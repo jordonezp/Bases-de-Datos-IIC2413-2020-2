@@ -29,10 +29,10 @@ $tabla = $result -> fetchAll();
 
 </table>
 </div>
-
+<div class="container is-max-desktop">
 <form action="index.php" method="get">
     <input class="button is-link" type="submit" value="Volver">
 </form>
-
+</div>
 
 
