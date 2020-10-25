@@ -42,7 +42,7 @@
     <br>
     <br>
 
-?php
+<?php
 
 if (sizeof($nav) == 1) {
     echo "Existe";

@@ -4,7 +4,9 @@
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/index.php">
+        <figure class="image is-128x128">
             <img src="https://c0.klipartz.com/pngpicture/459/215/gratis-png-base-de-datos-de-iconos-de-computadora-del-almacen-de-datos-extraer-transformar-cargar-icono-de-datos.png" width="70" height="120">
+        </figure>
         </a>
     </div>
     <div class="navbar-brand">
@@ -20,12 +22,12 @@
                     <?php
                         session_start();
                         if ($_SESSION['name'] == "") {
-                         echo "Perfil";
+                            echo "Perfil";
                         } else {
                             echo "Perfil";
                         }
                         ?>
-                   <?php  ?>
+                    <?php  ?>
                 </a>
                 <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/consultas/load_accounts.php">
                     Cargar Cuentas Capitanes/Jefes
