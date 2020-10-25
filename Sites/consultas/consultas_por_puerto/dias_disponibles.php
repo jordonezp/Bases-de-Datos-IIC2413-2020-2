@@ -10,6 +10,9 @@ $fecha_inicio = $_GET["fecha_inicio"];
 $fecha_termino = $_GET["fecha_termino"];
 
 // $query = "SELECT * FROM ports;";
+echo $pid
+echo $fecha_inicio
+echo $fecha_termino
 $query = "SELECT get_available_days_for_facility_for_port_for_day_range(
     '$pid', '$fecha_inicio', '$fecha_termino');";
 $result = $dbimp -> prepare($query);
