@@ -4,7 +4,7 @@
 <?php include('../templates/header.html');   ?>
 
 <br/><br/><br/>
-
+$pas = $_POST["pas"];
 <div class="container is-max-desktop">
         <head>
           <h1 class="title"> Cambio de contraseña </h1>
@@ -17,6 +17,7 @@
                 <br/><br/>
                 Contraseña Nueva:
                 <input class="input is-rounded" style="width: 33%;" type="text" name="new">
+                <input type = "hidden" name = "rut" value = $pas />
                 <br/><br/>
                 <input class="button is-link" type="submit" value="Cambiar">
             </form>
