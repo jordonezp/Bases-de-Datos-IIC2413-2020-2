@@ -27,9 +27,12 @@ $tabla_petrolero = $result_petrolero->fetchAll();
 
 ?>
 
-<h1> Buques de <?php echo $nnombre ?> </h1>
 
-<p> A continuación se listan las patente y nombres de los buques de la naviera <?php echo 
+<br/><br/><br/>
+<div class="container is-max-desktop">
+<h1 class="title"> Buques de <?php echo $nnombre ?> </h1>
+
+<p class="subtitle"> A continuación se listan las patente y nombres de los buques de la naviera <?php echo
     $nnombre ?> por tipo de buque. </p>
 
 <?php
@@ -75,6 +78,11 @@ if (count($tabla_petrolero) >= 1) {
 ?>
 
 
+</div>
+<br/><br/><br/>
+<div class="container is-max-desktop">
+
 <form action="../navieras.php" method="get">
     <input class="button is-link" type="submit" value="Volver">
 </form>
+</div>
