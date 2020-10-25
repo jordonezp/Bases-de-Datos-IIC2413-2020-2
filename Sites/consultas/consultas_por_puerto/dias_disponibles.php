@@ -6,6 +6,7 @@
 require('./../../config/conection.php');
 
 $pid = $_GET["pid"];
+$name = $_GET["name"];
 $fecha_inicio = $_GET["fecha_inicio"];
 $fecha_termino = $_GET["fecha_termino"];
 
@@ -25,9 +26,10 @@ $tabla = $result -> fetchAll();
 
 <?php
 
-    echo "<h2> Días disponibles en rango:  </h2>";
+    // echo "<h2> Días disponibles en rango:  </h2>";
     echo "
     <div class='container is-max-desktop'>
+        <h2> Disponibilidad para el puerto '$name' entre las fechas '$fecha_inicio' y '$fecha_termino' </h2>
         <table class='table'>
             <thead>
                 <tr>
