@@ -170,7 +170,7 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No h
             Nacionalidad:
             <input class="input is-rounded" style="width: 33%;" type="text" name="nacio">
             <br/><br/>
-            <input class="button is-link" type="submit" value="Buscar">
+            <input class="button is-link" type="submit" value="Crear">
         </form>
   </div>
   '
