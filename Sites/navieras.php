@@ -9,7 +9,7 @@ $tabla = $result -> fetchAll();
 ?>
 <?php include('templates/header.html');   ?>
 <?php include('navbar.php'); ?>
-
+<br/><br/><br/>
 
 <div class="container is-max-desktop">
 
