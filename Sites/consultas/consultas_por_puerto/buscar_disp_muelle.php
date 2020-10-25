@@ -54,9 +54,9 @@ $value = $result -> fetchAll();
         <h2> Consulta de muelles disponibles en el puerto $name para la fecha $fecha. </h2>
     ";
     echo "<h3> El resultado es: $value </h3>";
-    // foreach ($tabla as $fila) {
-    //     echo "<h3> El resultado es: $fila </h3>";
-    // }
+    foreach ($value as $fila) {
+        echo "<h3> El resultado es: $fila </h3>";
+    }
     echo "</div>";
 
 ?>
