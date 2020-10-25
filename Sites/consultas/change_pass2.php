@@ -6,7 +6,9 @@
 $old = $_POST["old"];
 $new = $_POST["new"];
 $pas = $_SESSION["pasaporte"];
-
+echo $old;
+echo $new;
+echo $pas;
 
 $query = "SELECT pasaporte, password FROM usuarios WHERE pasaporte='$pas' AND password='$old';";
 $result = $dbimp -> prepare($query);
