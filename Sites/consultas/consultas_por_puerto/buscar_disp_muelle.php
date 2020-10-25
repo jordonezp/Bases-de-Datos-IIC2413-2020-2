@@ -53,9 +53,10 @@ $value = $result -> fetchAll();
     <div class='container is-max-desktop'>
         <h2> Consulta de muelles disponibles en el puerto $name para la fecha $fecha. </h2>
     ";
-    echo "<h3> El resultado es: $value </h3>";
+    // echo "<h3> El resultado es: $value </h3>";
+    // echo count($value);
     foreach ($value as $fila) {
-        echo "<h3> El resultado es: $fila </h3>";
+        echo "<h3> El resultado es: $fila[0] </h3>";
     }
     echo "</div>";
 
