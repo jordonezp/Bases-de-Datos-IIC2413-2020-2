@@ -68,11 +68,14 @@ $name = $_GET["name"];
 <div class="container is-max-desktop">
     <h3 class="subtitle"> Astillero </h3>
 
-    <form action="respuesta_permiso.php" method="post">
+    <form action="consultas_por_puerto/buscar_disp_astillero.php" method="get">
         Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun astillero del puerto <?php echo $name ?>
        desde el día  <input type="" name="fecha_atraco"> hasta el día <input type="" name="fecha_salida">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
-       <input type="hidden" name="tipo"  value="shipyard"> <input type="hidden" name="nombre_puerto"  value= "<?php echo $name; ?>" >
-       <input type="hidden" name="pid"  value= "<?php echo $pid; ?>"> <br>
+       <input type="hidden" name="tipo"  value="shipyard"> 
+        <?php
+            echo "<input type = 'hidden' name = 'pid' value = $pid />";
+            echo "<input type = 'hidden' name = 'name' value = $name />";
+        ?> <br>
        <input class="button is-link" type="submit" value="Consultar">
     </form>
 </div>
