@@ -14,7 +14,7 @@ $query = "SELECT pasaporte, password FROM usuarios WHERE pasaporte='$pas' AND pa
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $len = $result -> fetchAll();
-if (sizeof($new) != 6{
+if (sizeof($new) != 6){
 echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Nueva Clave Invalida :/ </h3></div>';
 
 
