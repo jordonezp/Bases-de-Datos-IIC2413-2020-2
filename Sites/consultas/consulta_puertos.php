@@ -22,8 +22,8 @@ $name = $_GET["name"];
 
     <form action="consultas_por_puerto/dias_disponibles.php" method="get">
         Muestre todos los días en que todas las instalaciones del puerto <?php echo $name ?>
-        estuvieron libres desde el día  <input type="" name="fecha_inicio">, hasta el día
-        <input type="" name="fecha_termino"> <br>
+        estuvieron libres desde el día  <input type="date" name="fecha_inicio">, hasta el día
+        <input type="date" name="fecha_termino"> <br>
         <?php
             echo "<input type = 'hidden' name = 'pid' value = $pid />";
             echo "<input type = 'hidden' name = 'name' value = $name />";
@@ -38,8 +38,8 @@ $name = $_GET["name"];
 
     <form action="consultas_por_puerto/ocupacion_promedio.php" method="get">
         Muestre el promedio de ocupación de todas las instalaciones del puerto <?php echo $name ?>
-        entre los días <input type="" name="fecha_inicio"> y 
-        <input type="" name="fecha_termino"> <br>
+        entre los días <input type="date" name="fecha_inicio"> y
+        <input type="date" name="fecha_termino"> <br>
         <?php
             echo "<input type = 'hidden' name = 'pid' value = $pid />";
             echo "<input type = 'hidden' name = 'name' value = $name />";
@@ -54,8 +54,10 @@ $name = $_GET["name"];
     <h3 class="subtitle"> Muelle </h3>
 
     <form action="consultas_por_puerto/buscar_disp_muelle.php" method="get">
-        Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun muelle del puerto <?php echo $name ?>
-        el día  <input type="" name="fecha_atraco">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
+        Revise si es que el buque de patente <input type="text" name="patente_barco"> puede atracar
+        en algun muelle del puerto <?php echo $name ?>
+        el día  <input type="date" name="fecha_atraco">. <b>NOTA</b>: De poderse, se generará el
+        permiso para el buque en la fecha indicada.
         <input type="hidden" name="tipo"  value="port"> 
         <?php
             echo "<input type = 'hidden' name = 'pid' value = $pid />";
@@ -69,8 +71,10 @@ $name = $_GET["name"];
     <h3 class="subtitle"> Astillero </h3>
 
     <form action="consultas_por_puerto/buscar_disp_astillero.php" method="get">
-        Revise si es que el buque de patente <input type="" name="patente_barco"> puede atracar en algun astillero del puerto <?php echo $name ?>
-       desde el día  <input type="" name="fecha_atraco"> hasta el día <input type="" name="fecha_salida">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
+        Revise si es que el buque de patente <input type="text" name="patente_barco"> puede atracar
+        en algun astillero del puerto <?php echo $name ?> desde el día  <input type="date"
+                                                                               name="fecha_atraco"> hasta el día <input type="date"
+                                                                                 name="fecha_salida">. <b>NOTA</b>: De poderse, se generará el permiso para el buque en la fecha indicada.
        <input type="hidden" name="tipo"  value="shipyard"> 
         <?php
             echo "<input type = 'hidden' name = 'pid' value = $pid />";
