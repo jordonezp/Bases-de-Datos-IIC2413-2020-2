@@ -14,8 +14,12 @@ $query = "SELECT pasaporte, password FROM usuarios WHERE pasaporte='$pas' AND pa
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $len = $result -> fetchAll();
+if (sizeof($new) != 6{
+echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Nueva Clave Invalida :/ </h3></div>';
 
-if (sizeof($len) > 0){
+
+}
+elseif (sizeof($len) > 0){
 
 echo '<br/><br/><div class="container is-max-desktop"><h3 class="subtitle"> Clave Cambiada correctamente :) </h3></div>';
     $sql = "UPDATE usuarios SET password='$new' WHERE pasaporte='$pas' AND password='$old';";
