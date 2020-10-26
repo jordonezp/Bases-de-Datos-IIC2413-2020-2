@@ -31,3 +31,10 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Clav
 }
 
 ?>
+
+<div class="container is-max-desktop">
+
+<form action="perfil.php" method="get">
+    <input class="button is-link" type="submit" value="Perfil">
+</form>
+</div>
