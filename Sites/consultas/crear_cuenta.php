@@ -25,7 +25,7 @@
 
 
 	$query_all = "SELECT * FROM usuarios;";
-    $result_all = $dbp -> prepare($query_all);
+    $result_all = $dbimp -> prepare($query_all);
 	$result_all -> execute();
 	$all = $result_all -> fetchAll();
     $last = end($all);
