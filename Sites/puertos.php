@@ -11,8 +11,8 @@ if (isset($_POST["submit"])) {
 //    else {
 //        $query = "SELECT * FROM ports WHERE UPPER(name) LIKE '%$nombre%';";
 //    }
-//}
     $query = "SELECT * FROM ports WHERE UPPER(name) LIKE '%$nombre%';";
+}
 
 $result = $dbimp -> prepare($query);
 $result -> execute();
