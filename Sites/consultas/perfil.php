@@ -33,13 +33,17 @@ if (strlen($datos_user[0][0]) != 0){
     
 }
 
-$hola = $_INICIADO;
-echo '111'.$hola.'22';
+
 else {
     $_INICIADO = 0;
     echo '<br/><br/><div class="container is-max-desktop"><h3 class ="subtitle"><strong> Credenciales inválidas </strong></h3></div>';
     echo '<br>';
 }
+
+
+$hola = $_INICIADO;
+echo '111'.$hola.'22';
+
 ?>
 <?php
 
