@@ -28,7 +28,65 @@ Escoja si quiere buscar una Naviera o Puerto.
 
 En esta vista, se presentará una barra de búsqueda que filtrará la lista mostrada.
 
-## (Cómo corregir cada requerimiento..)
+## Procedimientos almacenados
+
+Para todas las consultas de la página de puertos se utilizaron procedimientos almacenados. Algunos de estos llaman a otros procedimientos almacenados, por lo tanto se han incluido todas junto a este README.md.
+
+A continuación se da una breve explicación del funcionamiento de cada uno.
+
+### Días disponibles para cada instalación del puerto:
+
+``` sql
+get_available_days_for_facility_for_port_for_day_range(
+    '$pid', '$fecha_inicio', '$fecha_termino')
+```
+
+Este procedimiento almacenado a su vez llama a
+
+``` sql
+get_permits_for_facility_for_date
+```
+
+### Porcentaje de ocupación promedio en ese intervalo:
+
+``` sql
+get_average_occupancy_per_facility_for_port_for_day_range(
+    '$pid', '$fecha_inicio', '$fecha_termino')
+```
+
+Este procedimiento almacenado a su vez llama a
+
+``` sql
+get_permits_for_facility_for_date
+```
+
+### Buscar si hay disponibilidad en algún astillero:
+
+``` sql
+search_shipyard_permit_availability(
+    '$pid', '$fecha1', '$fecha2', '$patente')
+```
+
+En caso de encontrar disponibilidad, se llama al siguiente procedimiento almacenado para crear un permiso.
+
+``` sql
+insert_shipyard_permit
+```
+
+### Buscar si hay disponibilidad en algún muelle:
+
+``` sql
+search_dock_permit_availability(
+    '$pid', '$fecha', '$patente');
+```
+
+En caso de encontrar disponibilidad, se llama al siguiente procedimiento almacenado para crear un permiso. Notar que la descripción en este caso será '-'.
+
+``` sql
+insert_dock_permit
+```
+
+## Cómo corregir cada requerimiento
 
 ### Cambio de contraseña
 
