@@ -25,7 +25,7 @@ WHERE usuarios.pasaporte = '$pasaporte' AND usuario.password = '$clave';";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $datos_user = $result -> fetchAll();
-echo 'datos user es'.$datos_user.'.';
+echo 'datos user es'.$datos_user[0][0].'.';
 if (strlen($datos_user[0][0]) != 0){
     $_INICIADO = TRUE;
     
@@ -36,9 +36,7 @@ else {
     echo '<br/><br/><div class="container is-max-desktop"><h3 class ="subtitle"><strong> Credenciales inválidas </strong></h3></div>';
     echo '<br>';
 }
-
 ?>
-
 <?php
 
 
