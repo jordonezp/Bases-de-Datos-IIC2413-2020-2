@@ -42,22 +42,11 @@
     }
     elseif (strlen($pass) > 0){
 
-        echo '<br/><br/><div class="container is-max-desktop"><h3 class="subtitle"> Cuenta Creada Correctamente :) </h3></div>';
         $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
         $stmt = $dbimp -> prepare($sql);
         $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
-    }
-    else{
-    echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Error Desconocido </h3></div>';
-    }
 
-    ?>
-    <br>
-    <br>
-
-
-
-<div class="container is-max-desktop">
+        echo '<div class="container is-max-desktop">
     <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
     <p class="subtitle">Bienvenido: <?php echo "$name" ?> !</p>
     <table class="table is-striped is-hoverable">
@@ -75,11 +64,23 @@
                     <td>$edad</td>
                     <td>$sexo</td>
                     <td>$nacio</td>
-                    
+
                 </tr>";
-            
+
         ?>
     </table>
     </div>
-</body>
+</body>';
+    }
+    else{
+    echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Error Desconocido </h3></div>';
+    }
+
+    ?>
+    <br>
+    <br>
+
+
+
+
 <?php include('../templates/footer.html'); ?>
