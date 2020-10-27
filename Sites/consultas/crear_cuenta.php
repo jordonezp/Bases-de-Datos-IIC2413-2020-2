@@ -42,7 +42,6 @@
     }
     elseif (strlen($pass) > 0){
 
-        echo '<br/><br/><div class="container is-max-desktop"><h3 class="subtitle"> Cuenta Creada Correctamente :) </h3></div>';
         $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
         $stmt = $dbimp -> prepare($sql);
         $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
