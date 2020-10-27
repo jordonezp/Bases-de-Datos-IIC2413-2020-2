@@ -219,6 +219,9 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No h
 }else{
 
 //INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
+echo '<div class="container is-max-desktop"> <h4 class="title"><strong>Datos personales</strong></div>';
+echo '<br>';
+
 
 $query = "SELECT * FROM usuarios 
 WHERE usuarios.pasaporte = '$pasaporte';";
