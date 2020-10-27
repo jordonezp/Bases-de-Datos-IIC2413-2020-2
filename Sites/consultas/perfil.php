@@ -130,7 +130,7 @@ elseif(sizeof($jefe) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puerto_jefe = $result -> fetchAll();
-    $puertoj = $puerto_jefe[0];
+    $puertoj = $puerto_jefe[0][0];
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre de puerto:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$puertoj.'</p>';
     echo '<div class="container is-max-desktop"><p>aa'.$puerto_jefe[0].'</p>';
@@ -262,6 +262,6 @@ echo '<div class="container is-max-desktop">
 }
 ?>
 
-
-<?php include('../templates/footer.html'); ?>
-
+<div class="container is-max-desktop">
+    <?php include('../templates/footer.html'); ?>
+</div>
