@@ -38,15 +38,18 @@
     elseif ($nav[0][0] != ""){
     echo'<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Pasaporte Existente </h3></div>';
     }
-    elseif (strlen($pass) > 0 and strlen($pasaporte) and strlen($nombre) and strlen($edad) and strlen($sexo) and strlen($nacio)){
+    elseif (strlen($pass) > 0 and $edad != 0 and strlen($pasaporte) and strlen($nombre) and strlen($edad) and strlen($sexo) and strlen($nacio)){
 
         $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
         $stmt = $dbimp -> prepare($sql);
         $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
 
+        $_SESSION["pasaporte"] = $pasaporte;
+        $_SESSION["clave"] = $pass;
+        echo '<br/><br/>';
         echo '<div class="container is-max-desktop">
     <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
-    <p class="subtitle">Bienvenido: <?php echo "$name" ?> !</p>
+    <p class="subtitle">Bienvenido: '.$nombre.'
     <table class="table is-striped is-hoverable">
         <tr>
             <th>Pasaporte</th>
@@ -55,17 +58,15 @@
             <th>Sexo</th>
             <th>Nacionalidad</th>
         </tr>
-        <?php
-                echo "<tr>
-                    <td>$pasaporte</td>
-                    <td>$nombre</td>
-                    <td>$edad</td>
-                    <td>$sexo</td>
-                    <td>$nacio</td>
+        <tr>
+                    <td>'.$pasaporte.'</td>
+                    <td>'.$nombre.'</td>
+                    <td>'.$edad.'</td>
+                    <td>'.$sexo.'</td>
+                    <td>'.$nacio.'</td>
 
-                </tr>";
 
-        ?>
+
     </table>
     </div>
 </body>';
@@ -80,5 +81,6 @@
 
 
 
-
-<?php include('../templates/footer.html'); ?>
+<div class="container is-max-desktop">
+    <?php include('../templates/footer.html'); ?>
+</div>

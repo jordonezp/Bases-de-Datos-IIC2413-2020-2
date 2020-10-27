@@ -32,34 +32,6 @@ $result = $dbimp -> prepare($query);
 $result -> execute();
 $jefe = $result -> fetchAll();
 
-//INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
-$query = "SELECT * FROM usuarios 
-    WHERE usuarios.pasaporte = '$pasaporte';";
-    $result = $dbp -> prepare($query);
-    $result -> execute();
-    $datos_usuario = $result -> fetchAll();
-    $nombre = $datos_usuario[0][1];
-    $nacionalidad = $datos_usuario[0][3];
-    $edad = $datos_usuario[0][5];
-    $sexo = $datos_usuario[0][6];
-
-echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nombre: </strong></h4><p>'.$nombre.'</p></div>';
-echo '<br>';
-echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Edad: </strong></h4><p>'.$edad.'</p></div>';
-echo '<br>';
-echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Sexo: </strong></h4><p>'.$sexo.'</p></div>';
-echo '<br>';
-echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Pasaporte/RUT: </strong></h4><p>'.$pasaporte.'</p></div>';
-echo '<br>';
-echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>'.$nacionalidad.'</p></div>';
-echo '<br>';
-
-// nombre
-//edad
-//sexo
-//nro de pasaporte
-//nacionalidad
-
 
 //echo $jefe[0][0];
 if (sizeof($capitan) == 1) {
@@ -161,6 +133,7 @@ elseif(sizeof($jefe) == 1) {
     $puertoj = $puerto_jefe[0];
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre de puerto:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$puertoj.'</p>';
+    echo '<div class="container is-max-desktop"><p>aa'.$puerto_jefe[0].'</p>';
     echo '<br/>';
 
     //jefe de qué tipo de instalación:
@@ -245,6 +218,32 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No h
   ;
 
 }else{
+
+//INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
+
+$query = "SELECT * FROM usuarios 
+WHERE usuarios.pasaporte = '$pasaporte';";
+$result = $dbimp -> prepare($query);
+$result -> execute();
+$datos_usuario = $result -> fetchAll();
+$nombre = $datos_usuario[0][1];
+$nacionalidad = $datos_usuario[0][3];
+$edad = $datos_usuario[0][5];
+$sexo = $datos_usuario[0][6];
+
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nombre: </strong></h4><p>'.$nombre.'</p></div>';
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Edad: </strong></h4><p>'.$edad.'</p></div>';
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Sexo: </strong></h4><p>'.$sexo.'</p></div>';
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Pasaporte/RUT: </strong></h4><p>'.$pasaporte.'</p></div>';
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>'.$nacionalidad.'</p></div>';
+echo '<br>';
+
+
 echo '<div class="container is-max-desktop">
     <form align="center" action="./logout.php" method="post">
         <br/><br/>
