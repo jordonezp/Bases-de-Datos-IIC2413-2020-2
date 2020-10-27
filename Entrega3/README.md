@@ -113,3 +113,6 @@ Finalmente, haciendo click en algun puerto lo redirigirá a una vista adonde se 
 
 Para ver todos los perfiles (pasaporte/clave/etc.) hay que dirigirse a la pestaña ([Cargar Cuentas Capitanes/Jefes](http://codd.ing.puc.cl/~grupo81/consultas/load_accounts.php)).
 Lo que hace esta funcion es cargar todos los perfiles de la base de datos, al mismo tiempo recorre todos los capitanes y jefes existentes y revisa si es que estan marcados como usuarios, en caso de no estarlo, se le creara automaticamente un perfil con clave aleatoria.
+
+### Disclaimer 
+Para el inicio de sesión se solicita una clave y contraseña pero no se lograron implementar restricciones para el inicio de sesión. Es decir, se puede ingresar con cualquier contraseña.
