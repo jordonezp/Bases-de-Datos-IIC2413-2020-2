@@ -25,7 +25,9 @@ WHERE usuarios.pasaporte = '$pasaporte' AND usuarios.password = '$clave';";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $datos_user = $result -> fetchAll();
-echo 'datos user es'.$datos_user[0][0].'.';
+$lala = $datos_user[0][1];
+echo 'datos user es'.$lala.'.';
+
 if (strlen($datos_user[0][0]) != 0){
     $_INICIADO = TRUE;
     
