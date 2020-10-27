@@ -2,7 +2,16 @@
 
 <?php
 require('./config/conection.php');
-$query = "SELECT * FROM ports;";
+
+if (isset($_POST["submit"])) {
+    $nombre = strtoupper($_POST["nombre"]);
+    if ($nombre == "") {
+        $query = "SELECT * FROM ports;";
+    }
+    else {
+        $query = "SELECT * FROM ports WHERE UPPER(name) LIKE '%$nombre%';";
+    }
+}
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
@@ -19,12 +28,12 @@ $tabla = $result -> fetchAll();
 
     <!-- Acá va el form para filtrar-->
     <p> Filtrar por nombre</p>
-    </br>
-    </br>
     <form action="puertos.php" method="post">
         <input class="button is-link" type="text" name="nombre" placeholder="Nombre...">
-        <input class="button is-link" type="submit" value="Filtrar">
+        <input class="button is-link" type="submit" value="Filtrar" name="submit">
     </form>
+    </br>
+    </br>
 
 
   <table>
