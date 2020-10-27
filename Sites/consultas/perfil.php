@@ -27,6 +27,7 @@ $result -> execute();
 $datos_usuario = $result -> fetchAll();
 if ($datos_usario[0][0] != ""){
     $sesion_on = TRUE;
+    echo 'Credenciales inválidas';
 }
 
 else {
