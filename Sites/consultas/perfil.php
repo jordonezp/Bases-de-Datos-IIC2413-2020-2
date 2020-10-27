@@ -33,6 +33,27 @@ $result -> execute();
 $jefe = $result -> fetchAll();
 
 //INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
+$query = "SELECT * FROM usuarios 
+    WHERE usuarios.pasaporte = '$pasaporte';";
+    $result = $dbp -> prepare($query);
+    $result -> execute();
+    $datos_usuario = $result -> fetchAll();
+    $nombre = $datos_usuario[0][1];
+    $nacionalidad = $datos_usuario[0][3];
+    $edad = $datos_usuario[0][5];
+    $sexo = $datos_usuario[0][6];
+
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nombre: </strong></h4><p>'.$nombre.'</p></div>';
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Edad: </strong></h4><p>'.$edad.'</p></div>';
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Sexo: </strong></h4><p>'.$sexo.'</p></div>';
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Pasaporte/RUT: </strong></h4><p>'.$pasaporte.'</p></div>';
+echo '<br>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>'.$nacionalidad.'</p></div>';
+echo '<br>';
+
 // nombre
 //edad
 //sexo
@@ -90,7 +111,7 @@ if (sizeof($capitan) == 1) {
     // FALTA!! NO LO HABÍAMOS ANOTADO
     $query = "SELECT pi.fecha, pu.punombre 
             FROM proxitinerario pi, puerto pu 
-            WHERE pi.patente ='DA9671' AND pu.puid=pi.puid 
+            WHERE pi.patente ='$p' AND pu.puid=pi.puid 
             ORDER BY pi.fecha ASC LIMIT 1;";
     $result = $dbp -> prepare($query);
     $result -> execute();
@@ -100,6 +121,7 @@ if (sizeof($capitan) == 1) {
     
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Próximo itinerario:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$i.', '.$i2.'</p>';
+    //echo '<div class="container is-max-desktop"><p>'.$itinerario'</p>';
     echo '<br>';
 
 
@@ -136,9 +158,9 @@ elseif(sizeof($jefe) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puerto_jefe = $result -> fetchAll();
-    $p = $puerto_jefe[0][0];
+    $puertoj = $puerto_jefe[0];
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre de puerto:</strong></h4>';
-    echo '<div class="container is-max-desktop"><p>'.$p.'</p>';
+    echo '<div class="container is-max-desktop"><p>'.$puertoj.'</p>';
     echo '<br/>';
 
     //jefe de qué tipo de instalación:
@@ -171,7 +193,6 @@ else{
     $tipo_usuario = "otro";
 }
 ?>
-
 
 <?php
 if ($pasaporte == ""){

@@ -18,14 +18,14 @@
     $query = "SELECT usuarios.pasaporte
                 FROM usuarios
                 WHERE '$pasaporte' = usuarios.pasaporte;";
-    $result = $dbp -> prepare($query);
+    $result = $dbimp -> prepare($query);
 	$result -> execute();
 	$nav = $result -> fetchAll();
 
 
 
 	$query_all = "SELECT * FROM usuarios;";
-    $result_all = $dbp -> prepare($query_all);
+    $result_all = $dbimp -> prepare($query_all);
 	$result_all -> execute();
 	$all = $result_all -> fetchAll();
     $last = end($all);
@@ -33,28 +33,20 @@
     echo "El id es:";
     echo $uid;
     $edad2 = (int)$edad;
-    
-    $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
-    $stmt = $dbimp -> prepare($sql);
-    $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
+    if (strlen($pass) != 6){
+    echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Clave Invalida :/ </h3></div>';
 
-    ?>
-    <br>
-    <br>
+    }
+    elseif ($nav[0][0] != ""){
+    echo'<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Pasaporte Existente </h3></div>';
+    }
+    elseif (strlen($pass) > 0){
 
-<?php
+        $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
+        $stmt = $dbimp -> prepare($sql);
+        $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
 
-if (sizeof($nav) == 1) {
-    echo "Existe";
-
-} elseif (sizeof($nav) == 0) {
-    echo "No existe";
-} else {
-    echo "Hay 2 ????";
-}
-?>
-
-<div class="container is-max-desktop">
+        echo '<div class="container is-max-desktop">
     <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
     <p class="subtitle">Bienvenido: <?php echo "$name" ?> !</p>
     <table class="table is-striped is-hoverable">
@@ -72,11 +64,23 @@ if (sizeof($nav) == 1) {
                     <td>$edad</td>
                     <td>$sexo</td>
                     <td>$nacio</td>
-                    
+
                 </tr>";
-            
+
         ?>
     </table>
     </div>
-</body>
+</body>';
+    }
+    else{
+    echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Error Desconocido </h3></div>';
+    }
+
+    ?>
+    <br>
+    <br>
+
+
+
+
 <?php include('../templates/footer.html'); ?>
