@@ -29,4 +29,7 @@
         </form>
   </div>
 
+<div class="container is-max-desktop">
+    <?php include('./templates/footer.html'); ?>
+</div>
 
