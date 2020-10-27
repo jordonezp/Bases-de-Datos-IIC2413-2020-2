@@ -32,7 +32,8 @@ if ($datos_usario[0][0] != ""){
 
 else {
     $sesion_on = FALSE;
-    echo '<div class="container is-max-desktop"><strong> Credenciales inválidas></strong></div>';
+    echo '<div class="container is-max-desktop"><h3 class ="subtitle"><strong> Credenciales inválidas </strong></h3></div>';
+    echo '<br>';
 }
 
 ?>
@@ -72,7 +73,8 @@ if (strlen($datos[0][0]) > 0){
 }
 
 else{
-echo 'El pasaporte ingresado no existe en la base de datos, crea una cuenta.';
+echo '<div class="container is-max-desktop">El pasaporte ingresado no existe en la base de datos, crea una cuenta.</div>';
+echo '<br>';
 echo
     '<div class="container is-max-desktop">
     <h1 class="title">Creador de cuenta</h1>
