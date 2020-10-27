@@ -247,7 +247,13 @@ echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Sexo: 
 echo '<br>';
 echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Pasaporte/RUT: </strong></h4><p>'.$pasaporte.'</p></div>';
 echo '<br>';
-echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>'.$nacionalidad.'</p></div>';
+
+if (strlen($nacionalidad) = "") {
+    echo 'Nacionalidad no reportada'    
+}
+else{
+    echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>'.$nacionalidad.'</p></div>';
+}
 echo '<br>';
 
 
