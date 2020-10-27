@@ -28,7 +28,7 @@ $datos_user = $result -> fetchAll();
 $lala = $datos_user[0][1];
 echo 'datos user es'.$lala.'.';
 
-if (strlen($datos_user[0][0]) != 0){
+if ($datos_user[0][0] != ""){
     $_INICIADO = 1;
     
 }
