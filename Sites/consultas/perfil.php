@@ -27,38 +27,56 @@ $result -> execute();
 $datos_usuario = $result -> fetchAll();
 if ($datos_usario[0][0] != ""){
     $sesion_on = TRUE;
-    echo 'Credenciales inválidas';
+    
 }
 
 else {
     $sesion_on = FALSE;
+    echo '<div class="container is-max-desktop"><strong> Credenciales inválidas></strong></div>';
 }
 
 ?>
 
 <?php
 
-if ($sesion_on == FALSE){
-echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No hay sesion iniciada</h3></div>
-<br/><br/>
-<div class="container is-max-desktop">
-  <h1 class="title">Login</h1>
-    <h2 class="subtitle">Ingresa a tu cuenta</h2>
-        <form align="center" action="perfil.php" method="post">
-            Pasaporte:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
-            <br/><br/>
-            Contraseña:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="clave">
-            <br/><br/>
-            <input class="button is-link" type="submit" value="Ingresar">
-        </form>
-  </div>
-  <br/><br/>
 
-  <div class="container is-max-desktop">
-  <h1 class="title">Creador de cuenta</h1>
-  <p class="subtitle">Ingresa tu informacion.</p>
+
+//no se inicio la sesion por clave o pasaporte
+if ($sesion_on == FALSE){
+
+//existe pasaporte pero clave fallo
+$query = "SELECT * FROM usuarios 
+WHERE usuarios.pasaporte = '$pasaporte';";
+$result = $dbimp -> prepare($query);
+$result -> execute();
+$datos = $result -> fetchAll();
+
+if (strlen($datos[0][0]) > 0){
+    echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Intentalo nuevamente</h3></div>
+    <br/><br/>
+
+    <div class="container is-max-desktop">
+    <h1 class="title">Login</h1>
+        <h2 class="subtitle">Ingresa a tu cuenta</h2>
+            <form align="center" action="perfil.php" method="post">
+                Pasaporte:
+                <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
+                <br/><br/>
+                Contraseña:
+                <input class="input is-rounded" style="width: 33%;" type="text" name="clave">
+                <br/><br/>
+                <input class="button is-link" type="submit" value="Ingresar">
+            </form>
+    </div>
+    <br/><br/>';
+}
+
+else{
+echo 'El pasaporte ingresado no existe en la base de datos, crea una cuenta.' 
+echo
+    '<div class="container is-max-desktop">
+    <h1 class="title">Creador de cuenta</h1>
+    <p class="subtitle">Ingresa tu informacion.</p>
         <form align="center" action="crear_cuenta.php" method="post">
             Pasaporte:
             <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
@@ -80,10 +98,9 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No h
             <br/><br/>
             <input class="button is-link" type="submit" value="Crear">
         </form>
-  </div>
-  '
+    </div>';
 
-
+}
 
   ;
 
