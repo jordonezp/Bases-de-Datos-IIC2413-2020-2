@@ -57,7 +57,7 @@ if (sizeof($capitan) == 1) {
     $patente_capitan = $result -> fetchAll();
     $p = $patente_capitan[0][0];
     $pat = "Patente del Buque:";
-    echo '<div class="container is-max-desktop"> <h4 class="<subtitle"><strong>'.$pat.'</strong></h4><p>'.$p.'</p></div>';
+    echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>'.$pat.'</strong></h4><p>'.$p.'</p></div>';
     echo '<br>';
 
     //nombre de buque
@@ -88,7 +88,17 @@ if (sizeof($capitan) == 1) {
 
     //próximo itinerario (con fecha)
     // FALTA!! NO LO HABÍAMOS ANOTADO
-
+    $query = "SELECT pi.fecha, pi.puid, pu.punombre 
+            FROM proxitinerario pi, puerto pu 
+            WHERE pi.patente = '.$p.' AND pu.puid=pi.puid 
+            ORDER BY pi.fecha ASC LIMIT 1;";
+    $result = $dbp -> prepare($query);
+    $result -> execute();
+    $itinerario = $result -> fetchAll();
+    $i = $itinerario_capitan[0][0];
+    echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Proximo itinerario:</strong></h4>';
+    echo '<div class="container is-max-desktop"><p>'.$i.'</p>';
+    echo '<br>';
 
 
     //ultimos 5 lugares en que ha estado
