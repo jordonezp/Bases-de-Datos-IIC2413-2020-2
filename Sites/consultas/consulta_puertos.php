@@ -18,7 +18,7 @@ $name = $_GET["name"];
 <div class="container is-max-desktop">
     <h1 class="title"> Puerto <?php echo $name ?></h1>
 
-    <h2>Consulte la ocupación de las instalaciones por fecha</h2>
+    <h2 class="subtitle"> Consulte la ocupación de las instalaciones por fecha</h2>
 
     <form action="consultas_por_puerto/dias_disponibles.php" method="get">
         Muestre todos los días en que todas las instalaciones del puerto <?php echo $name ?>
@@ -34,7 +34,7 @@ $name = $_GET["name"];
 <br/><br/><br/>
 
 <div class="container is-max-desktop">
-    <h2>Consulte la ocupación de las instalaciones por fecha</h2>
+    <h2 class="subtitle"> Consulte la ocupación de las instalaciones por fecha</h2>
 
     <form action="consultas_por_puerto/ocupacion_promedio.php" method="get">
         Muestre el promedio de ocupación de todas las instalaciones del puerto <?php echo $name ?>

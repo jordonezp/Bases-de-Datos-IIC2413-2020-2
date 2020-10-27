@@ -16,6 +16,17 @@ $tabla = $result -> fetchAll();
   <h1 class="title">Puertos</h1>
     <h2 class="subtitle">Acá podrás revisar los puertos existentes. Haciendo <i>click</i> sobre un puerto podrás
     realizar consultas sobre este puerto</h2>
+
+    <!-- Acá va el form para filtrar-->
+    <p> Filtrar por nombre</p>
+    </br>
+    </br>
+    <form action="puertos.php" method="post">
+        <input class="button is-link" type="text" name="nombre" placeholder="Nombre...">
+        <input class="button is-link" type="submit" value="Filtrar">
+    </form>
+
+
   <table>
     <tr>
         <th>Nombre</th>

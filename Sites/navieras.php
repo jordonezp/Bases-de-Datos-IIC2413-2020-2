@@ -16,6 +16,7 @@ $tabla = $result -> fetchAll();
   <h1 class="title">Navieras</h1>
     <h2 class="subtitle">Acá podrás revisar las navieras existentes. Haciendo <i>click</i> sobre una naviera podrás
     acceder a los barcos de esta.</h2>
+
   <table>
     <tr>
         <th>Nombre</th>
