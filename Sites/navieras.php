@@ -7,7 +7,7 @@ if (isset($_POST["submit"])) {
     $query = "SELECT * FROM naviera WHERE UPPER(nnombre) LIKE '%$nombre%';";
 }
 else {
-    $query = "SELECT * FROM naviera;";
+    $query = "SELECT * FROM naviera   ;";
 }
 $result = $dbp -> prepare($query);
 $result -> execute();
