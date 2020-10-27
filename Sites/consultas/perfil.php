@@ -133,6 +133,7 @@ elseif(sizeof($jefe) == 1) {
     $puertoj = $puerto_jefe[0];
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre de puerto:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$puertoj.'</p>';
+    echo '<div class="container is-max-desktop"><p>aa'.$puerto_jefe.'</p>';
     echo '<br/>';
 
     //jefe de qué tipo de instalación:
@@ -218,7 +219,8 @@ echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No h
 
 }else{
 
-    //INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
+//INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
+
 $query = "SELECT * FROM usuarios 
 WHERE usuarios.pasaporte = '$pasaporte';";
 $result = $dbimp -> prepare($query);
