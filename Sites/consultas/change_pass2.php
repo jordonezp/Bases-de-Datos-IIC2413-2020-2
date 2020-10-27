@@ -17,7 +17,6 @@ $len = $result -> fetchAll();
 if (strlen($new) != 6){
 echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Nueva Clave Invalida :/ </h3></div>';
 
-
 }
 elseif (sizeof($len) > 0){
 
