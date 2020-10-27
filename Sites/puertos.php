@@ -5,15 +5,11 @@ require('./config/conection.php');
 
 if (isset($_POST["submit"])) {
     $nombre = strtoupper($_POST["nombre"]);
-//    if ($nombre == "") {
-//        $query = "SELECT * FROM ports;";
-//    }
-//    else {
-//        $query = "SELECT * FROM ports WHERE UPPER(name) LIKE '%$nombre%';";
-//    }
     $query = "SELECT * FROM ports WHERE UPPER(name) LIKE '%$nombre%';";
 }
-
+else {
+    $query = "SELECT * FROM ports;";
+}
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
