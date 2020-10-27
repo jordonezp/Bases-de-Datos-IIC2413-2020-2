@@ -2,7 +2,14 @@
 
 <?php
 require('./config/conection.php');
-$query = "SELECT * FROM ports;";
+
+if (isset($_POST["submit"])) {
+    $nombre = strtoupper($_POST["nombre"]);
+    $query = "SELECT * FROM ports WHERE UPPER(name) LIKE '%$nombre%';";
+}
+else {
+    $query = "SELECT * FROM ports;";
+}
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $tabla = $result -> fetchAll();
@@ -16,6 +23,17 @@ $tabla = $result -> fetchAll();
   <h1 class="title">Puertos</h1>
     <h2 class="subtitle">Acá podrás revisar los puertos existentes. Haciendo <i>click</i> sobre un puerto podrás
     realizar consultas sobre este puerto</h2>
+
+    <!-- Acá va el form para filtrar-->
+    <p> Filtrar por nombre</p>
+    <form action="puertos.php" method="post">
+        <input class="button is-link" type="text" name="nombre" placeholder="Nombre...">
+        <input class="button is-link" type="submit" value="Filtrar" name="submit">
+    </form>
+    </br>
+    </br>
+
+
   <table>
     <tr>
         <th>Nombre</th>

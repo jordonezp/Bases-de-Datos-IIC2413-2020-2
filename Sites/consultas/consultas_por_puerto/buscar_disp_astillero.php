@@ -25,13 +25,13 @@ $table = $result -> fetchAll();
 
     echo "
     <div class='container is-max-desktop'>
-        <h2> Consulta de astilleros disponibles en el puerto $name para la fecha $fecha. </h2>
+        <h2 class='subtitle'> Consulta de astilleros disponibles en el puerto $name para la fecha $fecha. </h2>
     ";
     $fid_disp = $table[0][0];
     if ($fid_disp < 0) {
-        echo "<h3> No hay instalación disponible. </h3>";
+        echo "<h3> <b> No hay instalación disponible. </b> </h3>";
     } else {
-        echo "<h3> La instalación disponible es: $fid_disp </h3>";
+        echo "<h3> <b> La instalación disponible es: $fid_disp </b> </h3>";
     }
     echo "</div>";
 

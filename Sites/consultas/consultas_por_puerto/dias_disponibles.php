@@ -29,7 +29,7 @@ $tabla = $result -> fetchAll();
     // echo "<h2> Días disponibles en rango:  </h2>";
     echo "
     <div class='container is-max-desktop'>
-        <h2> Disponibilidad para el puerto '$name' entre las fechas '$fecha_inicio' y '$fecha_termino' </h2>
+        <h2 class='subtitle'> Disponibilidad para el puerto '$name' entre las fechas '$fecha_inicio' y '$fecha_termino' </h2>
         <table class='table'>
             <thead>
                 <tr>
