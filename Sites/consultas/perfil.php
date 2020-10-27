@@ -21,7 +21,7 @@ $clave = $_SESSION["clave"];
 }
 
 $query = "SELECT * FROM usuarios 
-WHERE usuarios.pasaporte = '$pasaporte' AND usuario.password = '$clave';";
+WHERE usuarios.pasaporte = '$pasaporte' AND usuarios.password = '$clave';";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $datos_user = $result -> fetchAll();
