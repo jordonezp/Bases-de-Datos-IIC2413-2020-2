@@ -46,7 +46,7 @@ else {
 
 
 //no se inicio la sesion por clave o pasaporte
-if ($_INICIADO == FALSE){
+if ($_INICIADO == 0){
 
     //existe pasaporte pero clave fallo
     $query = "SELECT * FROM usuarios 
@@ -83,7 +83,7 @@ $datos = $result -> fetchAll();
 
 if (strlen($datos[0][0]) > 0){
     echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Intentalo nuevamente</h3></div>
-    <br/><br/>
+    <br/><br/>';
 
     //no tira nada de vuelta ala query de psarporte
     elseif (strlen($datos[0][0]) == 0){
@@ -119,7 +119,7 @@ if (strlen($datos[0][0]) > 0){
     }
 }
 
-elseif ($_INICIADO == TRUE){
+elseif ($_INICIADO == 1){
 
     //INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
     echo '<div class="container is-max-desktop"> <h4 class="title"><strong>Datos personales</strong></div>';
