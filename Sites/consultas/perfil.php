@@ -88,7 +88,7 @@ $datos = $result -> fetchAll();
 if (strlen($datos[0][0]) > 0){
     echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Intentalo nuevamente</h3></div>
     <br/><br/>';
-
+}
     //no tira nada de vuelta ala query de psarporte
     elseif (strlen($datos[0][0]) == 0){
     echo '<div class="container is-max-desktop">El pasaporte ingresado no existe en la base de datos, crea una cuenta.</div>';
