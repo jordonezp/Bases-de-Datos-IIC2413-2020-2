@@ -72,7 +72,7 @@ if (strlen($datos[0][0]) > 0){
 }
 
 else{
-echo 'El pasaporte ingresado no existe en la base de datos, crea una cuenta.' 
+echo 'El pasaporte ingresado no existe en la base de datos, crea una cuenta.';
 echo
     '<div class="container is-max-desktop">
     <h1 class="title">Creador de cuenta</h1>
