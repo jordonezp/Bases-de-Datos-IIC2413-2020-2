@@ -35,3 +35,7 @@
             <input class="button is-link" type="submit" value="Crear">
         </form>
   </div>
+
+ <div class="container is-max-desktop">
+    <?php include('./templates/footer.html'); ?>
+</div>
