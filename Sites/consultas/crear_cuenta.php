@@ -44,6 +44,8 @@
         $stmt = $dbimp -> prepare($sql);
         $stmt -> execute([$uid, $nombre, $pasaporte, $nacio, $pass, $edad2, $sexo]);
 
+        $_SESSION["pasaporte"] = $pasaporte;
+        $_SESSION["clave"] = $pass;
         echo '<div class="container is-max-desktop">
     <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
     <p class="subtitle">Bienvenido: $name
