@@ -32,7 +32,7 @@ if ($datos_usario[0][0] != ""){
 
 else {
     $sesion_on = FALSE;
-    echo '<div class="container is-max-desktop"><h3 class ="subtitle"><strong> Credenciales inválidas </strong></h3></div>';
+    echo '<br/><br/><div class="container is-max-desktop"><h3 class ="subtitle"><strong> Credenciales inválidas </strong></h3></div>';
     echo '<br>';
 }
 
