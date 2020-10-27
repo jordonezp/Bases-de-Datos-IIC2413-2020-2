@@ -26,7 +26,7 @@ $tabla = $result -> fetchAll();
     <!-- Acá va el form para filtrar-->
     <p> Filtrar por nombre</p>
     <form action="navieras.php" method="post">
-        <input class="button is-link" type="text" name="nombre" placeholder="Nombre...">
+        <input class="input is-rounded" type="text" name="nombre" placeholder="Nombre...">
         <input class="button is-link" type="submit" value="Filtrar" name="submit">
     </form>
     </br>
