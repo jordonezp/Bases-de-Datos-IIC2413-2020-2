@@ -248,7 +248,7 @@ echo '<br>';
 echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Pasaporte/RUT: </strong></h4><p>'.$pasaporte.'</p></div>';
 echo '<br>';
 
-if (strlen($nacionalidad) = 0) {
+if (strlen($nacionalidad) == 0) {
     echo 'Nacionalidad no reportada';
 }
 else{
