@@ -7,7 +7,7 @@ if (isset($_POST["submit"])) {
     $query = "SELECT * FROM naviera WHERE UPPER(nnombre) LIKE '%$nombre%';";
 }
 else {
-    $query = "SELECT * FROM naviera;";
+    $query = "SELECT * FROM naviera   ;";
 }
 $result = $dbp -> prepare($query);
 $result -> execute();
@@ -26,7 +26,7 @@ $tabla = $result -> fetchAll();
     <!-- Acá va el form para filtrar-->
     <p> Filtrar por nombre</p>
     <form action="navieras.php" method="post">
-        <input class="button is-link" type="text" name="nombre" placeholder="Nombre...">
+        <input class="input is-rounded" type="text" name="nombre" placeholder="Nombre...">
         <input class="button is-link" type="submit" value="Filtrar" name="submit">
     </form>
     </br>
