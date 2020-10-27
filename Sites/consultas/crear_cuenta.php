@@ -46,9 +46,10 @@
 
         $_SESSION["pasaporte"] = $pasaporte;
         $_SESSION["clave"] = $pass;
+        echo '<br/><br/>'
         echo '<div class="container is-max-desktop">
     <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
-    <p class="subtitle">Bienvenido: $name
+    <p class="subtitle">Bienvenido: $nombre
     <table class="table is-striped is-hoverable">
         <tr>
             <th>Pasaporte</th>
@@ -58,11 +59,11 @@
             <th>Nacionalidad</th>
         </tr>
         <tr>
-                    <td>"$pasaporte"</td>
-                    <td>"$nombre"</td>
-                    <td>"$edad"</td>
-                    <td>"$sexo"</td>
-                    <td>"$nacio"</td>
+                    <td>$pasaporte</td>
+                    <td>$nombre</td>
+                    <td>$edad</td>
+                    <td>$sexo</td>
+                    <td>$nacio</td>
 
 
 
