@@ -16,14 +16,28 @@ $_SESSION["pasaporte"] = $_POST["pasaporte"];
 $_SESSION["pass"] = $_POST["clave"];
 $pasaporte = $_SESSION["pasaporte"];
 $clave = $_SESSION["clave"];
+
+
 }
 
+$query = "SELECT * FROM usuarios 
+WHERE usuarios.pasaporte = '$pasaporte' AND usuario.password = '$clave';";
+$result = $dbimp -> prepare($query);
+$result -> execute();
+$datos_usuario = $result -> fetchAll();
+if ($datos_usario[0][0] != ""){
+    $sesion_on = TRUE;
+}
 
+else {
+    $sesion_on = FALSE;
+}
 
 ?>
 
 <?php
-if ($pasaporte == ""){
+
+if ($sesion_on == FALSE){
 echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No hay sesion iniciada</h3></div>
 <br/><br/>
 <div class="container is-max-desktop">
@@ -223,10 +237,6 @@ elseif(sizeof($jefe) == 1) {
 else{
     $tipo_usuario = "otro";
 }
-
-
-
-
 
 $query = "SELECT * FROM usuarios 
 WHERE usuarios.pasaporte = '$pasaporte';";
