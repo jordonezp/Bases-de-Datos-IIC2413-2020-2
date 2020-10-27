@@ -30,8 +30,6 @@
 	$all = $result_all -> fetchAll();
     $last = end($all);
     $uid = (int)$last[0] + 1;
-    echo "El id es:";
-    echo $uid;
     $edad2 = (int)$edad;
     if (strlen($pass) != 6){
     echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Clave Invalida :/ </h3></div>';
@@ -40,7 +38,7 @@
     elseif ($nav[0][0] != ""){
     echo'<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Pasaporte Existente </h3></div>';
     }
-    elseif (strlen($pass) > 0){
+    elseif (strlen($pass) > 0 and strlen($pasaporte) and strlen($nombre) and strlen($edad) and strlen($sexo) and strlen($nacio)){
 
         $sql = "INSERT INTO usuarios(uid, nombre, pasaporte, nacionalidad, password, edad, sexo) VALUES (?,?,?,?,?,?,?)";
         $stmt = $dbimp -> prepare($sql);
@@ -73,7 +71,7 @@
 </body>';
     }
     else{
-    echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Error Desconocido </h3></div>';
+    echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Falto algun dato!! :/</h3></div>';
     }
 
     ?>
