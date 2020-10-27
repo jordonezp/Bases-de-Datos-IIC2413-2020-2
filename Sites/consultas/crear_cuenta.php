@@ -46,7 +46,7 @@
 
         echo '<div class="container is-max-desktop">
     <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
-    <p class="subtitle">Bienvenido: "$name"
+    <p class="subtitle">Bienvenido: $name
     <table class="table is-striped is-hoverable">
         <tr>
             <th>Pasaporte</th>
