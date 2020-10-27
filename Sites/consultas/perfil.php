@@ -97,6 +97,7 @@ if (sizeof($capitan) == 1) {
     $itinerario = $result -> fetchAll();
     $i = $itinerario_capitan[0][0];
     $i2 = $itinerario_capitan[0][1];
+    echo $itinerario;
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Próximo itinerario:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$i.', '.$i2.'</p>';
     echo '<br>';
