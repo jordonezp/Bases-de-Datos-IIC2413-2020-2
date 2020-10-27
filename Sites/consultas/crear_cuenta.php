@@ -49,7 +49,7 @@
         echo '<br/><br/>';
         echo '<div class="container is-max-desktop">
     <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
-    <p class="subtitle">Bienvenido: $nombre
+    <p class="subtitle">Bienvenido: '.$nombre.'
     <table class="table is-striped is-hoverable">
         <tr>
             <th>Pasaporte</th>
@@ -59,11 +59,11 @@
             <th>Nacionalidad</th>
         </tr>
         <tr>
-                    <td>$pasaporte</td>
-                    <td>$nombre</td>
-                    <td>$edad</td>
-                    <td>$sexo</td>
-                    <td>$nacio</td>
+                    <td>'.$pasaporte.'</td>
+                    <td>'.$nombre.'</td>
+                    <td>'.$edad.'</td>
+                    <td>'.$sexo.'</td>
+                    <td>'.$nacio.'</td>
 
 
 
@@ -81,5 +81,6 @@
 
 
 
-
-<?php include('../templates/footer.html'); ?>
+<div class="container is-max-desktop">
+    <?php include('../templates/footer.html'); ?>
+</div>
