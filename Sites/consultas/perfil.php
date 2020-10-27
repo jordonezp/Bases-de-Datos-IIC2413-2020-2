@@ -249,7 +249,7 @@ echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Pasapo
 echo '<br>';
 
 if (strlen($nacionalidad) == 0) {
-    echo 'Nacionalidad no reportada';
+    echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>Nacionalidad no reportada</p></div>';
 }
 else{
     echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>'.$nacionalidad.'</p></div>';
