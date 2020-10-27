@@ -24,14 +24,15 @@ $query = "SELECT * FROM usuarios
 WHERE usuarios.pasaporte = '$pasaporte' AND usuario.password = '$clave';";
 $result = $dbimp -> prepare($query);
 $result -> execute();
-$datos_usuario = $result -> fetchAll();
-if ($datos_usario[0][0] != ""){
-    $sesion_on = TRUE;
+$datos_user = $result -> fetchAll();
+echo 'datos user es'.$datos_user.;
+if (strlen($datos_user[0][0]) != 0){
+    $_INICIADO = TRUE;
     
 }
 
 else {
-    $sesion_on = FALSE;
+    $_INICIADO = FALSE;
     echo '<br/><br/><div class="container is-max-desktop"><h3 class ="subtitle"><strong> Credenciales inválidas </strong></h3></div>';
     echo '<br>';
 }
@@ -43,7 +44,7 @@ else {
 
 
 //no se inicio la sesion por clave o pasaporte
-if ($sesion_on == FALSE){
+if ($_INICIADO == FALSE){
 
 //existe pasaporte pero clave fallo
 $query = "SELECT * FROM usuarios 
@@ -106,7 +107,7 @@ echo
 }
 }
 
-elseif ($sesion_on == TRUE){
+elseif ($_INICIADO == TRUE){
 
     //INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
     echo '<div class="container is-max-desktop"> <h4 class="title"><strong>Datos personales</strong></div>';
