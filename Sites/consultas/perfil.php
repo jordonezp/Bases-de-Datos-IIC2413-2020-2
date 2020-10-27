@@ -90,7 +90,7 @@ if (sizeof($capitan) == 1) {
     // FALTA!! NO LO HABÍAMOS ANOTADO
     $query = "SELECT pi.fecha, pu.punombre 
             FROM proxitinerario pi, puerto pu 
-            WHERE pi.patente ='DA9671' AND pu.puid=pi.puid 
+            WHERE pi.patente ='$p' AND pu.puid=pi.puid 
             ORDER BY pi.fecha ASC LIMIT 1;";
     $result = $dbp -> prepare($query);
     $result -> execute();
@@ -100,6 +100,7 @@ if (sizeof($capitan) == 1) {
     
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Próximo itinerario:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$i.', '.$i2.'</p>';
+    //echo '<div class="container is-max-desktop"><p>'.$itinerario'</p>';
     echo '<br>';
 
 
@@ -136,9 +137,9 @@ elseif(sizeof($jefe) == 1) {
     $result = $dbp -> prepare($query);
     $result -> execute();
     $puerto_jefe = $result -> fetchAll();
-    $p = $puerto_jefe[0][0];
+    $puertoj = $puerto_jefe[0];
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre de puerto:</strong></h4>';
-    echo '<div class="container is-max-desktop"><p>'.$p.'</p>';
+    echo '<div class="container is-max-desktop"><p>'.$puertoj.'</p>';
     echo '<br/>';
 
     //jefe de qué tipo de instalación:
