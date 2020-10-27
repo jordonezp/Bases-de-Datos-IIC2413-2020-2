@@ -43,6 +43,7 @@ $query = "SELECT * FROM usuarios
     $edad = $datos_usuario[0][5];
     $sexo = $datos_usuario[0][6];
 
+echo '<br>';
 echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nombre: </strong></h4><p>'.$nombre.'</p></div>';
 echo '<br>';
 echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Edad: </strong></h4><p>'.$edad.'</p></div>';
