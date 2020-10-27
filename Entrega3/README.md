@@ -116,3 +116,5 @@ Lo que hace esta funcion es cargar todos los perfiles de la base de datos, al mi
 
 ### Disclaimer 
 Para el inicio de sesión se solicita una clave y contraseña pero no se lograron implementar restricciones para el inicio de sesión. Es decir, se puede ingresar con cualquier contraseña.
+
+Tuvimos problemas con los ultimos commits, por lo que tuvimos que volver a un comit anterior (Datos Personales 19 - 4418881f27bfbbaada6f2cfdbaeb71b4c0709106)
