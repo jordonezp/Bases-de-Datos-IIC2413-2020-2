@@ -262,6 +262,6 @@ echo '<div class="container is-max-desktop">
 }
 ?>
 
-
-<?php include('../templates/footer.html'); ?>
-
+<div class="container is-max-desktop">
+    <?php include('../templates/footer.html'); ?>
+</div>
