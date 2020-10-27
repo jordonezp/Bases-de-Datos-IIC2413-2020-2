@@ -106,7 +106,7 @@ echo
 }
 }
 
-elseif (sesion_on == TRUE){
+elseif ($sesion_on == TRUE){
 
     //INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
     echo '<div class="container is-max-desktop"> <h4 class="title"><strong>Datos personales</strong></div>';
