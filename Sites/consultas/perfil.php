@@ -52,7 +52,7 @@ WHERE usuarios.pasaporte = '$pasaporte';";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $datos = $result -> fetchAll();
-
+}
 if (strlen($datos[0][0]) > 0){
     echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">Intentalo nuevamente</h3></div>
     <br/><br/>
