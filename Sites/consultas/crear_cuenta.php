@@ -46,7 +46,7 @@
 
         $_SESSION["pasaporte"] = $pasaporte;
         $_SESSION["clave"] = $pass;
-        echo '<br/><br/>'
+        echo '<br/><br/>';
         echo '<div class="container is-max-desktop">
     <h1 class="title">Cuenta Creada Satisfactoriamente ! :D</h1>
     <p class="subtitle">Bienvenido: $nombre
