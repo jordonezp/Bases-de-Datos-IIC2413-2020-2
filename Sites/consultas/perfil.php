@@ -35,7 +35,7 @@ $jefe = $result -> fetchAll();
 //INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
 $query = "SELECT * FROM usuarios 
     WHERE uid = '$pasaporte';";
-    $result = $dbimp -> prepare($query);
+    $result = $dbp -> prepare($query);
     $result -> execute();
     $datos_usuario = $result -> fetchAll();
     $nombre = $datos_usuario[0][1];
@@ -47,7 +47,7 @@ echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nombre
 echo '<br>'
 echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Edad: </strong></h4><p>'.$edad.'</p></div>';
 echo '<br>';
-echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Sexo: /RUT</strong></h4><p>'.$sexo.'</p></div>';
+echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Sexo: </strong></h4><p>'.$sexo.'</p></div>';
 echo '<br>';
 echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Pasaporte/RUT: </strong></h4><p>'.$pasaporte.'</p></div>';
 echo '<br>';
