@@ -127,13 +127,12 @@ elseif(sizeof($jefe) == 1) {
     $query = "SELECT ports.name FROM ports, employees e, facilities f
                 WHERE f.boss_rut = '$pasaporte' AND f.pid = ports.pid 
                 GROUP BY ports.name;";
-    $result = $dbp -> prepare($query);
+    $result = $dbimp -> prepare($query);
     $result -> execute();
     $puerto_jefe = $result -> fetchAll();
     $puertoj = $puerto_jefe[0][0];
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre de puerto:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$puertoj.'</p>';
-    echo '<div class="container is-max-desktop"><p>aa'.$puerto_jefe[0].'</p>';
     echo '<br/>';
 
     //jefe de qué tipo de instalación:
