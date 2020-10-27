@@ -85,19 +85,19 @@ if (sizeof($capitan) == 1) {
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Naviera:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$n.'</p>';
     echo '<br>';
-
+    echo '<br>';
     //próximo itinerario (con fecha)
     // FALTA!! NO LO HABÍAMOS ANOTADO
-    $query = "SELECT pi.fecha, pi.puid, pu.punombre 
+    $query = "SELECT pi.fecha, pu.punombre 
             FROM proxitinerario pi, puerto pu 
             WHERE pi.patente ='DA9671' AND pu.puid=pi.puid 
             ORDER BY pi.fecha ASC LIMIT 1;";
     $result = $dbp -> prepare($query);
     $result -> execute();
     $itinerario = $result -> fetchAll();
-    $i = $itinerario_capitan[0][0];
-    $i2 = $itinerario_capitan[0][1];
-    echo $itinerario;
+    $i = $itinerario[0][0];
+    $i2 = $itinerario[0][1];
+    
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Próximo itinerario:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$i.', '.$i2.'</p>';
     echo '<br>';
