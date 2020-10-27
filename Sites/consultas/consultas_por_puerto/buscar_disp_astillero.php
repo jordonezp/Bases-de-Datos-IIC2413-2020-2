@@ -7,11 +7,12 @@ require('./../../config/conection.php');
 
 $pid = $_GET["pid"];
 $name = $_GET["name"];
-$fecha = $_GET["fecha_atraco"];
+$fecha1 = $_GET["fecha_atraco"];
+$fecha2 = $_GET["fecha_salida"];
 $patente = $_GET["patente_barco"];
 
-$query = "SELECT * FROM search_dock_permit_availability(
-    '$pid', '$fecha', '$patente');";
+$query = "SELECT * FROM search_shipyard_permit_availability(
+    '$pid', '$fecha1', '$fecha2', '$patente');";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $table = $result -> fetchAll();
@@ -24,9 +25,8 @@ $table = $result -> fetchAll();
 
     echo "
     <div class='container is-max-desktop'>
-        <h2> Consulta de muelles disponibles en el puerto $name para la fecha $fecha. </h2>
+        <h2> Consulta de astilleros disponibles en el puerto $name para la fecha $fecha. </h2>
     ";
-    
     $fid_disp = $table[0][0];
     if ($fid_disp < 0) {
         echo "<h3> No hay instalación disponible. </h3>";
