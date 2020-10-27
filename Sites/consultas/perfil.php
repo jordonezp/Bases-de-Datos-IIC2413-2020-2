@@ -208,7 +208,7 @@ elseif (sesion_on == TRUE){
         }
         echo '<br>';
 
-
+    }
 
     //JEFE
 
@@ -302,8 +302,8 @@ elseif (sesion_on == TRUE){
         </form>
     </div>
     ';
-    }
 }
+
 ?>
 
 <div class="container is-max-desktop">
