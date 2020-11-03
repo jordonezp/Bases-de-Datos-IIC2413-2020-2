@@ -19,6 +19,65 @@ $clave = $_SESSION["clave"];
 }
 
 
+
+?>
+
+<?php
+if ($pasaporte == ""){
+echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No hay sesion iniciada</h3></div>
+<br/><br/>
+<div class="container is-max-desktop">
+  <h1 class="title">Login</h1>
+    <h2 class="subtitle">Ingresa a tu cuenta</h2>
+        <form align="center" action="perfil.php" method="post">
+            Pasaporte:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
+            <br/><br/>
+            Contraseña:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="clave">
+            <br/><br/>
+            <input class="button is-link" type="submit" value="Ingresar">
+        </form>
+  </div>
+  <br/><br/>
+
+  <div class="container is-max-desktop">
+  <h1 class="title">Creador de cuenta</h1>
+  <p class="subtitle">Ingresa tu informacion.</p>
+        <form align="center" action="crear_cuenta.php" method="post">
+            Pasaporte:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
+            <br><br> <br>
+            Contraseña:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="pass">
+            <br><br> <br>
+            Nombre:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="nombre">
+            <br><br> <br>
+            Edad:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="edad">
+            <br><br> <br>
+            Sexo:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="sexo">
+            <br><br> <br>
+            Nacionalidad:
+            <input class="input is-rounded" style="width: 33%;" type="text" name="nacio">
+            <br/><br/>
+            <input class="button is-link" type="submit" value="Crear">
+        </form>
+  </div>
+  '
+
+
+
+  ;
+
+}else{
+
+//INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
+echo '<div class="container is-max-desktop"> <h4 class="title"><strong>Datos personales</strong></div>';
+echo '<br>';
+
 // querys para clasificar tipo de persona (capitan, jefe, otro)
 $query = "SELECT personal.pasaporte FROM personal
             WHERE personal.capitan = True AND personal.pasaporte = '$pasaporte';";
@@ -127,13 +186,12 @@ elseif(sizeof($jefe) == 1) {
     $query = "SELECT ports.name FROM ports, employees e, facilities f
                 WHERE f.boss_rut = '$pasaporte' AND f.pid = ports.pid 
                 GROUP BY ports.name;";
-    $result = $dbp -> prepare($query);
+    $result = $dbimp -> prepare($query);
     $result -> execute();
     $puerto_jefe = $result -> fetchAll();
     $puertoj = $puerto_jefe[0][0];
     echo '<div class="container is-max-desktop"><h4 class="subtitle"><strong>Nombre de puerto:</strong></h4>';
     echo '<div class="container is-max-desktop"><p>'.$puertoj.'</p>';
-    echo '<div class="container is-max-desktop"><p>aa'.$puerto_jefe[0].'</p>';
     echo '<br/>';
 
     //jefe de qué tipo de instalación:
@@ -165,61 +223,10 @@ elseif(sizeof($jefe) == 1) {
 else{
     $tipo_usuario = "otro";
 }
-?>
-
-<?php
-if ($pasaporte == ""){
-echo '<br/><br/><div class="container is-max-desktop"> <h3 class="subtitle">No hay sesion iniciada</h3></div>
-<br/><br/>
-<div class="container is-max-desktop">
-  <h1 class="title">Login</h1>
-    <h2 class="subtitle">Ingresa a tu cuenta</h2>
-        <form align="center" action="perfil.php" method="post">
-            Pasaporte:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
-            <br/><br/>
-            Contraseña:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="clave">
-            <br/><br/>
-            <input class="button is-link" type="submit" value="Ingresar">
-        </form>
-  </div>
-  <br/><br/>
-
-  <div class="container is-max-desktop">
-  <h1 class="title">Creador de cuenta</h1>
-  <p class="subtitle">Ingresa tu informacion.</p>
-        <form align="center" action="crear_cuenta.php" method="post">
-            Pasaporte:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="pasaporte">
-            <br><br> <br>
-            Contraseña:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="pass">
-            <br><br> <br>
-            Nombre:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="nombre">
-            <br><br> <br>
-            Edad:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="edad">
-            <br><br> <br>
-            Sexo:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="sexo">
-            <br><br> <br>
-            Nacionalidad:
-            <input class="input is-rounded" style="width: 33%;" type="text" name="nacio">
-            <br/><br/>
-            <input class="button is-link" type="submit" value="Crear">
-        </form>
-  </div>
-  '
 
 
 
-  ;
 
-}else{
-
-//INFORMACIÓN PERSONAL -LEFT COLUMN (independiente del tipo de persona)
 
 $query = "SELECT * FROM usuarios 
 WHERE usuarios.pasaporte = '$pasaporte';";
@@ -240,7 +247,13 @@ echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Sexo: 
 echo '<br>';
 echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Pasaporte/RUT: </strong></h4><p>'.$pasaporte.'</p></div>';
 echo '<br>';
-echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>'.$nacionalidad.'</p></div>';
+
+if (strlen($nacionalidad) == 0) {
+    echo 'Nacionalidad no reportada';
+}
+else{
+    echo '<div class="container is-max-desktop"> <h4 class="subtitle"><strong>Nacionalidad: </strong></h4><p>'.$nacionalidad.'</p></div>';
+}
 echo '<br>';
 
 
