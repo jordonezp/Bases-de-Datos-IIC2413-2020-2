@@ -34,7 +34,7 @@ Para todas las consultas de la página de puertos se utilizaron procedimientos a
 
 A continuación se da una breve explicación del funcionamiento de cada uno.
 
-### Días disponibles para cada instalación del puerto:
+### Días disponibles para cada instalación del puerto
 
 ``` sql
 get_available_days_for_facility_for_port_for_day_range(
@@ -47,7 +47,7 @@ Este procedimiento almacenado a su vez llama a
 get_permits_for_facility_for_date
 ```
 
-### Porcentaje de ocupación promedio en ese intervalo:
+### Porcentaje de ocupación promedio en ese intervalo
 
 ``` sql
 get_average_occupancy_per_facility_for_port_for_day_range(
@@ -60,7 +60,7 @@ Este procedimiento almacenado a su vez llama a
 get_permits_for_facility_for_date
 ```
 
-### Buscar si hay disponibilidad en algún astillero:
+### Buscar si hay disponibilidad en algún astillero
 
 ``` sql
 search_shipyard_permit_availability(
@@ -73,7 +73,7 @@ En caso de encontrar disponibilidad, se llama al siguiente procedimiento almacen
 insert_shipyard_permit
 ```
 
-### Buscar si hay disponibilidad en algún muelle:
+### Buscar si hay disponibilidad en algún muelle
 
 ``` sql
 search_dock_permit_availability(
