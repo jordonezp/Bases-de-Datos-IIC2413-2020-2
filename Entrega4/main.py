@@ -1,7 +1,7 @@
 ##### Importaciones
+import json
 from flask import Flask
 # import pandas
-import pymongo
 from pymongo import MongoClient
 
 
@@ -14,6 +14,28 @@ db = client.get_database()
 
 ##### Declaración de la aplicación
 app = Flask(__name__)
+
+
+mensajes = db.mensajes
+usuarios = db.usuarios
+
+
+####### Rutas GET
+#### Rutas básicas
+@app.route('/messages')
+def show_messages():
+    messages = list(mensajes.find({}, {"_id": 0}))
+    return json.jsonify(messages)
+
+
+#### Rutas busqueda por texto
+
+
+####### Rutas POST
+####### Rutas DELETE
+
+
+
 
 @app.route('/')
 def hello_world():
