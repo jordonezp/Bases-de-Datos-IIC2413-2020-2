@@ -47,6 +47,10 @@ def show_messages_from_user(uid):
 
 
 ####### Rutas POST
+@app.route('/users', methods=['POST'])
+def add_message():
+    pass
+
 ####### Rutas DELETE
 
 
@@ -56,9 +60,6 @@ def show_messages_from_user(uid):
 def hello_world():
     return 'Hello World!'
 
-@app.route('/a')
-def test():
-    return "a"
 
 
 
