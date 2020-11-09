@@ -67,3 +67,9 @@ Para conectarse a la mongodb:
 ``` bash
 mongo -u grupo81 -p grupo81 gray.ing.puc.cl/grupo81 --authenticationDatabase admin
 ```
+
+Para subir archivos a mongodb:
+
+``` bash
+mongoimport --collection <nombre_coleccion> --drop --file <archivo>.json --jsonArray --uri "mongodb://grupo81:grupo81@gray.ing.puc.cl:27017/grupo81?authSource=admin"
+```
