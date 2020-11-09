@@ -62,6 +62,12 @@ Para verla hay que ejecutar (en psql)
 SELECT * FROM boats;
 ```
 
+Para entrar al shell:
+
+``` bash
+pipenv shell
+```
+
 Para conectarse a la mongodb:
 
 ``` bash
