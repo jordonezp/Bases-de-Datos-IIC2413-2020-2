@@ -1,6 +1,5 @@
 ##### Importaciones
-import json
-from flask import Flask
+from flask import Flask, json
 # import pandas
 from pymongo import MongoClient
 
@@ -26,6 +25,21 @@ usuarios = db.usuarios
 def show_messages():
     messages = list(mensajes.find({}, {"_id": 0}))
     return json.jsonify(messages)
+
+@app.route('/messages/<int:mid>')
+def show_message(mid):
+    messages = list(mensajes.find({"mid": mid}, {"_id": 0}))
+    return json.jsonify(messages)
+
+@app.route('/users')
+def show_users():
+    users = list(usuarios.find({}, {"_id": 0}))
+    return json.jsonify(users)
+
+@app.route('/users/<int:uid>')
+def show_message(uid):
+    users = list(usuarios.find({"uid": uid}, {"_id": 0}))
+    return json.jsonify(users)
 
 
 #### Rutas busqueda por texto
