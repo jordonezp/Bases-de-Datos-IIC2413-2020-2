@@ -1,6 +1,6 @@
 ##### Importaciones
 from flask import Flask
-import pandas
+# import pandas
 import pymongo
 from pymongo import MongoClient
 
@@ -15,9 +15,15 @@ db = client.get_database()
 ##### Declaración de la aplicación
 app = Flask(__name__)
 
-# @app.route('/')
-# def hello_world():
-#     return 'Hello World!'
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+@app.route('/a')
+def test():
+    return "a"
+
+
 
 if __name__ == '__main__':
     app.run()
