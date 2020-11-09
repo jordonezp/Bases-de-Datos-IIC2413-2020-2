@@ -61,3 +61,9 @@ Para verla hay que ejecutar (en psql)
 ``` sql
 SELECT * FROM boats;
 ```
+
+Para conectarse a la mongodb:
+
+``` bash
+mongo -u grupo81 -p grupo81 gray.ing.puc.cl/grupo81 --authenticationDatabase admin
+```
