@@ -27,7 +27,7 @@ def show_messages():
     return json.jsonify(messages)
 
 @app.route('/messages/<int:mid>')
-def show_message(mid):
+def show_messages_by_id(mid):
     messages = list(mensajes.find({"mid": mid}, {"_id": 0}))
     return json.jsonify(messages)
 
@@ -37,9 +37,10 @@ def show_users():
     return json.jsonify(users)
 
 @app.route('/users/<int:uid>')
-def show_message(uid):
+def show_messages_from_user(uid):
     users = list(usuarios.find({"uid": uid}, {"_id": 0}))
-    return json.jsonify(users)
+    messages = list(mensajes.find({"sender": uid}, {"_id": 0}))
+    return json.jsonify(users + messages)
 
 
 #### Rutas busqueda por texto
