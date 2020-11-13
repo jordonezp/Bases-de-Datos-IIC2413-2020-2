@@ -77,12 +77,18 @@ def add_message():
     messages = list(mensajes.find({}, {"_id": 0}))
     max_mid = max(messages, key=lambda m: int(m['mid']))['mid']
     print(max_mid)
-    data = {key: request.json[key] for key in USER_KEYS}
+    print(request)
+    try:
+        data = {key: request.json[key] for key in USER_KEYS}
+    except(KeyError):
+        return json.jsonify({"success": False, "msg": "KeyError, body incompleto"})
+    except(TypeError):
+        return json.jsonify({"success": False, "msg": "no tiene body"})
     data['mid'] = max_mid + 1
     print(data)
     result = mensajes.insert_one(data)
     print(result)
-    return json.jsonify({"success": False})
+    return json.jsonify({"success": True})
 
 ####### Rutas DELETE
 # error si no existe
