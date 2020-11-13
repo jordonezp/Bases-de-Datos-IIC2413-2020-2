@@ -68,6 +68,14 @@ Para entrar al shell:
 pipenv shell
 ```
 
+Para ejecutar en modo debuger:
+
+``` bash
+export FLASK_APP=main.py
+export FLASK_ENV=development
+flask run
+```
+
 Para conectarse a la mongodb:
 
 ``` bash

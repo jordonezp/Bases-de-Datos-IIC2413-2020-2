@@ -1,5 +1,5 @@
 ##### Importaciones
-from flask import Flask, json
+from flask import Flask, json, request
 # import pandas
 from pymongo import MongoClient
 
@@ -23,8 +23,25 @@ usuarios = db.usuarios
 #### Rutas básicas
 @app.route('/messages')
 def show_messages():
+    if 'id1' in request.args and 'id2' in request.args:
+        id1 = request.args.get('id1')
+        id2 = request.args.get('id2')
+        if id1.isdigit() and id2.isdigit():
+            id1 = int(id1)
+            id2 = int(id2)
+            return show_messages_with_args(id1, id2)
     messages = list(mensajes.find({}, {"_id": 0}))
     return json.jsonify(messages)
+
+def show_messages_with_args(id1, id2):
+    # print(id1, id2)
+    messages12 = list(mensajes.find(
+        {"sender": id1, "receptant": id2}, {"_id": 0}))
+    # print(messages12)
+    messages21 = list(mensajes.find(
+        {"sender": id2, "receptant": id1}, {"_id": 0}))
+    # print(messages21)
+    return json.jsonify(messages12 + messages21)
 
 @app.route('/messages/<int:mid>')
 def show_messages_by_id(mid):
