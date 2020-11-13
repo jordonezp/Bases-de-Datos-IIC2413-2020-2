@@ -1,7 +1,7 @@
 ##### Importaciones
 from flask import Flask, json, request
 # import pandas
-from pymongo import MongoClient
+from pymongo import MongoClient, TEXT
 
 
 ##### Conexión con la BD
@@ -15,8 +15,11 @@ db = client.get_database()
 app = Flask(__name__)
 
 
-USER_KEYS = [
+POST_MESSAGE_KEYS = [
     'date', 'lat', 'long', 'message', 'receptant', 'sender'
+]
+GET_TEXTSEARCH_KEYS = [
+    'desired', 'required', 'forbidden', 'userId'
 ]
 
 mensajes = db.mensajes
@@ -64,7 +67,36 @@ def show_messages_from_user(uid):
     return json.jsonify(users + messages)
 
 
+
 #### Rutas busqueda por texto
+@app.route('/text_search')
+def text_search():
+    try:
+        data = {key: request.json[key] for key in GET_TEXTSEARCH_KEYS}
+    except(KeyError):
+        return json.jsonify({"success": False, "msg": "KeyError, body incompleto"})
+    except(TypeError):
+        return json.jsonify({"success": False, "msg": "no tiene body"})
+
+    print(data)
+    query = ''
+    for r in data["desired"]:
+        query = query + ' {}'.format(r)
+    for r in data["required"]:
+        query = query + ' "{}"'.format(r)
+    for r in data["forbidden"]:
+        query = query + ' -"{}"'.format(r)
+
+    print(query)
+    if not data['userId']:
+        messages = list(mensajes.find(
+            {"$text": {"$search": query}}, {"_id": 0}
+        ))
+        return json.jsonify(messages)
+    messages = list(mensajes.find(
+        {"$text": {"$search": query}, "sender": data['userId']}, {"_id": 0}
+    ))
+    return json.jsonify(messages)
 
 
 ####### Rutas POST
@@ -79,7 +111,7 @@ def add_message():
     print(max_mid)
     print(request)
     try:
-        data = {key: request.json[key] for key in USER_KEYS}
+        data = {key: request.json[key] for key in POST_MESSAGE_KEYS}
     except(KeyError):
         return json.jsonify({"success": False, "msg": "KeyError, body incompleto"})
     except(TypeError):
@@ -118,3 +150,5 @@ def hello_world():
 
 if __name__ == '__main__':
     app.run()
+
+    mensajes.create_index([("message", TEXT)])
