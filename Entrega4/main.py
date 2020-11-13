@@ -15,6 +15,10 @@ db = client.get_database()
 app = Flask(__name__)
 
 
+USER_KEYS = [
+    'date', 'lat', 'long', 'message', 'receptant', 'sender'
+]
+
 mensajes = db.mensajes
 usuarios = db.usuarios
 
@@ -64,12 +68,38 @@ def show_messages_from_user(uid):
 
 
 ####### Rutas POST
-@app.route('/users', methods=['POST'])
+# TODO: si falta el body, o no llega, 
+# mensaje no debe ser insertado y notificar error
+# TODO: el id del nuevo mensaje debe ser generado 
+# de tal manera de que no coincida
+@app.route('/messages', methods=['POST'])
 def add_message():
-    pass
+    messages = list(mensajes.find({}, {"_id": 0}))
+    max_mid = max(messages, key=lambda m: int(m['mid']))['mid']
+    print(max_mid)
+    data = {key: request.json[key] for key in USER_KEYS}
+    data['mid'] = max_mid + 1
+    print(data)
+    result = mensajes.insert_one(data)
+    print(result)
+    return json.jsonify({"success": False})
 
 ####### Rutas DELETE
+# error si no existe
+@app.route('/messages/<int:mid>', methods=['DELETE'])
+def delete_message(mid):
+    print(mid)
+    messages = list(mensajes.find({"mid": mid}, {"_id": 0}))
+    print(messages)
+    if len(messages) != 1:
+        if len(messages) < 1:
+            return json.jsonify({"success": False, "msg": "Non existent mid."})
+        else:
+            return json.jsonify({"success": False, "msg": "Too many mids (there should be only 1)."})
 
+    result = mensajes.remove({"mid": mid})
+    print(result)
+    return json.jsonify({"success": True})
 
 
 
