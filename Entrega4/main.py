@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 
 POST_MESSAGE_KEYS = [
-    'date', 'lat', 'long', 'message', 'receptant', 'sender'
+    'message', 'sender', 'receptant', 'lat', 'long', 'date'
 ]
 GET_TEXTSEARCH_KEYS = [
     'desired', 'required', 'forbidden', 'userId'
@@ -69,7 +69,9 @@ def show_messages_from_user(uid):
 
 
 #### Rutas busqueda por texto
-@app.route('/text_search')
+#busqueda sin body, no entra.
+
+@app.route('/text-search')
 def text_search():
     try:
         data = {key: request.json[key] for key in GET_TEXTSEARCH_KEYS}
@@ -110,13 +112,14 @@ def add_message():
     max_mid = max(messages, key=lambda m: int(m['mid']))['mid']
     print(max_mid)
     print(request)
-    try:
-        data = {key: request.json[key] for key in POST_MESSAGE_KEYS}
-    except(KeyError):
-        return json.jsonify({"success": False, "msg": "KeyError, body incompleto"})
-    except(TypeError):
-        return json.jsonify({"success": False, "msg": "no tiene body"})
-    data['mid'] = max_mid + 1
+    for key in POST_MESSAGE_KEYS:
+        try:
+            data = {key: request.json[key] }
+        except(KeyError):
+            return json.jsonify({"success": False, "msg": f"KeyError: falta ingresar {key}, body incompleto"})
+        except(TypeError):
+            return json.jsonify({"success": False, "msg": "no tiene body"})
+        data['mid'] = max_mid + 1
     print(data)
     result = mensajes.insert_one(data)
     print(result)
@@ -124,7 +127,7 @@ def add_message():
 
 ####### Rutas DELETE
 # error si no existe
-@app.route('/messages/<int:mid>', methods=['DELETE'])
+@app.route('/message/<int:mid>', methods=['DELETE'])
 def delete_message(mid):
     print(mid)
     messages = list(mensajes.find({"mid": mid}, {"_id": 0}))
