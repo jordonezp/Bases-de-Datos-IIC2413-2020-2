@@ -75,6 +75,9 @@ def show_messages_from_user(uid):
 
 @app.route('/text-search')
 def text_search():
+    #el problema con forbbiden es que no busca si solo hay forbbidens
+    #el otro problema es que no busca querys vacías, no retorna nada. Debería retornar todo.
+
     input = {}
 
     try:
@@ -87,6 +90,7 @@ def text_search():
         return show_messages()  
 
     print(input)
+    print(type(input))
 
     
     #si hay contenido, se comienza a armar la query
@@ -123,6 +127,7 @@ def text_search():
         if query == '':
             messages = list(mensajes.find({"sender": input["userId"]}, {"_id": 0}))
             return json.jsonify(messages)
+        
         else:
             messages = list(mensajes.find(
             {"sender": input["userId"], "$text": {"$search": query}}, {"_id": 0}
