@@ -75,6 +75,9 @@ def show_messages_from_user(uid):
 
 @app.route('/text-search')
 def text_search():
+    format = request.args.get('format')
+    if format is None:
+        return show_messages()
     input = {}
     try: 
         input = request.json
