@@ -76,15 +76,18 @@ def show_messages_from_user(uid):
 @app.route('/text-search')
 def text_search():
     input = {}
-    try: 
+
+    try:
         input = request.json
-    except(ValueError):
-        return json.jsonify({"success": False, "msg": "No se ingresa busqueda"})
+        if input == {} or input == None:
+            return show_messages()    
+
+    except:
+        print("fail")
+        return show_messages()  
+
     print(input)
 
-    #si input es un diccionario vacio, se imprimen todos los mensajes
-    if input == {} or input == None:
-        return show_messages()
     
     #si hay contenido, se comienza a armar la query
     query = ''
