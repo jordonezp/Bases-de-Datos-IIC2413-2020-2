@@ -118,16 +118,22 @@ def text_search():
     
     #busqueda con filtro de usuario
     if user_key:
-        print("con usuario id:" +str(id))
-        messages = list(mensajes.find(
-        {"sender": input["userId"], "$text": {"$search": query}}, {"_id": 0}
-        ))
-        print(messages)
-        return json.jsonify(messages)
-    
+        print("con usuario id:" + str(input["userId"]))
+        print(type(query))
+        if query == '':
+            messages = list(mensajes.find({"sender": input["userId"]}, {"_id": 0}))
+            return json.jsonify(messages)
+        else:
+            messages = list(mensajes.find(
+            {"sender": input["userId"], "$text": {"$search": query}}, {"_id": 0}
+            ))
+            print(messages)
+            return json.jsonify(messages)
+        
     #busqueda sin filtro de usuario
     else:
         print("sin usuario")
+        print(type(query))
         messages = list(mensajes.find(
             {"$text": {"$search": query}}, {"_id": 0}
         ))
