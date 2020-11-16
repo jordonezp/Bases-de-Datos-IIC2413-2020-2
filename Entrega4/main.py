@@ -29,6 +29,7 @@ usuarios = db.usuarios
 ####### Rutas GET
 #### Rutas básicas
 @app.route('/messages')
+    
 def show_messages():
     if 'id1' in request.args and 'id2' in request.args:
         id1 = request.args.get('id1')
@@ -49,6 +50,7 @@ def show_messages_with_args(id1, id2):
         {"sender": id2, "receptant": id1}, {"_id": 0}))
     # print(messages21)
     return json.jsonify(messages12 + messages21)
+
 
 @app.route('/messages/<int:mid>')
 def show_messages_by_id(mid):
@@ -73,32 +75,61 @@ def show_messages_from_user(uid):
 
 @app.route('/text-search')
 def text_search():
-    try:
-        data = {key: request.json[key] for key in GET_TEXTSEARCH_KEYS}
-    except(KeyError):
-        return json.jsonify({"success": False, "msg": "KeyError, body incompleto"})
-    except(TypeError):
-        return json.jsonify({"success": False, "msg": "no tiene body"})
+    input = {}
+    try: 
+        input = request.json
+    except(ValueError):
+        return json.jsonify({"success": False, "msg": "No se ingresa busqueda"})
+    print(input)
 
-    print(data)
+    #si input es un diccionario vacio, se imprimen todos los mensajes
+    if input == {} or input == None:
+        return show_messages()
+    
+    #si hay contenido, se comienza a armar la query
     query = ''
-    for r in data["desired"]:
-        query = query + ' {}'.format(r)
-    for r in data["required"]:
-        query = query + ' "{}"'.format(r)
-    for r in data["forbidden"]:
-        query = query + ' -"{}"'.format(r)
+    user_key = False
+    #se construye la query a partir de lo que contengan los inputs
+    print(input.keys())
+    for new_key in input.keys():
+        if new_key == "desired":
+            for r in input["desired"]:
+                print("entra desired")
+                query = query + '{} '.format(r)
+        elif new_key == "required":
+            print("entra required")
+            for r in input["required"]:
+                query = query + '\"{}\" '.format(r)
+        elif new_key == "forbidden":        
+            for r in input["forbidden"]:
+                query = query + f"-"+"{} ".format(r)
+        else:
+            print("entra else")
+            query = query + ''
+        
+        if new_key == "userId":
+            user_key=True
 
-    print(query)
-    if not data['userId']:
+
+    print("query:"+query)
+    
+    #busqueda con filtro de usuario
+    if user_key:
+        print("con usuario id:" +str(id))
+        messages = list(mensajes.find(
+        {"sender": input["userId"], "$text": {"$search": query}}, {"_id": 0}
+        ))
+        print(messages)
+        return json.jsonify(messages)
+    
+    #busqueda sin filtro de usuario
+    else:
+        print("sin usuario")
         messages = list(mensajes.find(
             {"$text": {"$search": query}}, {"_id": 0}
         ))
         return json.jsonify(messages)
-    messages = list(mensajes.find(
-        {"$text": {"$search": query}, "sender": data['userId']}, {"_id": 0}
-    ))
-    return json.jsonify(messages)
+    
 
 
 ####### Rutas POST
@@ -116,7 +147,7 @@ def add_message():
         try:
             data = {key: request.json[key] }
         except(KeyError):
-            return json.jsonify({"success": False, "msg": f"KeyError: falta ingresar {key}, body incompleto"})
+            return json.jsonify({"success": False, "msg": f"KeyError: falta ingresar {key}"})
         except(TypeError):
             return json.jsonify({"success": False, "msg": "no tiene body"})
         data['mid'] = max_mid + 1
