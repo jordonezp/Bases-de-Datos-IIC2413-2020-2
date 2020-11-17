@@ -75,6 +75,10 @@ def show_messages_from_user(uid):
 
 @app.route('/text-search')
 def text_search():
+    # print('\n\n\n\n hola', mensajes.index_information())
+    # mensajes.drop_indexes()
+    # print('\n\n\n\n hola', mensajes.index_information())
+    # mensajes.create_index([("message", TEXT)], default_language='none')
 
     # revisar que tenga cuerpo
     input_json = None
@@ -111,6 +115,35 @@ def text_search():
         else:
             raise Exception('id curioso..')
 
+    # probando lo de la issue...
+    # cuando todos son forbidden
+    print(input_json.keys())
+    if list(input_json.keys()) == ['forbidden']:
+        print('solamente negados...')
+        forbidden_query = ''
+        for word in input_json['forbidden']:
+            forbidden_query = forbidden_query + '{} '.format(word)
+        print('forbidden_query:', forbidden_query)
+        if user_id:
+            print('has userId:', user_id)
+            all_messages = list(mensajes.find(
+                {"sender": user_id}, {"_id": 0}))
+            forbidden_messages = [m['mid'] for m in mensajes.find(
+                {"$text": {"$search": forbidden_query}},
+                {"_id": 0})]
+            messages = [
+                m for m in all_messages if m['mid'] not in forbidden_messages]
+            return json.jsonify(messages)
+        else:
+            print('no userId')
+            all_messages = list(mensajes.find({}, {"_id": 0}))
+            forbidden_messages = [m['mid'] for m in mensajes.find(
+                {"$text": {"$search": forbidden_query}},
+                {"_id": 0})]
+            messages = [
+                m for m in all_messages if m['mid'] not in forbidden_messages]
+            return json.jsonify(messages)
+
     empty_query = False
     if query == '':
         empty_query = True
@@ -128,6 +161,7 @@ def text_search():
             messages = list(mensajes.find(
                 {"sender": user_id, "$text": {"$search": query}},
                 {"_id": 0}))
+            return json.jsonify(messages)
 
     # si no se indica userID
     else:
@@ -140,6 +174,7 @@ def text_search():
             messages = list(mensajes.find(
                 {"$text": {"$search": query}},
                 {"_id": 0}))
+            return json.jsonify(messages)
 
     return show_messages()
     # input = {}
@@ -270,4 +305,8 @@ def hello_world():
 if __name__ == '__main__':
     app.run()
 
-    mensajes.create_index([("message", TEXT)])
+    mensajes.create_index([("message", TEXT)], default_language='none')
+    # mensajes.create_index([
+    #     {"message": "text"},
+    #     {"default_language": "none"}])
+    print(mensajes.index_information())
