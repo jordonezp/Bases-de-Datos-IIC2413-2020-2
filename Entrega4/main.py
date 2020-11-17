@@ -75,69 +75,145 @@ def show_messages_from_user(uid):
 
 @app.route('/text-search')
 def text_search():
-    input = {}
 
+    # revisar que tenga cuerpo
+    input_json = None
     try:
-        input = request.json
-        if input == {} or input == None:
-            return show_messages()    
-
+        input_json = request.json
     except:
-        print("fail")
-        return show_messages()  
+        return show_messages()
 
-    print(input)
+    # print(input_json)
 
-    
-    #si hay contenido, se comienza a armar la query
+    if not input_json:
+        return show_messages()
+
+    # extraigo userId del json
+    user_id = None
+    if 'userId' in input_json:
+        user_id = input_json['userId']
+        del input_json['userId']
+
+    # print('userId: ', user_id)
+    # print(input_json)
+
     query = ''
-    user_key = False
-    #se construye la query a partir de lo que contengan los inputs
-    print(input.keys())
-    for new_key in input.keys():
-        if new_key == "desired":
-            for r in input["desired"]:
-                print("entra desired")
-                query = query + '{} '.format(r)
-        elif new_key == "required":
-            print("entra required")
-            for r in input["required"]:
-                query = query + '\"{}\" '.format(r)
-        elif new_key == "forbidden":        
-            for r in input["forbidden"]:
-                query = query + f"-"+"{} ".format(r)
+    for key in input_json:
+        if key == 'desired':
+            for word in input_json[key]:
+                query = query + '{} '.format(word)
+        elif key == 'required':
+            for word in input_json[key]:
+                query = query + '\"{}\" '.format(word)
+        elif key == 'forbidden':
+            for word in input_json[key]:
+                query = query + '-{} '.format(word)
         else:
-            print("entra else")
-            query = query + ''
-        
-        if new_key == "userId":
-            user_key=True
+            raise Exception('id curioso..')
 
+    empty_query = False
+    if query == '':
+        empty_query = True
 
-    print("query:"+query)
-    
-    #busqueda con filtro de usuario
-    if user_key:
-        print("con usuario id:" + str(input["userId"]))
-        print(type(query))
-        if query == '':
-            messages = list(mensajes.find({"sender": input["userId"]}, {"_id": 0}))
-            return json.jsonify(messages)
-        else:
+    # si se indica userId
+    if user_id:
+        print('has userId:', user_id)
+        if empty_query:
+            print('query: empty')
             messages = list(mensajes.find(
-            {"sender": input["userId"], "$text": {"$search": query}}, {"_id": 0}
-            ))
-            print(messages)
+                {"sender": user_id}, {"_id": 0}))
             return json.jsonify(messages)
-        
-    #busqueda sin filtro de usuario
+        else:
+            print('query:', query)
+            messages = list(mensajes.find(
+                {"sender": user_id, "$text": {"$search": query}},
+                {"_id": 0}))
+
+    # si no se indica userID
     else:
-        print("sin usuario")
-        print(type(query))
-        messages = list(mensajes.find(
-            {"$text": {"$search": query}}, {"_id": 0}
-        ))
-        return json.jsonify(messages)
+        print('no userId')
+        if empty_query:
+            print('query: empty')
+            return show_messages()
+        else:
+            print('query:', query)
+            messages = list(mensajes.find(
+                {"$text": {"$search": query}},
+                {"_id": 0}))
+
+    return show_messages()
+    # input = {}
+
+    # try:
+    #     input = request.json
+    #     if input == {} or input == None:
+    #         return show_messages()    
+
+    # except:
+    #     print("fail")
+    #     return show_messages()  
+
+    # print(input)
+
+    
+    # #si hay contenido, se comienza a armar la query
+    # query = ''
+    # user_key = False
+    # #se construye la query a partir de lo que contengan los inputs
+    # print(input.keys())
+    # for new_key in input.keys():
+    #     if new_key == "desired":
+    #         for r in input["desired"]:
+    #             print("entra desired")
+    #             query = query + '{} '.format(r)
+    #     elif new_key == "required":
+    #         print("entra required")
+    #         for r in input["required"]:
+    #             query = query + '\"{}\" '.format(r)
+    #     elif new_key == "forbidden":        
+    #         for r in input["forbidden"]:
+    #             query = query + f"-"+"{} ".format(r)
+    #     else:
+    #         print("entra else")
+    #         query = query + ''
+        
+    #     if new_key == "userId":
+    #         user_key=True
+
+
+    # print("query:"+query)
+    
+    # #busqueda con filtro de usuario
+    # if user_key:
+    #     print("con usuario id:" + str(input["userId"]))
+    #     print(type(query))
+    #     if query == '':
+    #         messages = list(mensajes.find({"sender": input["userId"]}, {"_id": 0}))
+    #         return json.jsonify(messages)
+    #     else:
+    #         messages = list(mensajes.find(
+    #         {"sender": input["userId"], "$text": {"$search": query}}, {"_id": 0}
+    #         ))
+    #         print(messages)
+    #         return json.jsonify(messages)
+        
+    # #busqueda sin filtro de usuario
+    # else:
+    #     print("sin usuario")
+    #     print(type(query))
+    #     # messages = list(mensajes.find(
+    #     #     {"$text": {"$search": query}}, {"_id": 0}
+    #     # ))
+    #     # return json.jsonify(messages)
+    #     if query == '':
+    #         messages = list(mensajes.find({"_id": 0}))
+    #         return json.jsonify(messages)
+    #     else:
+    #         messages = list(mensajes.find(
+    #         {"$text": {"$search": query}}, {"_id": 0}
+    #         ))
+    #         print(messages)
+    #         return json.jsonify(messages)
     
 
 
