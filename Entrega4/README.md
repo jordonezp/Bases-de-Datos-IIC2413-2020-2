@@ -45,14 +45,16 @@ flask run
 
 ### Funcionamiento
 
-Usar esto
+Para probar las consultas, se recomienda utilizar Postman.
 
 #### Caso de error
 
 En el caso de que el entorno virtual no funcione, las librerías utilizadas son:
 
-- l1
+- flask
 
-- l2
+- pymongo
 
-## Consideraciones
+## Consideraciones y explicaciones
+
+
