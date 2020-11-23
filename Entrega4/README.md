@@ -69,7 +69,9 @@ En el caso de que el entorno virtual no funcione, las librerías utilizadas son:
 
 
 ## Consideraciones y explicaciones
+
 **GET**
+
 Al inicio del documento ``` main.py``` se encuentran las rutas básicas que se solicitan en el enunciado.
 Para la ruta '/messages', se definen:
 *   ```show_messages()``` es una función que busca mensajes según ids con la función ```show_messages_with_args(id1, id2)``` , si es uqe estos son entregados, sino muestra todos los mensajes.
@@ -86,10 +88,14 @@ Para la ruta '/users/<int:uid>':
 
 Para la sección de '/text-search', se define una gran función ```text_search``` que filtra las búsquedas según condiciones de búsqueda. Para ello, se analizan las llaves del ```request.json``` para armar la ```query```.
 
+
 **POST**
+
 Para la ruta '/messages', se define la función ```add_message()```. Esta función recibe los atributos y crea una nueva entrada en la base de datos.
 
+
 **DELETE**
+
 Para eliminar mensajes en la ruta '/message/<int:mid>' se define la función ```delete_message(mid)```. Esta función busca el mensaje que coincide con el 'mid' entregado y lo elimina de la base de datos con el método ```.remove(mid)```
 
 
