@@ -92,8 +92,10 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
     //     echo "$r\n";
     // }
     
-    echo "$jsonData\n";
-    echo "$payload\n";
+    echo "payload: $payload\n";
+    echo "jsonData:\n";
+    echo $jsonData;
+    echo "----------\n";
     ?>
     
     <table class="table">
