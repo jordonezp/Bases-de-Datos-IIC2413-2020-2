@@ -28,6 +28,7 @@ function sendGet($url) {
 $url = "https://api-bdd-g-94-81.herokuapp.com/messages/$usuario_id";
 
 $response = sendGet($url);
+echo $response;
 
 // $string = sendGet($url);
 // if ($string === false) {
