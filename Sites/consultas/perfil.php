@@ -295,10 +295,10 @@ echo '<div class="container is-max-desktop">
             $response = file_get_contents($url);
     
             if ($response !== false) {
-                return $response;
+                $request_result = $response;
             }
         } catch (Exception $e) {
-            return $e->getMessage();
+            $request_result =  $e->getMessage();
         }
     }
     $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
@@ -328,6 +328,10 @@ echo '<div class="container is-max-desktop">
     </form>
     <button onclick="sendGet2()">Click</button>
 </div>
+
+<?php
+    echo $request_result
+?>
 
 <?php
     // try{
