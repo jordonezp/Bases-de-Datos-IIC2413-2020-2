@@ -39,6 +39,8 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
 <div class="container is-max-desktop">
     <br>
     <h1 class="title">Buscar Mensaje</h1>
+    <br>
+    <p>En caso de ingresar múltiples términos, separar por ",". </p>
     
     <form align="center" action="textsearch_messages.php" method="get">
         <p>Usuario (id): </p>
@@ -50,6 +52,8 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
         <p>Requerido: </p>
         <input class="input is-rounded" style="width: 33%;" type="text" name="required">
         <br>
+        <br>
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
 </div>
+
