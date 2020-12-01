@@ -40,8 +40,8 @@ $ch = curl_init($url);
 
 $data = array(
     'userId' => $userId,
-    'forbidden' => $forbidden_a
-    'desired' => $desired_a
+    'forbidden' => $forbidden_a,
+    'desired' => $desired_a,
     'required' => $required_a
 );
 $payload = json_encode(array("user" => $data));
