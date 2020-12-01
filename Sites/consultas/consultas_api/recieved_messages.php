@@ -11,6 +11,8 @@ require('../../config/conection.php');
 
 $pasaporte = $_GET["pasaporte"];
 
+echo $pasaporte;
+
 ?>
 
 <?php
