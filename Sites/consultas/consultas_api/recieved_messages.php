@@ -9,25 +9,28 @@
 
 require('../../config/conection.php');
 
-$pasaporte = $_GET["pasaporte"];
+$usuario_id = $_GET["usuario_id"];
 
-echo $pasaporte;
+echo $usuario_id;
+
+function sendGet($url) {
+    try{
+        $response = file_get_contents($url);
+
+        if ($response !== false) {
+            return $response;
+        }
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+}
+$url = "https://api-bdd-g-94-81.herokuapp.com/messages";
 
 ?>
 
+<br>
+
 <?php
-    function sendGet($url) {
-        try{
-            $response = file_get_contents($url);
-    
-            if ($response !== false) {
-                return $response;
-            }
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
-    $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
 
     echo sendGet($url);
 ?>

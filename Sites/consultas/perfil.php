@@ -233,6 +233,7 @@ WHERE usuarios.pasaporte = '$pasaporte';";
 $result = $dbimp -> prepare($query);
 $result -> execute();
 $datos_usuario = $result -> fetchAll();
+$usuario_id = $datos_usuario[0][0];
 $nombre = $datos_usuario[0][1];
 $nacionalidad = $datos_usuario[0][3];
 $edad = $datos_usuario[0][5];
@@ -277,7 +278,7 @@ echo '<div class="container is-max-desktop">
 
 <div class="container is-max-desktop">
     <form align="center" action="consultas_api/recieved_messages.php" method="get">
-        <input type="hidden" name="pasaporte" value=<?php echo $pasaporte ?> />
+        <input type="hidden" name="usuario_id" value=<?php echo $usuario_id ?> />
         <input class="button is-link" type="submit" value="Mensajes Recibidos">
     </form>
 </div>
