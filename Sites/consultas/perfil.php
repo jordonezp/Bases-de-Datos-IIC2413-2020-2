@@ -289,6 +289,20 @@ echo '<div class="container is-max-desktop">
     }
     $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
 
+    function sendGet2() {
+        try{
+            $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
+            $response = file_get_contents($url);
+    
+            if ($response !== false) {
+                return $response;
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+    $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
+
     echo sendGet($url);
 
     // try{
@@ -311,7 +325,8 @@ echo '<div class="container is-max-desktop">
     <br>
     <form action="https://api-bdd-g-94-81.herokuapp.com/messages" method="get">
         <input class="button is-link" type="submit" value="Ver mensajes enviados">
-  </form>
+    </form>
+    <button onclick="sendGet2()">Click</button>
 </div>
 
 <?php
