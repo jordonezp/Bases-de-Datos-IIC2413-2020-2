@@ -51,95 +51,97 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
 ?>
 
 <?php
-        foreach ($jsonData as $m) {
-            $rec = $m["receptant"];
-            echo $rec;
-            echo "<br>";
-            echo $m["date"];
-            echo "<br>";
-            if ("$rec" === $usuario_id) {
-                echo "True!!\n\n";
-                echo "<tr>";
-                echo $m["date"];
-                // foreach ($m as $d) {
-                //     echo "<td>";
-                //     echo $d;
-                //     echo "</td>";
-                // }
-                // echo "<td>$m['date']</td>";
-                // echo "<td>$m['lat']</td>";
-                // echo "<td>$m['long']</td>";
-                // echo "<td>$m['mid']</td>";
-                // echo "<td>$m['message']</td>";
-                // echo "<td>$m['receptant']</td>";
-                // echo "<td>$m['sender']</td>";
-                echo "</tr>";
-            }
-            // echo "\n m[0]: $m[0]";
-            // echo "\n\n m['date']: ";
-            // echo $m["date"];
-        }
-        // foreach ($tabla as $fila) {
-        //     echo "<tr> <td> <a href='consultas/consulta_puertos.php?pid=$fila[0]&name=$fila[1]'> $fila[1] </a> </td> </tr>";
+        // foreach ($jsonData as $m) {
+        //     $rec = $m["receptant"];
+        //     echo $rec;
+        //     echo "<br>";
+        //     echo $m["date"];
+        //     echo "<br>";
+        //     if ("$rec" === $usuario_id) {
+        //         echo "True!!\n\n";
+        //         echo "<tr>";
+        //         echo $m["date"];
+        //         // foreach ($m as $d) {
+        //         //     echo "<td>";
+        //         //     echo $d;
+        //         //     echo "</td>";
+        //         // }
+        //         // echo "<td>$m['date']</td>";
+        //         // echo "<td>$m['lat']</td>";
+        //         // echo "<td>$m['long']</td>";
+        //         // echo "<td>$m['mid']</td>";
+        //         // echo "<td>$m['message']</td>";
+        //         // echo "<td>$m['receptant']</td>";
+        //         // echo "<td>$m['sender']</td>";
+        //         echo "</tr>";
+        //     }
+        //     // echo "\n m[0]: $m[0]";
+        //     // echo "\n\n m['date']: ";
+        //     // echo $m["date"];
         // }
+        // // foreach ($tabla as $fila) {
+        // //     echo "<tr> <td> <a href='consultas/consulta_puertos.php?pid=$fila[0]&name=$fila[1]'> $fila[1] </a> </td> </tr>";
+        // // }
     ?>
+<div class="container is-max-desktop">
+    <h1>Mensajes Recibidos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>date</th>
+                <th>lat</th>
+                <th>long</th>
+                <th>message</th>
+                <th>mid</th>
+                <th>receptant</th>
+                <th>sender</th>
+            </tr>
+        </thead>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>date</th>
-            <th>lat</th>
-            <th>long</th>
-            <th>message</th>
-            <th>mid</th>
-            <th>receptant</th>
-            <th>sender</th>
-        </tr>
-    </thead>
+        <tbody>
 
-    <tbody>
-
-    <?php
-        foreach ($jsonData as $m) {
-            $rec = $m["receptant"];
-            // echo $rec;
-            // echo "<br>";
-            // echo $m["date"];
-            // echo "<br>";
-            if ("$rec" === $usuario_id) {
-                $date =  $m["date"];
-                $lat =  $m["lat"];
-                $long =  $m["long"];
-                $mid =  $m["mid"];
-                $message =  $m["message"];
-                $receptant =  $m["receptant"];
-                $sender =  $m["sender"];
-                echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
-                // echo "True!!\n\n";
-                // echo "<tr>";
-                // // echo $m["date"];
-                // // foreach ($m as $d) {
-                // //     echo "<td>";
-                // //     echo $d;
-                // //     echo "</td>";
-                // // }
-                // echo "<td>$m['date']</td>";
-                // echo "<td>$m['lat']</td>";
-                // echo "<td>$m['long']</td>";
-                // echo "<td>$m['mid']</td>";
-                // echo "<td>$m['message']</td>";
-                // echo "<td>$m['receptant']</td>";
-                // echo "<td>$m['sender']</td>";
-                // echo "</tr>";
+        <?php
+            foreach ($jsonData as $m) {
+                $rec = $m["receptant"];
+                // echo $rec;
+                // echo "<br>";
+                // echo $m["date"];
+                // echo "<br>";
+                if ("$rec" === $usuario_id) {
+                    $date =  $m["date"];
+                    $lat =  $m["lat"];
+                    $long =  $m["long"];
+                    $mid =  $m["mid"];
+                    $message =  $m["message"];
+                    $receptant =  $m["receptant"];
+                    $sender =  $m["sender"];
+                    echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
+                    // echo "True!!\n\n";
+                    // echo "<tr>";
+                    // // echo $m["date"];
+                    // // foreach ($m as $d) {
+                    // //     echo "<td>";
+                    // //     echo $d;
+                    // //     echo "</td>";
+                    // // }
+                    // echo "<td>$m['date']</td>";
+                    // echo "<td>$m['lat']</td>";
+                    // echo "<td>$m['long']</td>";
+                    // echo "<td>$m['mid']</td>";
+                    // echo "<td>$m['message']</td>";
+                    // echo "<td>$m['receptant']</td>";
+                    // echo "<td>$m['sender']</td>";
+                    // echo "</tr>";
+                }
+                // echo "\n m[0]: $m[0]";
+                // echo "\n\n m['date']: ";
+                // echo $m["date"];
             }
-            // echo "\n m[0]: $m[0]";
-            // echo "\n\n m['date']: ";
-            // echo $m["date"];
-        }
-        // foreach ($tabla as $fila) {
-        //     echo "<tr> <td> <a href='consultas/consulta_puertos.php?pid=$fila[0]&name=$fila[1]'> $fila[1] </a> </td> </tr>";
-        // }
-    ?>
-    </tbody>
+            // foreach ($tabla as $fila) {
+            //     echo "<tr> <td> <a href='consultas/consulta_puertos.php?pid=$fila[0]&name=$fila[1]'> $fila[1] </a> </td> </tr>";
+            // }
+        ?>
+        </tbody>
 
-</table>
+    </table>
+</div>
