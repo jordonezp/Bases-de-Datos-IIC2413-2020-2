@@ -25,7 +25,7 @@ function sendGet($url) {
         return $e->getMessage();
     }
 }
-$url = "https://api-bdd-g-94-81.herokuapp.com/messages/$usuario_id";
+$url = "https://api-bdd-g-94-81.herokuapp.com/messages";
 
 $response = sendGet($url);
 echo $response;
@@ -46,7 +46,7 @@ foreach ($jsonData[0] as $m) {
 $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
 // echo $jsonData;
 echo '<pre>';
-echo $jsonData;
+var_dump($jsonData);
 echo '</pre>';
 
 foreach ($jsonData[0] as $m) {
