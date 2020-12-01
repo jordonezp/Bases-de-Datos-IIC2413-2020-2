@@ -9,8 +9,15 @@
 
 require('../../config/conection.php');
 
-// echo $usuario_id;
-// echo "<br>";
+$userId = $_GET["userId"];
+$forbidden = $_GET["forbidden"];
+$desired = $_GET["desired"];
+$required = $_GET["required"];
+
+echo $userId;
+echo $forbidden;
+echo $desired;
+echo $required;
 
 function sendGet($url) {
     try{
@@ -33,20 +40,16 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
     <br>
     <h1 class="title">Buscar Mensaje</h1>
     
-    <form align="center" action="consultas_api/sent_messages.php" method="get">
+    <form align="center" action="textsearch_messages.php" method="get">
         <p>Usuario (id): </p>
-        <input class="input is-rounded" style="width: 33%;" type="number" name="prohibido">
+        <input class="input is-rounded" style="width: 33%;" type="number" name="userId">
         <p>Prohibido: </p>
-        <input class="input is-rounded" style="width: 33%;" type="text" name="prohibido">
+        <input class="input is-rounded" style="width: 33%;" type="text" name="forbidden">
         <p>Deseado: </p>
-        <input class="input is-rounded" style="width: 33%;" type="text" name="deseado">
+        <input class="input is-rounded" style="width: 33%;" type="text" name="desired">
         <p>Requerido: </p>
-        <input class="input is-rounded" style="width: 33%;" type="text" name="requerido">
+        <input class="input is-rounded" style="width: 33%;" type="text" name="required">
+        <br>
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
 </div>
-
-"userId": 212,
-	"forbidden": ["magikarp", "se"],
-	"desired": ["shrek"],
-	"required": ["que"]
