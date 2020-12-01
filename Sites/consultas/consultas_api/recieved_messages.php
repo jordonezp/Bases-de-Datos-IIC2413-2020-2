@@ -43,6 +43,17 @@ foreach ($jsonData[0] as $m) {
 }
 
 
+$jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
+// echo $jsonData;
+echo '<pre>';
+var_dump($jsonData);
+echo '</pre>';
+
+foreach ($jsonData[0] as $m) {
+    echo $m;
+}
+
+
 
 
 // $string = sendGet($url);
