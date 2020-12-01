@@ -84,16 +84,20 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
         // }
     ?>
 
-<table>
-    <tr>
-        <th>date</th>
-        <th>lat</th>
-        <th>long</th>
-        <th>message</th>
-        <th>mid</th>
-        <th>receptant</th>
-        <th>sender</th>
-    </tr>
+<table class="table">
+    <thead>
+        <tr>
+            <th>date</th>
+            <th>lat</th>
+            <th>long</th>
+            <th>message</th>
+            <th>mid</th>
+            <th>receptant</th>
+            <th>sender</th>
+        </tr>
+    </thead>
+
+    <tbody>
 
     <?php
         foreach ($jsonData as $m) {
@@ -136,5 +140,6 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
         //     echo "<tr> <td> <a href='consultas/consulta_puertos.php?pid=$fila[0]&name=$fila[1]'> $fila[1] </a> </td> </tr>";
         // }
     ?>
+    </tbody>
 
 </table>
