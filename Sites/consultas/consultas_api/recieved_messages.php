@@ -30,10 +30,13 @@ $url = "https://api-bdd-g-94-81.herokuapp.com/messages/$usuario_id";
 $response = sendGet($url);
 echo $response;
 
-$json = json_decode($response);
-echo $json;
-$json_a = json_decode($string, true);
-echo $json_a;
+// $json = json_decode($response);
+// echo $json;
+$jsonData = json_decode($string, true);
+echo $jsonData;
+echo '<pre>';
+var_dump($jsonData);
+echo '</pre>';
 
 
 
