@@ -87,3 +87,31 @@ Para subir archivos a mongodb:
 ``` bash
 mongoimport --collection <nombre_coleccion> --drop --file <archivo>.json --jsonArray --uri "mongodb://grupo81:grupo81@gray.ing.puc.cl:27017/grupo81?authSource=admin"
 ```
+
+## Deploy a Heroku
+
+### Dirección a la repo
+
+``` bash
+https://git.heroku.com/api-bdd-g-94-81.git
+```
+
+### Conexión a la repo
+
+``` bash
+git remote add heroku https://git.heroku.com/api-bdd-g-94-81.git
+```
+
+Para verificar que se haya añadido
+
+``` bash
+git remote -v
+```
+
+### Deploy de la app
+
+Desde la carpate principal del proyecto, se debe ejecutar el comando
+
+``` bash
+git subtree push --prefix Entrega4 heroku master
+```
