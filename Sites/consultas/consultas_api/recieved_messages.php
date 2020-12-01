@@ -37,7 +37,7 @@ if ($json_a === null) {
 }
 echo $json_a;
 foreach ($json_a as $person_name => $person_a) {
-    echo $person_a[0];
+    echo $person_a[0][0];
 }
 
 ?>
