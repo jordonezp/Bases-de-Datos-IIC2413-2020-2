@@ -55,8 +55,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $result = curl_exec($ch);
 
-$response = $result;
-$jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
+// $response = $result;
+$jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
 
 ?>
 <div class="container is-max-desktop">
@@ -95,6 +95,7 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
     echo "payload: $payload\n";
     echo "jsonData:\n";
     echo $jsonData;
+    echo $result;
     echo "----------\n";
     ?>
     
