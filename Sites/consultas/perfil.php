@@ -276,8 +276,8 @@ echo '<div class="container is-max-desktop">
 ?>
 
 <?php
-    echo 'HEllo Worlds'
-    echo $_GET["https://api-bdd-g-94-81.herokuapp.com/messages"]
+    echo 'HEllo Worlds';
+    echo $_GET["https://api-bdd-g-94-81.herokuapp.com/messages"];
 ?>
 
 <div class="container is-max-desktop">
