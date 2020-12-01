@@ -12,6 +12,7 @@ require('../../config/conection.php');
 $usuario_id = $_GET["usuario_id"];
 
 echo $usuario_id;
+echo "<br>"
 
 function sendGet($url) {
     try{
@@ -26,14 +27,16 @@ function sendGet($url) {
 }
 $url = "https://api-bdd-g-94-81.herokuapp.com/messages/$usuario_id";
 
-$msgs = sendGet($url);
+$string = sendGet($url);
+if ($string === false) {
+    echo "Api no retorna nada..."
+}
+$json_a = json_decode($string, true);
+if ($json_a === null) {
+    echo "Api retorna extraño..."
+}
+foreach ($json_a as $person_name => $person_a) {
+    echo $person_a;
+}
 
-?>
-
-<br>
-
-<?php
-    foreach ($msgs as $msg) {
-        echo $msg;
-    }
 ?>
