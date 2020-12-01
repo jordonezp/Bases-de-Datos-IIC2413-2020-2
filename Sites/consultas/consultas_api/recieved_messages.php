@@ -38,7 +38,7 @@ echo '<pre>';
 var_dump($jsonData);
 echo '</pre>';
 
-foreach ($jsonData as $m) {
+foreach ($jsonData[0] as $m) {
     echo $m;
 }
 
