@@ -39,8 +39,8 @@ var_dump($jsonData);
 echo '</pre>';
 
 foreach ($jsonData as $m) {
-    echo $m[0];
-    echo $m["date"];
+    echo "m[0]: "$m[0];
+    echo "m['date']: "$m["date"];
 }
 
 ?>
