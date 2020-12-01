@@ -44,7 +44,7 @@ $data = array(
     'desired' => $desired_a,
     'required' => $required_a
 );
-$payload = json_encode(array("user" => $data));
+$payload = json_encode($data);
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
 
@@ -91,7 +91,8 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
     //     echo "$r\n";
     // }
     
-    echo $jsonData;
+    echo "$jsonData\n";
+    echo "$payload\n";
     ?>
     
     <table class="table">
