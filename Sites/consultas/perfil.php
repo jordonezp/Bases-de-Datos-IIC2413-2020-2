@@ -276,7 +276,8 @@ echo '<div class="container is-max-desktop">
 ?>
 
 <div class="container is-max-desktop">
-    <form align="center" action="consultas_api/recieved_messages.php?pasaporte=43" method="get">
+    <form align="center" action="consultas_api/recieved_messages.php" method="get">
+        <input type="hidden" name="pasaporte" value=<?php echo $pasaporte ?> />
         <input class="button is-link" type="submit" value="Mensajes Recibidos">
     </form>
 </div>
