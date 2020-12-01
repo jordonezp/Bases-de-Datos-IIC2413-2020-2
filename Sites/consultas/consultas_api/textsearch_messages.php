@@ -14,12 +14,11 @@ $forbidden = $_GET["forbidden"];
 $desired = $_GET["desired"];
 $required = $_GET["required"];
 
-$userId_a = preg_split("/[\s,]+/", $userId);
 $forbidden_a = preg_split("/[\s,]+/", $forbidden);
 $desired_a = preg_split("/[\s,]+/", $desired);
 $required_a = preg_split("/[\s,]+/", $required);
 
-echo $userId_a;
+echo $userId;
 echo $forbidden;
 echo $desired;
 echo $required;
@@ -46,6 +45,7 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
     <h1 class="title">Buscar Mensaje</h1>
     <br>
     <p>En caso de ingresar múltiples términos, separar por ",". </p>
+    <br>
     
     <form align="center" action="textsearch_messages.php" method="get">
         <p>Usuario (id): </p>
@@ -60,5 +60,18 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
         <br>
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
+
+    <h2 class="title">Resultados</h2>
+    <?php
+    foreach ($forbidden_a as $f) {
+        echo $f;
+    }
+    foreach ($desired_a as $d) {
+        echo $d;
+    }
+    foreach ($required_a as $r) {
+        echo $r;
+    }
+    ?>
 </div>
 
