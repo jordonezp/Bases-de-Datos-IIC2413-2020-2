@@ -32,37 +32,21 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
 <div class="container is-max-desktop">
     <br>
     <h1 class="title">Buscar Mensaje</h1>
-    <!-- <table class="table">
-        <thead>
-            <tr>
-                <th>date</th>
-                <th>lat</th>
-                <th>long</th>
-                <th>message</th>
-                <th>mid</th>
-                <th>receptant</th>
-                <th>sender</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-        <?php
-            // foreach ($jsonData as $m) {
-            //     $rec = $m["receptant"];
-            //     if ("$rec" === $usuario_id) {
-            //         $date =  $m["date"];
-            //         $lat =  $m["lat"];
-            //         $long =  $m["long"];
-            //         $mid =  $m["mid"];
-            //         $message =  $m["message"];
-            //         $receptant =  $m["receptant"];
-            //         $sender =  $m["sender"];
-            //         echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
-            //     }
-            // }
-        ?>
-        </tbody>
-
-    </table> -->
+    
+    <form align="center" action="consultas_api/sent_messages.php" method="get">
+        <p>Usuario (id): </p>
+        <input class="input is-rounded" style="width: 33%;" type="number" name="prohibido">
+        <p>Prohibido: </p>
+        <input class="input is-rounded" style="width: 33%;" type="text" name="prohibido">
+        <p>Deseado: </p>
+        <input class="input is-rounded" style="width: 33%;" type="text" name="deseado">
+        <p>Requerido: </p>
+        <input class="input is-rounded" style="width: 33%;" type="text" name="requerido">
+        <input class="button is-link" type="submit" value="Buscar Mensajes">
+    </form>
 </div>
+
+"userId": 212,
+	"forbidden": ["magikarp", "se"],
+	"desired": ["shrek"],
+	"required": ["que"]
