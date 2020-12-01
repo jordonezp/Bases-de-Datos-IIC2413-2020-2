@@ -274,6 +274,35 @@ echo '<div class="container is-max-desktop">
 ';
 }
 ?>
+
+<?php
+    function sendGet($url) {
+        try{
+            $response = file_get_contents($url);
+    
+            if ($response !== false) {
+                return $response;
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+    $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
+
+    echo sendGet($url);
+
+    // try{
+    //     $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
+    //     $response = file_get_contents($url);
+
+    //     if ($response !== false) {
+    //         echo $response;
+    //     }
+    // } catch (Exception $e) {
+    //     echo $e->getMessage();
+    // }
+?>
+
 <div class="container is-max-desktop">
     <input class="button is-link" value="Ver mensajes enviados">
     <input class="button is-link" value="Ver mensajes recibidos">
