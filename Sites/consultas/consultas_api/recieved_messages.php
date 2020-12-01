@@ -38,15 +38,15 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
 // var_dump($jsonData);
 // echo '</pre>';
 
-foreach ($jsonData as $m) {
-    $rec = $m["receptant"];
-    if ($rec === $usuario_id) {
-        echo 
-    }
-    echo "\n m[0]: $m[0]";
-    echo "\n\n m['date']: ";
-    echo $m["date"];
-}
+// foreach ($jsonData as $m) {
+//     $rec = $m["receptant"];
+//     if ($rec === $usuario_id) {
+//         echo 
+//     }
+//     echo "\n m[0]: $m[0]";
+//     echo "\n\n m['date']: ";
+//     echo $m["date"];
+// }
 
 ?>
 
