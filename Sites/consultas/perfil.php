@@ -276,8 +276,16 @@ echo '<div class="container is-max-desktop">
 ?>
 
 <?php
-    echo 'HEllo Worlds';
-    echo $_GET["https://api-bdd-g-94-81.herokuapp.com/messages"];
+    try{
+        $url = "https://api-bdd-g-94-81.herokuapp.com/";
+        $response = file_get_contents($url);
+
+        if ($response !== false) {
+            echo $response;
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 ?>
 
 <div class="container is-max-desktop">

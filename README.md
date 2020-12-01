@@ -14,6 +14,8 @@ Repositorio para el ramo de bases de datos
 
 [Link a la pagina (http://codd.ing.puc.cl/~grupo81/index.php)](http://codd.ing.puc.cl/~grupo81/index.php)
 
+[Link a la API (https://api-bdd-g-94-81.herokuapp.com/)](https://api-bdd-g-94-81.herokuapp.com/)
+
 ## Notas Entrega1
 
 Dirección del servidor:
