@@ -30,6 +30,14 @@ $url = "https://api-bdd-g-94-81.herokuapp.com/messages/$usuario_id";
 $response = sendGet($url);
 echo $response;
 
+$json = json_decode($response);
+echo $json;
+$json_a = json_decode($string, true);
+echo $json_a;
+
+
+
+
 // $string = sendGet($url);
 // if ($string === false) {
 //     echo "Api no retorna nada...";
