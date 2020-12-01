@@ -276,27 +276,10 @@ echo '<div class="container is-max-desktop">
 ?>
 
 <div class="container is-max-desktop">
-  <form align="center" action="consultas_api/recieved_messages.php" method="get">
+  <form align="center" action='consultas_api/recieved_messages.php?pid=<?php echo $tipo_usuario ?>' method="get">
     <input class="button is-link" type="submit" value="Mensajes Recibidos">
   </form>
 </div>
-
-<?php
-    function sendGet($url) {
-        try{
-            $response = file_get_contents($url);
-    
-            if ($response !== false) {
-                return $response;
-            }
-        } catch (Exception $e) {
-            return $e->getMessage();
-        }
-    }
-    $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
-
-    echo sendGet($url);
-?>
 
 <div class="container is-max-desktop">
     <?php include('../templates/footer.html'); ?>
