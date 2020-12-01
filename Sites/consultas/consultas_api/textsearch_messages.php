@@ -14,7 +14,12 @@ $forbidden = $_GET["forbidden"];
 $desired = $_GET["desired"];
 $required = $_GET["required"];
 
-echo $userId;
+$userId_a = split(';', $userId);
+$forbidden_a = split(';', $forbidden);
+$desired_a = split(';', $desired);
+$required_a = split(';', $required);
+
+echo $userId_a;
 echo $forbidden;
 echo $desired;
 echo $required;
