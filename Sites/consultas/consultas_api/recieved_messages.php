@@ -103,22 +103,30 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
             // echo $m["date"];
             // echo "<br>";
             if ("$rec" === $usuario_id) {
+                $date =  $m["date"];
+                $lat =  $m["lat"];
+                $long =  $m["long"];
+                $mid =  $m["mid"];
+                $message =  $m["message"];
+                $receptant =  $m["receptant"];
+                $sender =  $m["sender"];
+                echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>"
                 // echo "True!!\n\n";
-                echo "<tr>";
-                // echo $m["date"];
-                // foreach ($m as $d) {
-                //     echo "<td>";
-                //     echo $d;
-                //     echo "</td>";
-                // }
-                echo "<td>$m['date']</td>";
-                echo "<td>$m['lat']</td>";
-                echo "<td>$m['long']</td>";
-                echo "<td>$m['mid']</td>";
-                echo "<td>$m['message']</td>";
-                echo "<td>$m['receptant']</td>";
-                echo "<td>$m['sender']</td>";
-                echo "</tr>";
+                // echo "<tr>";
+                // // echo $m["date"];
+                // // foreach ($m as $d) {
+                // //     echo "<td>";
+                // //     echo $d;
+                // //     echo "</td>";
+                // // }
+                // echo "<td>$m['date']</td>";
+                // echo "<td>$m['lat']</td>";
+                // echo "<td>$m['long']</td>";
+                // echo "<td>$m['mid']</td>";
+                // echo "<td>$m['message']</td>";
+                // echo "<td>$m['receptant']</td>";
+                // echo "<td>$m['sender']</td>";
+                // echo "</tr>";
             }
             // echo "\n m[0]: $m[0]";
             // echo "\n\n m['date']: ";
