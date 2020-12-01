@@ -66,13 +66,13 @@ foreach ($jsonData as $m) {
             $rec = $m["receptant"];
             if ($rec === $usuario_id) {
                 echo "<tr>";
-                echo "<td>$m['date']</td>"
-                echo "<td>$m['lat']</td>"
-                echo "<td>$m['long']</td>"
-                echo "<td>$m['mid']</td>"
-                echo "<td>$m['message']</td>"
-                echo "<td>$m['receptant']</td>"
-                echo "<td>$m['sender']</td>"
+                echo "<td>$m['date']</td>";
+                echo "<td>$m['lat']</td>";
+                echo "<td>$m['long']</td>";
+                echo "<td>$m['mid']</td>";
+                echo "<td>$m['message']</td>";
+                echo "<td>$m['receptant']</td>";
+                echo "<td>$m['sender']</td>";
                 echo "</tr>";
             }
             // echo "\n m[0]: $m[0]";
