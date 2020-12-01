@@ -27,21 +27,23 @@ function sendGet($url) {
 }
 $url = "https://api-bdd-g-94-81.herokuapp.com/messages/$usuario_id";
 
-$string = sendGet($url);
-if ($string === false) {
-    echo "Api no retorna nada...";
-}
-$json_a = json_decode($string, true);
-if ($json_a === null) {
-    echo "Api retorna extraño...";
-}
-echo "json_a: ";
-echo $json_a;
-echo "\n\nreal stuff....\n";
-foreach ($json_a as $person_name) {
-    echo $person_name;
-    echo $person_name[0];
-    echo $person_name[0][0];
-}
+$response = sendGet($url);
+
+// $string = sendGet($url);
+// if ($string === false) {
+//     echo "Api no retorna nada...";
+// }
+// $json_a = json_decode($string, true);
+// if ($json_a === null) {
+//     echo "Api retorna extraño...";
+// }
+// echo "json_a: ";
+// echo $json_a;
+// echo "\n\nreal stuff....\n";
+// foreach ($json_a as $person_name) {
+//     echo $person_name;
+//     echo $person_name[0];
+//     echo $person_name[0][0];
+// }
 
 ?>
