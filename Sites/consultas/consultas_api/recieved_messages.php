@@ -9,8 +9,7 @@
 
 require('../../config/conection.php');
 
-$pid = $_GET["pid"];
-$name = $_GET["name"];
+$pasaporte = $_GET["pasaporte"];
 
 ?>
 
