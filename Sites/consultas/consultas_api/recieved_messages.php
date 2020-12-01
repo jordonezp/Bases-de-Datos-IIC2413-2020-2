@@ -50,6 +50,40 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
 
 ?>
 
+<?php
+        foreach ($jsonData as $m) {
+            $rec = $m["receptant"];
+            echo $rec;
+            echo "<br>";
+            echo $m["date"];
+            echo "<br>";
+            if ("$rec" === $usuario_id) {
+                echo "True!!\n\n"
+                echo "<tr>";
+                echo $m["date"];
+                // foreach ($m as $d) {
+                //     echo "<td>";
+                //     echo $d;
+                //     echo "</td>";
+                // }
+                // echo "<td>$m['date']</td>";
+                // echo "<td>$m['lat']</td>";
+                // echo "<td>$m['long']</td>";
+                // echo "<td>$m['mid']</td>";
+                // echo "<td>$m['message']</td>";
+                // echo "<td>$m['receptant']</td>";
+                // echo "<td>$m['sender']</td>";
+                echo "</tr>";
+            }
+            // echo "\n m[0]: $m[0]";
+            // echo "\n\n m['date']: ";
+            // echo $m["date"];
+        }
+        // foreach ($tabla as $fila) {
+        //     echo "<tr> <td> <a href='consultas/consulta_puertos.php?pid=$fila[0]&name=$fila[1]'> $fila[1] </a> </td> </tr>";
+        // }
+    ?>
+
 <table>
     <tr>
         <th>date</th>
@@ -69,6 +103,7 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
             echo $m["date"];
             echo "<br>";
             if ("$rec" === $usuario_id) {
+                echo "True!!\n\n"
                 echo "<tr>";
                 echo $m["date"];
                 // foreach ($m as $d) {
