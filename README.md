@@ -115,5 +115,5 @@ git remote -v
 Desde la carpate principal del proyecto, se debe ejecutar el comando
 
 ``` bash
-git subtree push --prefix Entrega4 heroku master
+git subtree push --prefix Entrega5 heroku master
 ```

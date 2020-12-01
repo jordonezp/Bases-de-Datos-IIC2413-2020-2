@@ -274,18 +274,28 @@ echo '<div class="container is-max-desktop">
 ';
 }
 ?>
+<div class="container is-max-desktop">
+    <input class="button is-link" value="Ver mensajes enviados">
+    <input class="button is-link" value="Ver mensajes recibidos">
+    <input class="button is-link" value="Enviar mensaje">
+    <input class="button is-link" value="Buscar mensaje">
+    <br>
+    <form action="https://api-bdd-g-94-81.herokuapp.com/messages" method="get">
+        <input class="button is-link" type="submit" value="Ver mensajes enviados">
+  </form>
+</div>
 
 <?php
-    try{
-        $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
-        $response = file_get_contents($url);
+    // try{
+    //     $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
+    //     $response = file_get_contents($url);
 
-        if ($response !== false) {
-            echo $response;
-        }
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
+    //     if ($response !== false) {
+    //         echo $response;
+    //     }
+    // } catch (Exception $e) {
+    //     echo $e->getMessage();
+    // }
 ?>
 
 <div class="container is-max-desktop">
