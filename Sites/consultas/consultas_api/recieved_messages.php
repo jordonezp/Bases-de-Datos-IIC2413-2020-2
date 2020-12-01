@@ -24,7 +24,7 @@ function sendGet($url) {
         return $e->getMessage();
     }
 }
-$url = "https://api-bdd-g-94-81.herokuapp.com/$usuario_id";
+$url = "https://api-bdd-g-94-81.herokuapp.com/messages/$usuario_id";
 
 $msgs = sendGet($url);
 
@@ -34,6 +34,6 @@ $msgs = sendGet($url);
 
 <?php
     foreach ($msgs as $msg) {
-        echo "<tr> <td> $msg </td> </tr>";
+        echo $msg;
     }
 ?>
