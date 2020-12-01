@@ -38,6 +38,10 @@ echo '<pre>';
 var_dump($jsonData);
 echo '</pre>';
 
+foreach ($jsonData as $m) {
+    echo $m;
+}
+
 
 
 
