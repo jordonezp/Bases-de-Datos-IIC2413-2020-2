@@ -14,7 +14,7 @@ Repositorio para el ramo de bases de datos
 
 [Link a la pagina (http://codd.ing.puc.cl/~grupo81/index.php)](http://codd.ing.puc.cl/~grupo81/index.php)
 
-[Link a la API (https://api-bdd-g-94-81.herokuapp.com/)](https://api-bdd-g-94-81.herokuapp.com/)
+[Link a la API (https://bdd-e5-g9481.herokuapp.com/)](https://bdd-e5-g9481.herokuapp.com/)
 
 ## Notas Entrega1
 
@@ -95,13 +95,13 @@ mongoimport --collection <nombre_coleccion> --drop --file <archivo>.json --jsonA
 ### Dirección a la repo
 
 ``` bash
-https://git.heroku.com/api-bdd-g-94-81.git
+https://git.heroku.com/bdd-e5-g9481.git
 ```
 
 ### Conexión a la repo
 
 ``` bash
-git remote add heroku https://git.heroku.com/api-bdd-g-94-81.git
+git remote add heroku https://git.heroku.com/bdd-e5-g9481.git
 ```
 
 Para verificar que se haya añadido

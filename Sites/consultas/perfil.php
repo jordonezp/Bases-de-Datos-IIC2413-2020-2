@@ -289,61 +289,7 @@ echo '<div class="container is-max-desktop">
     }
     $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
 
-    function sendGet2() {
-        try{
-            $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
-            $response = file_get_contents($url);
-    
-            if ($response !== false) {
-                $request_result = $response;
-            }
-        } catch (Exception $e) {
-            $request_result =  $e->getMessage();
-        }
-    }
-    $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
-
     echo sendGet($url);
-
-    // try{
-    //     $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
-    //     $response = file_get_contents($url);
-
-    //     if ($response !== false) {
-    //         echo $response;
-    //     }
-    // } catch (Exception $e) {
-    //     echo $e->getMessage();
-    // }
-?>
-
-<div class="container is-max-desktop">
-    <input class="button is-link" value="Ver mensajes enviados">
-    <input class="button is-link" value="Ver mensajes recibidos">
-    <input class="button is-link" value="Enviar mensaje">
-    <input class="button is-link" value="Buscar mensaje">
-    <br>
-    <form action="https://api-bdd-g-94-81.herokuapp.com/messages" method="get">
-        <input class="button is-link" type="submit" value="Ver mensajes enviados">
-    </form>
-    <button onclick="sendGet2()">Click</button>
-</div>
-
-<?php
-    echo $request_result
-?>
-
-<?php
-    // try{
-    //     $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
-    //     $response = file_get_contents($url);
-
-    //     if ($response !== false) {
-    //         echo $response;
-    //     }
-    // } catch (Exception $e) {
-    //     echo $e->getMessage();
-    // }
 ?>
 
 <div class="container is-max-desktop">
