@@ -65,7 +65,9 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
         foreach ($jsonData as $m) {
             $rec = $m["receptant"];
             echo $rec;
+            echo "<br>";
             echo $m["date"];
+            echo "<br>";
             if ($rec === $usuario_id) {
                 echo "<tr>";
                 echo $m["date"];
