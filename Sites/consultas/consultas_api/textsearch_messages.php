@@ -77,6 +77,7 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     foreach ($required_a as $r) {
         echo "$r\n";
     }
+    echo "payload: $payload\n";
     ?>
     
     <form align="center" action="textsearch_messages.php" method="get">
@@ -94,17 +95,6 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     </form>
 
     <h2 class="title">Resultados</h2>
-    <?php
-    
-    echo "payload: $payload\n";
-    echo "jsonData:\n";
-    echo $jsonData;
-    echo $result;
-    echo "-------------------\n";
-    echo "result:\n";
-    echo $result;
-    echo "###################\n";
-    ?>
     
     <table class="table">
         <thead>
