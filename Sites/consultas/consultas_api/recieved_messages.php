@@ -35,9 +35,9 @@ $json_a = json_decode($string, true);
 if ($json_a === null) {
     echo "Api retorna extraño...";
 }
-echo "json_a: "
+echo "json_a: ";
 echo $json_a;
-echo "\n\nreal stuff....\n"
+echo "\n\nreal stuff....\n";
 foreach ($json_a as $person_name) {
     echo $person_name;
     echo $person_name[0];
