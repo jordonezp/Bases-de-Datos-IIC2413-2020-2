@@ -36,7 +36,25 @@ function sendGet($url) {
 }
 $url = "https://bdd-e5-g9481.herokuapp.com/text-search";
 
-$response = sendGet($url);
+$ch = curl_init($url);
+
+$data = array(
+    'userId' => $userId,
+    'forbidden' => $forbidden_a
+    'desired' => $desired_a
+    'required' => $required_a
+);
+$payload = json_encode(array("user" => $data));
+
+curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$result = curl_exec($ch);
+
+$response = $result;
 $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
 
 ?>
