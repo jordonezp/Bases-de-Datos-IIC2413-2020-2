@@ -277,7 +277,7 @@ echo '<div class="container is-max-desktop">
 
 <?php
     try{
-        $url = "https://api-bdd-g-94-81.herokuapp.com/";
+        $url = "https://api-bdd-g-94-81.herokuapp.com/messages";
         $response = file_get_contents($url);
 
         if ($response !== false) {
