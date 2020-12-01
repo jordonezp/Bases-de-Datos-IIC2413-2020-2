@@ -32,7 +32,7 @@ echo $response;
 
 // $json = json_decode($response);
 // echo $json;
-$jsonData = json_decode($string, true);
+$jsonData = json_decode($string, TRUE, 512, JSON_INVALID_UTF8_IGNORE);
 echo $jsonData;
 echo '<pre>';
 var_dump($jsonData);
