@@ -64,13 +64,13 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
     <h2 class="title">Resultados</h2>
     <?php
     foreach ($forbidden_a as $f) {
-        echo $f;
+        echo "$f\n";
     }
     foreach ($desired_a as $d) {
-        echo $d;
+        echo "$d\n";
     }
     foreach ($required_a as $r) {
-        echo $r;
+        echo "$r\n";
     }
     ?>
 </div>
