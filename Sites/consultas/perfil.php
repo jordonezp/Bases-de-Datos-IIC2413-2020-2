@@ -289,6 +289,11 @@ echo '<div class="container is-max-desktop">
     </form>
 </div>
 <div class="container is-max-desktop">
+    <form align="center" action="consultas_api/send_message.php" method="get">
+        <input class="button is-link" type="submit" value="Enviar Mensaje">
+    </form>
+</div>
+<div class="container is-max-desktop">
     <form align="center" action="consultas_api/textsearch_messages.php" method="get">
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
