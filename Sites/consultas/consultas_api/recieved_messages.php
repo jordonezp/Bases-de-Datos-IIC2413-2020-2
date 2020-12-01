@@ -12,7 +12,7 @@ require('../../config/conection.php');
 $usuario_id = $_GET["usuario_id"];
 
 echo $usuario_id;
-echo "<br>"
+echo "<br>";
 
 function sendGet($url) {
     try{
