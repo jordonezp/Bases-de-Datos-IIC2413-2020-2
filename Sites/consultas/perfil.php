@@ -275,6 +275,12 @@ echo '<div class="container is-max-desktop">
 }
 ?>
 
+<div class="container is-max-desktop">
+  <form align="center" action="consultas/consultas_api/recieved_messages.php" method="get">
+    <input class="button is-link" type="submit" value="Mensajes Recibidos">
+  </form>
+</div>
+
 <?php
     function sendGet($url) {
         try{
