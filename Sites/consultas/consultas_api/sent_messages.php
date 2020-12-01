@@ -84,7 +84,8 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
         // // }
     ?>
 <div class="container is-max-desktop">
-    <h1 class="title">Mensajes Recibidos</h1>
+    <br>
+    <h1 class="title">Mensajes Enviados</h1>
     <table class="table">
         <thead>
             <tr>

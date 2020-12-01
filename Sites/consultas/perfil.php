@@ -289,9 +289,7 @@ echo '<div class="container is-max-desktop">
     </form>
 </div>
 <div class="container is-max-desktop">
-    <form align="center" action="consultas_api/sent_messages.php" method="get">
-        <input type="hidden" name="usuario_id" value=<?php echo $usuario_id ?> />
-        <input class="input is-rounded" type="text" name="busqueda" placeholder="Búsqueda...">
+    <form align="center" action="consultas_api/textsearch_messages.php" method="get">
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
 </div>
