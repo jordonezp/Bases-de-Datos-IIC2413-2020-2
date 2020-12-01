@@ -25,7 +25,7 @@ function sendGet($url) {
         return $e->getMessage();
     }
 }
-$url = "https://api-bdd-g-94-81.herokuapp.com/messages";
+$url = "https://bdd-e5-g9481.herokuapp.com/messages";
 
 $response = sendGet($url);
 $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
