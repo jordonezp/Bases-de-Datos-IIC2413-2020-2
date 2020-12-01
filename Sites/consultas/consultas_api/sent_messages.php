@@ -102,12 +102,12 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
 
         <?php
             foreach ($jsonData as $m) {
-                $rec = $m["receptant"];
+                $sen = $m["sender"];
                 // echo $rec;
                 // echo "<br>";
                 // echo $m["date"];
                 // echo "<br>";
-                if ("$rec" === $usuario_id) {
+                if ("$sen" === $usuario_id) {
                     $date =  $m["date"];
                     $lat =  $m["lat"];
                     $long =  $m["long"];
