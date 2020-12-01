@@ -110,7 +110,7 @@ $jsonData = json_decode($response, JSON_INVALID_UTF8_IGNORE);
                 $message =  $m["message"];
                 $receptant =  $m["receptant"];
                 $sender =  $m["sender"];
-                echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>"
+                echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
                 // echo "True!!\n\n";
                 // echo "<tr>";
                 // // echo $m["date"];
