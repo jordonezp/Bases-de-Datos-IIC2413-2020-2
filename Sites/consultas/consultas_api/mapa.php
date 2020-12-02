@@ -47,6 +47,10 @@ $result = curl_exec($ch);
 // $response = $result;
 $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
 
+
+
+$marker_list = []
+
 ?>
 <div class="container is-max-desktop">
     <br>
@@ -102,6 +106,7 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
                     $receptant =  $m["receptant"];
                     $sender =  $m["sender"];
                     echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
+                    array_push($marker_list,[ "lat" => $lat, "long" => $long]);
                 }
             }
         ?>
@@ -111,6 +116,8 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     <br>
     <br>
     <div id="mapid" style="height: 300px"></div>
+    <br>
+    <br>
     <?php
         // echo "start: $start_date\n";
         // echo "end: $end_date\n";
@@ -118,16 +125,16 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     ?>
 </div>
 <?php 
-    $lat = -33.5;
-    $long = -70.5;
-    $marker_list = [
-        ["lat" => -33.4,
-        "long" => -70.5],
-        ["lat" => -33.6,
-        "long" => -70.5],
-        ["lat" => -33.5,
-        "long" => -70.6],
-    ];
+    // $lat = -33.5;
+    // $long = -70.5;
+    // $marker_list = [
+    //     ["lat" => -33.4,
+    //     "long" => -70.5],
+    //     ["lat" => -33.6,
+    //     "long" => -70.5],
+    //     ["lat" => -33.5,
+    //     "long" => -70.6],
+    // ];
 ?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
