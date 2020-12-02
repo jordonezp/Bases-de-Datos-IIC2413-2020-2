@@ -60,8 +60,9 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     <?php
         echo "payload: $payload\n";
         echo "result: $result\n";
-        echo 'User IP Address - '.$_SERVER['REMOTE_ADDR'];
-        $res = file_get_contents("https://www.iplocate.io/api/lookup/$_SERVER['REMOTE_ADDR']");
+        $ip = $_SERVER['REMOTE_ADDR'];
+        echo 'User IP Address - '.$ip;
+        $res = file_get_contents("https://www.iplocate.io/api/lookup/$ip");
         $res = json_decode($res);
         
         echo $res->country; // United States
