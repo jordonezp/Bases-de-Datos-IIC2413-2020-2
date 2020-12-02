@@ -19,10 +19,10 @@ $forbidden_a = preg_split("/[;]+/", $forbidden);
 $desired_a = preg_split("/[;]+/", $desired);
 $required_a = preg_split("/[;]+/", $required);
 
-echo $userId;
-echo $forbidden;
-echo $desired;
-echo $required;
+// echo $userId;
+// echo $forbidden;
+// echo $desired;
+// echo $required;
 
 function sendGet($url) {
     try{
@@ -113,7 +113,6 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
 
         <?php
             foreach ($jsonData as $m) {
-                echo $m;
                 $date =  $m["date"];
                 $lat =  $m["lat"];
                 $long =  $m["long"];

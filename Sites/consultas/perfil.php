@@ -290,6 +290,7 @@ echo '<div class="container is-max-desktop">
 </div>
 <div class="container is-max-desktop">
     <form align="center" action="consultas_api/send_message.php" method="get">
+        <input type="hidden" name="sender" value=<?php echo $usuario_id ?> />
         <input class="button is-link" type="submit" value="Enviar Mensaje">
     </form>
 </div>
