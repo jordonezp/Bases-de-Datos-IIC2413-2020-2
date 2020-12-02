@@ -16,6 +16,16 @@ require('../../config/conection.php');
 // 	"lat": -46.059365,
 // 	"long": -72.201691,
 // 	"date": "2018-10-16"
+
+$ip = $_SERVER['REMOTE_ADDR'];
+$res = file_get_contents("https://www.iplocate.io/api/lookup/$ip");
+$res = json_decode($res);
+
+$lat = $res->latitude;
+$long = $res->longitude;
+
+$date = date("Y-m-d");
+
 $sender = $_GET["sender"];
 $receptant = $_GET["receptant"];
 $message = $_GET["message"];
@@ -33,9 +43,12 @@ $url = "https://bdd-e5-g9481.herokuapp.com/messages";
 $ch = curl_init($url);
 
 $data = array(
+    'message' => $message,
     'sender' => $sender,
     'receptant' => $receptant,
-    'message' => $message
+    'lat' => $lat,
+    'long' => $long,
+    'date' => $date,
 );
 $payload = json_encode($data);
 
@@ -60,17 +73,17 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     <?php
         echo "payload: $payload\n";
         echo "result: $result\n";
-        $ip = $_SERVER['REMOTE_ADDR'];
-        echo 'User IP Address - '.$ip;
-        $res = file_get_contents("https://www.iplocate.io/api/lookup/$ip");
-        $res = json_decode($res);
+        // $ip = $_SERVER['REMOTE_ADDR'];
+        // echo 'User IP Address - '.$ip;
+        // $res = file_get_contents("https://www.iplocate.io/api/lookup/$ip");
+        // $res = json_decode($res);
         
-        echo $res->country; // United States
-        echo $res->continent; // North America
-        echo $res->latitude; // 37.751
-        echo $res->longitude; // -97.822
+        // echo $res->country; // United States
+        // echo $res->continent; // North America
+        // echo $res->latitude; // 37.751
+        // echo $res->longitude; // -97.822
         
-        var_dump($res);
+        // var_dump($res);
     ?>
     
     <form align="center" action="send_message.php" method="get">
