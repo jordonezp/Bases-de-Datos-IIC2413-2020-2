@@ -14,11 +14,8 @@ $desired = $_GET["desired"];
 $start_date = $_GET["start_date"];
 $end_date = $_GET["end_date"];
 
-$time_input_start_date = strtotime($start_date);  
-$start_date = getDate($time_input_start_date);
-
-$time_input_end_date = strtotime($end_date);  
-$end_date = getDate($time_input_end_date);
+$start_date = strtotime($start_date);
+$end_date = strtotime($end_date);
 
 $userId = (int) $userId;
 $desired_a = preg_split("/[;]+/", $desired);
@@ -93,7 +90,8 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
         <?php
             foreach ($jsonData as $m) {
                 $date =  $m["date"];
-                if ($date > $start_date && $end_date > $data) {
+                $date_date = strtotime($date);
+                if ($date_date > $start_date && $end_date > $date_date) {
                     $lat =  $m["lat"];
                     $long =  $m["long"];
                     $mid =  $m["mid"];
