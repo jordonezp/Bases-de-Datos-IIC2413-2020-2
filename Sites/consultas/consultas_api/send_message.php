@@ -61,8 +61,15 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
         echo "payload: $payload\n";
         echo "result: $result\n";
         echo 'User IP Address - '.$_SERVER['REMOTE_ADDR'];
-        $record = geoip_record_by_name($_SERVER['REMOTE_ADDR']);
-        echo $record['city'];
+        $res = file_get_contents("https://www.iplocate.io/api/lookup/$_SERVER['REMOTE_ADDR']");
+        $res = json_decode($res);
+        
+        echo $res->country; // United States
+        echo $res->continent; // North America
+        echo $res->latitude; // 37.751
+        echo $res->longitude; // -97.822
+        
+        var_dump($res);
     ?>
     
     <form align="center" action="send_message.php" method="get">
