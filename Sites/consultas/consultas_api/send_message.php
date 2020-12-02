@@ -9,47 +9,37 @@
 
 require('../../config/conection.php');
 
-$userId = $_GET["userId"];
-$forbidden = $_GET["forbidden"];
-$desired = $_GET["desired"];
-$required = $_GET["required"];
 
-$userId = (int) $userId;
-$forbidden_a = preg_split("/[;]+/", $forbidden);
-$desired_a = preg_split("/[;]+/", $desired);
-$required_a = preg_split("/[;]+/", $required);
+// "message": "Mensaje para probar el POST",
+// 	"sender": 1,
+// 	"receptant": 2,
+// 	"lat": -46.059365,
+// 	"long": -72.201691,
+// 	"date": "2018-10-16"
+$sender = $_GET["sender"];
+$receptant = $_GET["receptant"];
+$message = $_GET["message"];
+
+$sender = (int) $sender;
+$receptant = (int) $receptant;
 
 // echo $userId;
 // echo $forbidden;
 // echo $desired;
 // echo $required;
 
-function sendGet($url) {
-    try{
-        $response = file_get_contents($url);
-
-        if ($response !== false) {
-            return $response;
-        }
-    } catch (Exception $e) {
-        return $e->getMessage();
-    }
-}
-$url = "https://bdd-e5-g9481.herokuapp.com/text-search";
+$url = "https://bdd-e5-g9481.herokuapp.com/messages";
 
 $ch = curl_init($url);
 
 $data = array(
-    'userId' => $userId,
-    'forbidden' => $forbidden_a,
-    'desired' => $desired_a,
-    'required' => $required_a
+    'sender' => $sender,
+    'receptant' => $receptant,
+    'message' => $message
 );
 $payload = json_encode($data);
 
 curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 
@@ -68,32 +58,21 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     <p>En caso de ingresar múltiples términos, separar por ",". </p>
     <br>
     <?php
-    foreach ($forbidden_a as $f) {
-        echo "$f\n";
-    }
-    foreach ($desired_a as $d) {
-        echo "$d\n";
-    }
-    foreach ($required_a as $r) {
-        echo "$r\n";
-    }
-    echo "payload: $payload\n";
+        echo "payload: $payload\n";
+        echo "result: $result\n";
+        echo 'User IP Address - '.$_SERVER['REMOTE_ADDR'];
+        $record = geoip_record_by_name($_SERVER['REMOTE_ADDR']);
+        echo $record['city'];
     ?>
     
     <form align="center" action="send_message.php" method="get">
         <input type="hidden" name="sender" value=<?php echo $usuario_id ?> />
         <p>Receptor (id): </p>
         <input class="input is-rounded" style="width: 33%;" type="number" name="receptant">
-        <p>message: </p>
+        <p>Message: </p>
         <input class="input is-rounded" style="width: 33%;" type="text" name="message">
         <br>
         <br>
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
 </div>
-"message": "Mensaje para probar el POST",
-	"sender": 1,
-	"receptant": 2,
-	"lat": -46.059365,
-	"long": -72.201691,
-	"date": "2018-10-16"
