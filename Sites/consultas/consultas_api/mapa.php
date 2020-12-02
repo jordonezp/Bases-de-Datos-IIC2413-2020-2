@@ -10,17 +10,14 @@
 require('../../config/conection.php');
 
 $userId = $_GET["userId"];
-$forbidden = $_GET["forbidden"];
 $desired = $_GET["desired"];
-$required = $_GET["required"];
+$start_date = $_GET["start_date"];
+$end_date = $_GET["end_date"];
 
 $userId = (int) $userId;
 $desired_a = preg_split("/[;]+/", $desired);
 
-// echo $userId;
-// echo $forbidden;
-// echo $desired;
-// echo $required;
+
 $url = "https://bdd-e5-g9481.herokuapp.com/text-search";
 
 $ch = curl_init($url);
@@ -97,7 +94,6 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
                 $receptant =  $m["receptant"];
                 $sender =  $m["sender"];
                 echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
-
             }
         ?>
         </tbody>
@@ -105,5 +101,10 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     </table>
     <br>
     <br>
+    <?php
+        echo $start_date;
+        echo $end_date;
+        echo $end_date > $start_date;
+    ?>
 </div>
 
