@@ -58,7 +58,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-$result = curl_exec($ch);
+if ($message !== null && $receptant !== 0) {
+    $result = curl_exec($ch);
+}
 
 // $response = $result;
 $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
@@ -96,4 +98,9 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
         <br>
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
+    <?php
+        if ($result) {
+            echo $result["success"];
+        }
+    ?>
 </div>
