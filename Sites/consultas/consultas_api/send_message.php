@@ -101,7 +101,9 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     </form>
     <?php
         if ($result) {
-            echo $result["success"];
+            echo '<h2 class="title">¡Exitoso!</h2>';
+        } else {
+            echo '<h2 class="title">Nada enviado...</h2>';
         }
     ?>
 </div>
