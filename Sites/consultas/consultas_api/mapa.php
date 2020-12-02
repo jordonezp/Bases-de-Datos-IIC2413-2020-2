@@ -87,13 +87,15 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
         <?php
             foreach ($jsonData as $m) {
                 $date =  $m["date"];
-                $lat =  $m["lat"];
-                $long =  $m["long"];
-                $mid =  $m["mid"];
-                $message =  $m["message"];
-                $receptant =  $m["receptant"];
-                $sender =  $m["sender"];
-                echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
+                if ($date > $start_date && $end_date > $data) {
+                    $lat =  $m["lat"];
+                    $long =  $m["long"];
+                    $mid =  $m["mid"];
+                    $message =  $m["message"];
+                    $receptant =  $m["receptant"];
+                    $sender =  $m["sender"];
+                    echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
+                }
             }
         ?>
         </tbody>
@@ -104,7 +106,7 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     <?php
         echo $start_date;
         echo $end_date;
-        echo $end_date < $start_date;
+        echo $start_date < $end_date;
     ?>
 </div>
 
