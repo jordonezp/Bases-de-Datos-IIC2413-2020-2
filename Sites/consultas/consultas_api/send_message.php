@@ -59,6 +59,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 if ($message !== null && $receptant !== 0) {
+    echo 'enviado!!';
     $result = curl_exec($ch);
 }
 
@@ -89,14 +90,14 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     ?>
     
     <form align="center" action="send_message.php" method="get">
-        <input type="hidden" name="sender" value=<?php echo $usuario_id ?> />
+        <input type="hidden" name="sender" value=<?php echo $sender ?> />
         <p>Receptor (id): </p>
         <input class="input is-rounded" style="width: 33%;" type="number" name="receptant">
         <p>Message: </p>
         <input class="input is-rounded" style="width: 33%;" type="text" name="message">
         <br>
         <br>
-        <input class="button is-link" type="submit" value="Buscar Mensajes">
+        <input class="button is-link" type="submit" value="Enviar">
     </form>
     <?php
         if ($result) {
