@@ -14,6 +14,12 @@ $desired = $_GET["desired"];
 $start_date = $_GET["start_date"];
 $end_date = $_GET["end_date"];
 
+$time_input_start_date = strtotime($start_date);  
+$start_date = getDate($time_input_start_date);
+
+$time_input_end_date = strtotime($end_date);  
+$end_date = getDate($time_input_end_date);
+
 $userId = (int) $userId;
 $desired_a = preg_split("/[;]+/", $desired);
 
