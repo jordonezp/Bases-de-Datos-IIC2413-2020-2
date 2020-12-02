@@ -80,7 +80,7 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     echo "payload: $payload\n";
     ?>
     
-    <form align="center" action="textsearch_messages.php" method="get">
+    <form align="center" action="mapa.php" method="get">
         <p>Usuario (id): </p>
         <input class="input is-rounded" style="width: 33%;" type="number" name="userId">
         <p>Prohibido: </p>

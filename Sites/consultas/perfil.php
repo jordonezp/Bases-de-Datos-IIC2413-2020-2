@@ -299,6 +299,11 @@ echo '<div class="container is-max-desktop">
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
 </div>
+<div class="container is-max-desktop">
+    <form align="center" action="consultas_api/mapa.php" method="get">
+        <input class="button is-link" type="submit" value="Ver Mapa">
+    </form>
+</div>
 
 <div class="container is-max-desktop">
     <?php include('../templates/footer.html'); ?>

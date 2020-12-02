@@ -59,7 +59,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 if ($message !== null && $receptant !== 0) {
-    echo 'enviado!!';
     $result = curl_exec($ch);
 }
 
@@ -70,8 +69,6 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
 <div class="container is-max-desktop">
     <br>
     <h1 class="title">Enviar Mensaje</h1>
-    <br>
-    <p>En caso de ingresar múltiples términos, separar por ",". </p>
     <br>
     <?php
         // echo "payload: $payload\n";
