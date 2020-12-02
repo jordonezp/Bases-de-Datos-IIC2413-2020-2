@@ -69,24 +69,13 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
 ?>
 <div class="container is-max-desktop">
     <br>
-    <h1 class="title">Buscar Mensaje</h1>
+    <h1 class="title">Enviar Mensaje</h1>
     <br>
     <p>En caso de ingresar múltiples términos, separar por ",". </p>
     <br>
     <?php
-        echo "payload: $payload\n";
-        echo "result: $result\n";
-        // $ip = $_SERVER['REMOTE_ADDR'];
-        // echo 'User IP Address - '.$ip;
-        // $res = file_get_contents("https://www.iplocate.io/api/lookup/$ip");
-        // $res = json_decode($res);
-        
-        // echo $res->country; // United States
-        // echo $res->continent; // North America
-        // echo $res->latitude; // 37.751
-        // echo $res->longitude; // -97.822
-        
-        // var_dump($res);
+        // echo "payload: $payload\n";
+        // echo "result: $result\n";
     ?>
     
     <form align="center" action="send_message.php" method="get">
