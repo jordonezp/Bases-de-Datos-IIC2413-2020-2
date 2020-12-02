@@ -104,8 +104,8 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
     <br>
     <br>
     <?php
-        echo $start_date;
-        echo $end_date;
+        echo "start: $start_date\n";
+        echo "end: $end_date\n";
         echo $start_date < $end_date;
     ?>
 </div>
