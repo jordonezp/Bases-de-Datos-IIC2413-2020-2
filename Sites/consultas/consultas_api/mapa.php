@@ -65,7 +65,7 @@ $marker_list = []
     <form align="center" action="mapa.php" method="get">
         <input type="hidden" name="sender" value=<?php echo $usuario_id ?> />
         <p>Usuario (id): </p>
-        <input class="input is-rounded" style="width: 33%;" type="number" name="userId">
+        <input class="input is-rounded" style="width: 33%;" type="text" name="userId">
         <p>Palabras Clave: </p>
         <input class="input is-rounded" style="width: 33%;" type="text" name="desired">
         <p>Fecha inicio: </p>
