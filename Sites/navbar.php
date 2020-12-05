@@ -18,6 +18,9 @@
                 <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/login.php">
                     Iniciar Sesion
                 </a>
+                <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/pdi.php">
+                    PDI
+                </a>
                 <a class="navbar-item" href="http://codd.ing.puc.cl/~grupo81/consultas/perfil.php">
                     <?php
                         session_start();
