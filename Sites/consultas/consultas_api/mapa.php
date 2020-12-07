@@ -138,7 +138,7 @@ $marker_list = []
 
 
 
-    $marker_list2 = []
+    $marker_list2 = [];
     if(strpos($id_description, "jefe") !== false){
         echo "Word Found!";
         $query_jefe = "SELECT pc.latitude, pc.longitud
