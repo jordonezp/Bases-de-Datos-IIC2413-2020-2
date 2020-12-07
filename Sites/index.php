@@ -31,4 +31,21 @@ if (!isset($_SESSION['name']))
     <br/><br/>
     <input class="button is-link" type="submit" value="Buscar">
   </form>
+
+
 </div>
+
+<?php 
+$json = file_get_contents('../Entrega4/datos/usuarios.json');
+$data = json_decode($json, true);
+foreach($data as $row){
+  $id = $row['id'];
+  $name = $row['name'];
+  $age = $row['age'];
+  $desription = $row['description'];
+  $sql = "INSERT INTO users_json ('id','name', 'age', 'description') 
+  VALUES ($id, $name, $age, $description)";
+}
+  
+
+?>
