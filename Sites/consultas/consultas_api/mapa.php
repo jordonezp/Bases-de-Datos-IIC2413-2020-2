@@ -121,7 +121,7 @@ $marker_list = []
         // echo "start: $start_date\n";
         // echo "end: $end_date\n";
         // echo $start_date < $end_date;
-    require('../config/conection.php');
+    require('../../config/conection.php');
     
     $query = "SELECT id FROM users_json WHERE pasaporte_rut = {$userId};";
     $result = $dbimp -> prepare($query);
