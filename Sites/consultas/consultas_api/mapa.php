@@ -133,6 +133,8 @@ $marker_list = []
     ?>
 </div>
 <?php 
+
+    $marker_list2 = [];
     $lat = -33.5;
     $long = -70.5;
     foreach ($jsonData as $m) {
@@ -163,6 +165,8 @@ $marker_list = []
 
     <?php foreach($marker_list as $marker) {
         echo 
-        'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
-    } ?>
+        'L.marker([' . $marker["lat"] . ',' . $marker["long"] . '], {icon: greenIcon}).addTo(map);';
+    } 
+    
+    ?>
 </script>
