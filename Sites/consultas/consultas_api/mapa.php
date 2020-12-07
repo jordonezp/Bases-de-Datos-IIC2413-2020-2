@@ -153,7 +153,7 @@ $marker_list = []
         $result_jefe -> execute();
         $lat_long_jefe = $result_jefe -> fetchAll();
         $lat_jefe = $lat_long_jefe[0][0];
-        echo 'latitud:' $lat_jefe;
+        echo $lat_jefe;
         $long_jefe = $lat_long_jefe[0][1];
         echo $long_jefe;
         array_push($marker_list2,[ "lat" => $lat_jefe, "long" => $long_jefe]);
