@@ -137,9 +137,9 @@ $marker_list = []
     $result2_json = $result2 -> fetchAll();
 
 
-
+    echo $id_description
     $marker_list2 = [];
-    if(strpos($id_description, "jefe") !== false){
+    if(strpos($id_description, "jefe") == true){
         echo "Word Found!";
         $query_jefe = "SELECT pc.latitude, pc.longitud
                         FROM employees e 
