@@ -137,7 +137,7 @@ $marker_list = []
     $result2_json = $result2 -> fetchAll();
 
 
-    echo $id_description
+    echo $id_description;
     $marker_list2 = [];
     if(strpos($id_description, "jefe") == true){
         echo "Word Found!";
