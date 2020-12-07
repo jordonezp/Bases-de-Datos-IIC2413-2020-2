@@ -43,7 +43,7 @@ foreach($data as $row){
   $name = $row['name'];
   $age = $row['age'];
   $desription = $row['description'];
-  $sql = "INSERT INTO users_json ('id','name', 'age', 'description') 
+  $sql = "INSERT INTO usuarios_json ('id','name', 'age', 'description') 
   VALUES ($id, $name, $age, $description)";
 }
   
