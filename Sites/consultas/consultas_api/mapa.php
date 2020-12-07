@@ -123,13 +123,21 @@ $marker_list = []
         // echo $start_date < $end_date;
     require('../../config/conection.php');
     
-    $query = "SELECT id FROM users_json WHERE pasaporte_rut = {$userId};";
+    $query = "SELECT * FROM users_json WHERE pasaporte_rut = {$userId};";
     $result = $dbimp -> prepare($query);
     $result -> execute();
-    $id_json = $result -> fetchAll();
-    $id_json = $id_json[0][0];
-        
+    $result_json = $result -> fetchAll();
+    $id_json = $result_json[0][0];
+    $id_description = $result_json[0][3];
+
     
+    if(strpos($id_description, "jefe") !== false){
+        echo "Word Found!";
+    } else{
+        echo "es capitan!";
+    }
+    ?>
+
     ?>
 </div>
 <?php 
@@ -150,6 +158,7 @@ $marker_list = []
             echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
             array_push($marker_list,[ "lat" => $lat, "long" => $long]);}
         }
+    
 
 ?>
 
