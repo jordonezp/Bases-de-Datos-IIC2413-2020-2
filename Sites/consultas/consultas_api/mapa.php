@@ -147,7 +147,7 @@ $marker_list = []
                         ON e.fid = f.fid
                         INNER JOIN puertos_completos pc
                         ON pc.pid = f.pid
-                        WHERE {$result2_json}= e.rut;"
+                        WHERE {$result2_json}= e.rut;";
 
         $result_jefe = $dbimp -> prepare($query_jefe);
         $result_jefe -> execute();
