@@ -153,7 +153,7 @@ $marker_list = []
         $result_jefe -> execute();
         $lat_long_jefe = $result_jefe -> fetchAll();
         $lat_jefe = $lat_long_jefe[0][0];
-        $long_jefe = $lat_long_jefe[0][1]
+        $long_jefe = $lat_long_jefe[0][1];
         array_push($marker_list2,[ "lat" => $lat_jefe, "long" => $long_jefe]);
     } else{
         echo "es capitan!";
