@@ -45,7 +45,9 @@ foreach($data as $row){
   $desription = $row['description'];
   $sql = "INSERT INTO usuarios_json ('id','name', 'age', 'description') 
   VALUES ($id, $name, $age, $description)";
+  echo ($id);
 }
+echo "listo";
   
 
 ?>
