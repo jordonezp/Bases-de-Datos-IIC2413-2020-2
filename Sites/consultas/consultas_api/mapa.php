@@ -131,13 +131,35 @@ $marker_list = []
     $id_description = $result_json[0][3];
 
     
+    $query1 = "SELECT ic.pasaporte_rut FROM ids_cruzados ic WHERE ic.id = {$id_json};"
+    $result = $dbimp -> prepare($query);
+    $result2 -> execute();
+    $result2_json = $result2 -> fetchAll();
+
+
+
+    $marker_list2 = []
     if(strpos($id_description, "jefe") !== false){
         echo "Word Found!";
+        $query_jefe = "SELECT pc.latitude, pc.longitud
+                        FROM employees e 
+                        INNER JOIN facilities f 
+                        ON e.fid = f.fid
+                        INNER JOIN puertos_completos pc
+                        ON pc.pid = f.pid
+                        WHERE {$result2_json}= e.rut;"
+
+        $result_jefe = $dbimp -> prepare($query_jefe);
+        $result_jefe -> execute();
+        $lat_long_jefe = $result_jefe -> fetchAll();
+        $lat_jefe = $lat_long_jefe[0][0];
+        $long_jefe = $lat_long_jefe[0][1]
+        array_push($marker_list2,[ "lat" => $lat_jefe, "long" => $long_jefe]);
     } else{
         echo "es capitan!";
+        
     }
-    ?>
-
+    
     ?>
 </div>
 <?php 
@@ -185,6 +207,10 @@ $marker_list = []
         echo 
         'L.marker([' . $marker["lat"] . ',' . $marker["long"] . '], {icon: greenIcon}).addTo(map);';
     } 
+    foreach($marker_list2 as $marker) {
+        echo 
+        'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
+    }
     
     ?>
 </script>
