@@ -135,7 +135,7 @@ $marker_list = []
     $result2 = $dbimp -> prepare($query1);
     $result2 -> execute();
     $result2_json = $result2 -> fetchAll();
-    $result2_json = $result2_json[0][0]
+    $result2_json = $result2_json[0][0];
 
 
     echo $id_description;
