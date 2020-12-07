@@ -138,7 +138,7 @@ $marker_list = []
     foreach ($jsonData as $m) {
         $date =  $m["date"];
         $date_date = strtotime($date);
-        if ($date_date > $start_date && $end_date > $date_date && $id_json == $m["sender"]) {
+        if ($date_date > $start_date && $end_date > $date_date && $userId == $m["sender"]) {
             $lat =  $m["lat"];
             $long =  $m["long"];
             $mid =  $m["mid"];
