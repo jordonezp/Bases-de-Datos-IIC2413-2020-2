@@ -131,7 +131,7 @@ $marker_list = []
     $id_description = $result_json[0][3];
 
     
-    $query1 = "SELECT ic.pasaporte_rut FROM ids_cruzados ic WHERE ic.id = {$id_json};"
+    $query1 = "SELECT ic.pasaporte_rut FROM ids_cruzados ic WHERE ic.id = {$id_json};";
     $result2 = $dbimp -> prepare($query1);
     $result2 -> execute();
     $result2_json = $result2 -> fetchAll();
