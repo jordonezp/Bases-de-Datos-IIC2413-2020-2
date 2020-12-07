@@ -137,8 +137,8 @@ $marker_list = []
             $receptant =  $m["receptant"];
             $sender =  $m["sender"];
             echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
-            array_push($marker_list,[ "lat" => $lat, "long" => $long])};
-        };
+            array_push($marker_list,[ "lat" => $lat, "long" => $long]);}
+        }
 
 ?>
 
