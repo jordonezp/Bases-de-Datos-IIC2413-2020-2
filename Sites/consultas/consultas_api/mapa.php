@@ -152,6 +152,7 @@ $marker_list = []
         $result_jefe = $dbimp -> prepare($query_jefe);
         $result_jefe -> execute();
         $lat_long_jefe = $result_jefe -> fetchAll();
+        echo $lat_long_jefe;
         $lat_jefe = $lat_long_jefe[0][0];
         echo $lat_jefe;
         $long_jefe = $lat_long_jefe[0][1];
