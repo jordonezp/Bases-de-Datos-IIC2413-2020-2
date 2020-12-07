@@ -121,6 +121,15 @@ $marker_list = []
         // echo "start: $start_date\n";
         // echo "end: $end_date\n";
         // echo $start_date < $end_date;
+    require('../config/conection.php');
+    
+    $query = "SELECT id FROM users_json WHERE pasaporte_rut = {$userId};";
+    $result = $dbimp -> prepare($query);
+    $result -> execute();
+    $id_json = $result -> fetchAll();
+    $id_json = $id_json[0][0];
+        
+    
     ?>
 </div>
 <?php 
@@ -129,7 +138,7 @@ $marker_list = []
     foreach ($jsonData as $m) {
         $date =  $m["date"];
         $date_date = strtotime($date);
-        if ($date_date > $start_date && $end_date > $date_date) {
+        if ($date_date > $start_date && $end_date > $date_date && $id_json == $m["sender"]) {
             $lat =  $m["lat"];
             $long =  $m["long"];
             $mid =  $m["mid"];
