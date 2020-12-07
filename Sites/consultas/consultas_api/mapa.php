@@ -126,14 +126,20 @@ $marker_list = []
 <?php 
     $lat = -33.5;
     $long = -70.5;
-    $marker_list = [
-        ["lat" => -33.4,
-        "long" => -70.5],
-        ["lat" => -33.6,
-        "long" => -70.5],
-        ["lat" => -33.5,
-        "long" => -70.6],
-    ];
+    foreach ($jsonData as $m) {
+        $date =  $m["date"];
+        $date_date = strtotime($date);
+        if ($date_date > $start_date && $end_date > $date_date) {
+            $lat =  $m["lat"];
+            $long =  $m["long"];
+            $mid =  $m["mid"];
+            $message =  $m["message"];
+            $receptant =  $m["receptant"];
+            $sender =  $m["sender"];
+            echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
+            array_push($marker_list,[ "lat" => $lat, "long" => $long])};
+        };
+
 ?>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
