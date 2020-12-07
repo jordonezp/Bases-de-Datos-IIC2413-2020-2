@@ -135,6 +135,7 @@ $marker_list = []
     $result2 = $dbimp -> prepare($query1);
     $result2 -> execute();
     $result2_json = $result2 -> fetchAll();
+    $result2_json = $result2_json[0][0]
 
 
     echo $id_description;
@@ -148,7 +149,6 @@ $marker_list = []
                         INNER JOIN puertos_completos pc
                         ON pc.pid = f.pid
                         WHERE {$result2_json}= e.rut;";
-
         $result_jefe = $dbimp -> prepare($query_jefe);
         $result_jefe -> execute();
         $lat_long_jefe = $result_jefe -> fetchAll();
