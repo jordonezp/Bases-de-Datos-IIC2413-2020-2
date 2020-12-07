@@ -155,6 +155,7 @@ $marker_list = []
         $lat_jefe = $lat_long_jefe[0][0];
         $long_jefe = $lat_long_jefe[0][1];
         array_push($marker_list2,[ "lat" => $lat_jefe, "long" => $long_jefe]);
+        echo $marker_list2;
     } else{
         echo "es capitan!";
         
@@ -203,10 +204,10 @@ $marker_list = []
         shadowSize: [41, 41]
         });
 
-    <?php foreach($marker_list as $marker) {
-        echo 
-        'L.marker([' . $marker["lat"] . ',' . $marker["long"] . '], {icon: greenIcon}).addTo(map);';
-    } 
+    <?php //foreach($marker_list as $marker) {
+        //echo 
+        //'L.marker([' . $marker["lat"] . ',' . $marker["long"] . '], {icon: greenIcon}).addTo(map);';
+    //} 
     foreach($marker_list2 as $marker) {
         echo 
         'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
