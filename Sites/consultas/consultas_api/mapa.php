@@ -170,7 +170,7 @@ $marker_list2 = [];
             // echo "p[0]: ";
             $puerto_nombre = $p[0];
             echo $puerto_nombre;
-            $query_capitan_3 = "SELECT latitude, longitud FROM coordenadas_puertos WHERE puerto = $puerto_nombre";
+            $query_capitan_3 = "SELECT latitude, longitud FROM coordenadas_puertos WHERE puerto = '$puerto_nombre';";
             echo $query_capitan_3;
             $result_capitan_3 = $dbimp -> prepare($query_capitan_3);
             $result_capitan_3 -> execute();
