@@ -22,6 +22,12 @@ $query_session_verif = "SELECT password FROM usuarios WHERE pasaporte = '$pasapo
 $result = $dbimp -> prepare($query_session_verif);
 $result -> execute();
 $data_verif = $result -> fetchAll();
+$clave_verif = $data_verif[0][0];
+
+if ($clave_verif != $clave) {
+    header('Location:login.php');
+}
+
 echo 'data_verif';
 echo $data_verif;
 echo 'data_verif[0]';
