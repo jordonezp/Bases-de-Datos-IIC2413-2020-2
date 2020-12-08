@@ -212,7 +212,7 @@ $marker_list2 = [];
 
             echo
             'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
-        //}
+        }
     
     ?>
 </script>
