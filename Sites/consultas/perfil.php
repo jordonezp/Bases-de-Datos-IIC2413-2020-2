@@ -1,5 +1,7 @@
 <?php session_start();?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+<?php include('../navbar.php'); ?>
+<?php include('../templates/header.html');   ?>
 <?php
 require("../config/conection.php");
 
@@ -23,7 +25,8 @@ $data_verif = $result -> fetchAll();
 $clave_verif = $data_verif[0][0];
 
 if ($clave_verif != $clave) {
-    header('Location:login.php');
+    // header('Location:login.php');
+    echo '<meta http-equiv="refresh" content="=0;URL=login.php" />'
 }
 
 echo 'data_verif';
@@ -41,9 +44,6 @@ echo $pasaporte;
 
 
 ?>
-
-<?php include('../navbar.php'); ?>
-<?php include('../templates/header.html');   ?>
 
 <?php
 if ($pasaporte == ""){
