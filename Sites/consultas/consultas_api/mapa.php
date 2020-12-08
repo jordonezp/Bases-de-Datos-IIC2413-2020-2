@@ -169,14 +169,14 @@ $marker_list2 = [];
         $patentes = $result_capitan_1 -> fetchAll();
         $patente = $patentes[0][0];
 
-        echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA";
-        echo "patente: ";
-        echo $patente;
+        // echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        // echo "patente: ";
+        // echo $patente;
 
-        echo "end_date_str: ";
-        echo $end_date_str;
-        echo "start_date_str: ";
-        echo $start_date_str;
+        // echo "end_date_str: ";
+        // echo $end_date_str;
+        // echo "start_date_str: ";
+        // echo $start_date_str;
 
         $query_capitan_2 = "SELECT p.punombre 
                             FROM historialatraque h, puerto p 
@@ -185,16 +185,17 @@ $marker_list2 = [];
                                    h.puid = p.puid AND
                                    h.patente = '$patente';";
         echo $query_capitan_2;
+        echo '<br>';
         $result_capitan_2 = $dbp -> prepare($query_capitan_2);
         $result_capitan_2 -> execute();
         $puertos = $result_capitan_2 -> fetchAll();
 
         echo "puertos: ";
         echo $puertos;
-        echo "puertos[0]: ";
-        echo $puertos[0];
-        echo "puertos[0][0]: ";
-        echo $puertos[0][0];
+        // echo "puertos[0]: ";
+        // echo $puertos[0];
+        // echo "puertos[0][0]: ";
+        // echo $puertos[0][0];
 
         foreach ($puertos as $p) {
             echo $p;
@@ -204,27 +205,45 @@ $marker_list2 = [];
     
     ?>
 </div>
-<?php 
 
-    $lat = -33.5;
-    $long = -70.5;
-    foreach ($jsonData as $m) {
-        $date =  $m["date"];
-        $date_date = strtotime($date);
-        if ($date_date > $start_date && $end_date > $date_date && $userId == $m["sender"]) {
-            $lat =  $m["lat"];
-            $long =  $m["long"];
-            $mid =  $m["mid"];
-            $message =  $m["message"];
-            $receptant =  $m["receptant"];
-            $sender =  $m["sender"];
-            echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
-            array_push($marker_list,[ "lat" => $lat, "long" => $long]);}
+<table class="table">
+        <thead>
+            <tr>
+                <th>date</th>
+                <th>lat</th>
+                <th>long</th>
+                <th>message</th>
+                <th>mid</th>
+                <th>receptant</th>
+                <th>sender</th>
+            </tr>
+        </thead>
 
-        }
-    
+        <tbody>
 
-?>
+            <?php 
+
+                $lat = -33.5;
+                $long = -70.5;
+                foreach ($jsonData as $m) {
+                    $date =  $m["date"];
+                    $date_date = strtotime($date);
+                    if ($date_date > $start_date && $end_date > $date_date && $userId == $m["sender"]) {
+                        $lat =  $m["lat"];
+                        $long =  $m["long"];
+                        $mid =  $m["mid"];
+                        $message =  $m["message"];
+                        $receptant =  $m["receptant"];
+                        $sender =  $m["sender"];
+                        echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
+                        array_push($marker_list,[ "lat" => $lat, "long" => $long]);}
+
+                    }
+                
+
+            ?>
+        </tbody>    
+</table>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
