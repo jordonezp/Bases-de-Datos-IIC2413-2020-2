@@ -17,6 +17,9 @@ $desired = $_GET["desired"];
 $start_date = $_GET["start_date"];
 $end_date = $_GET["end_date"];
 
+$start_date_str = $start_date;
+$end_date_str = $end_date;
+
 $start_date = strtotime($start_date);
 $end_date = strtotime($end_date);
 
@@ -169,9 +172,7 @@ $marker_list2 = [];
         echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA";
         echo "patente: ";
         echo $patente;
-
-        $end_date_str = $end_date->format('Y-m-d');
-        $start_date_str = $start_date->format('Y-m-d');
+        
         echo "end_date_str: ";
         echo $end_date_str;
         echo "start_date_str: ";
