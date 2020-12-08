@@ -80,41 +80,6 @@ $marker_list2 = [];
         <input class="button is-link" type="submit" value="Buscar Mensajes">
     </form>
 
-    <h2 class="title">Resultados</h2>
-    
-    <table class="table">
-        <thead>
-            <tr>
-                <th>date</th>
-                <th>lat</th>
-                <th>long</th>
-                <th>message</th>
-                <th>mid</th>
-                <th>receptant</th>
-                <th>sender</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-        <?php
-        //    foreach ($jsonData as $m) {
-        //        $date =  $m["date"];
-        //        $date_date = strtotime($date);
-        //        if ($date_date > $start_date && $end_date > $date_date) {
-        //            $lat =  $m["lat"];
-        //            $long =  $m["long"];
-        //            $mid =  $m["mid"];
-        //            $message =  $m["message"];
-        //            $receptant =  $m["receptant"];
-        //            $sender =  $m["sender"];
-        //            echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
-        //            array_push($marker_list,[ "lat" => $lat, "long" => $long]);
-        //        }
-        ?>
-        </tbody>
-
-    </table>
     <br>
     <br>
     <div id="mapid" style="height: 300px"></div>
