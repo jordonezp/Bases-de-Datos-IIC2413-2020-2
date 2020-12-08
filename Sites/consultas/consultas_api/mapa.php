@@ -157,7 +157,28 @@ $marker_list2 = [];
         echo $lat_jefe;
         echo $long_jefe;
     } else{
-        echo "es capitan!";
+        echo "Capitan Found!";
+        $query_capitan_1 = "SELECT patente
+                            FROM personal
+                             WHERE '$result2_json'= personal.pasaporte;";
+        $result_capitan_1 = $dbp -> prepare($query_capitan_1);
+        $result_capitan_1 -> execute();
+        $patentes = $result_capitan_1 -> fetchAll();
+        $patente = $patentes[0];
+
+        $query_capitan_2 = "SELECT p.punombre 
+                            FROM historialatraque h, puerto p 
+                             WHERE h.fecha_atraque >= '$end_date' AND
+                                   h.fecha <= '$start_date' AND
+                                   h.puid = p.puid AND
+                                   h.patente = '$patente';";
+        $result_capitan_2 = $dbp -> prepare($query_capitan_2);
+        $result_capitan_2 -> execute();
+        $puertos = $result_capitan_2 -> fetchAll();
+
+        foreach ($puertos as $p) {
+            echo $p;
+        }
         
     }
     
