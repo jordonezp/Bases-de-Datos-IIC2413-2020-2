@@ -157,13 +157,16 @@ $marker_list2 = [];
 
         echo "puertos: ";
         echo $puertos;
-        // echo "puertos[0]: ";
-        // echo $puertos[0];
+        echo "puertos[0]: ";
+        echo $puertos[0];
         // echo "puertos[0][0]: ";
         // echo $puertos[0][0];
 
         foreach ($puertos as $p) {
+            echo "p: ";
             echo $p;
+            echo "p[0]: ";
+            echo $p[0];
         }
 
     }
