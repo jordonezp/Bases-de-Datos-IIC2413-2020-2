@@ -154,8 +154,8 @@ $marker_list2 = [];
         $lat_jefe = $lat_long_jefe[0][0];
         $long_jefe = $lat_long_jefe[0][1];
         array_push($marker_list2,[ "lat" => $lat_jefe, "long" => $long_jefe]);
-        echo $lat;
-        echo $long;
+        echo $lat_jefe;
+        echo $long_jefe;
     } else{
         echo "es capitan!";
         
