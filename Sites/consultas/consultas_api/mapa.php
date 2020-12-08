@@ -177,18 +177,18 @@ $marker_list2 = [];
             $coords = $result_capitan_3 -> fetchAll();
             $lat_puerto = $coords[0][0];
             $lon_puerto = $coords[0][1];
-            echo '$coords';
-            echo $coords;
-            echo '$coords[0]';
-            echo $coords[0];
-            echo '$coords[0][0]';
-            echo $coords[0][0];
+            // echo '$coords';
+            // echo $coords;
+            // echo '$coords[0]';
+            // echo $coords[0];
+            // echo '$coords[0][0]';
+            // echo $coords[0][0];
             array_push($coords_puertos,[ "lat" => $lat_puerto, "long" => $lon_puerto]);
             array_push($marker_list2,[ "lat" => $lat_puerto, "long" => $lon_puerto]);
-            echo 'lat_puerto';
-            echo $lat_puerto;
-            echo 'lon_puerto';
-            echo $lon_puerto;
+            // echo 'lat_puerto';
+            // echo $lat_puerto;
+            // echo 'lon_puerto';
+            // echo $lon_puerto;
         }
 
     }
@@ -235,6 +235,8 @@ $marker_list2 = [];
             ?>
         </tbody>    
 </table>
+<br>
+<br>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
