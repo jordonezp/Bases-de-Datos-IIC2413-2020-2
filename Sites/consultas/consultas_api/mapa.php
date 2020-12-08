@@ -151,14 +151,9 @@ $marker_list2 = [];
         $result_jefe = $dbimp -> prepare($query_jefe);
         $result_jefe -> execute();
         $lat_long_jefe = $result_jefe -> fetchAll();
-        echo $lat_long_jefe;
-        echo $lat_long_jefe[0];
         $lat_jefe = $lat_long_jefe[0][0];
-        echo $lat_jefe;
         $long_jefe = $lat_long_jefe[0][1];
-        echo $long_jefe;
         array_push($marker_list2,[ "lat" => $lat_jefe, "long" => $long_jefe]);
-        echo $marker_list2;
     } else{
         echo "es capitan!";
         
@@ -183,6 +178,8 @@ $marker_list2 = [];
             $sender =  $m["sender"];
             echo "<tr><td>$date</td><td>$lat</td><td>$long</td><td>$mid</td><td>$message</td><td>$receptant</td><td>$sender</td></tr>";
             array_push($marker_list,[ "lat" => $lat, "long" => $long]);}
+            echo $lat;
+            echo $long;
         }
     
 
