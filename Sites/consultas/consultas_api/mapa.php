@@ -175,8 +175,8 @@ $marker_list2 = [];
             $result_capitan_3 = $dbimp -> prepare($query_capitan_3);
             $result_capitan_3 -> execute();
             $coords = $result_capitan_3 -> fetchAll();
-            $lat_puerto = $coords[0];
-            $lon_puerto = $coords[1];
+            $lat_puerto = $coords[0][0];
+            $lon_puerto = $coords[0][1];
             echo '$coords';
             echo $coords;
             echo '$coords[0]';
@@ -185,7 +185,9 @@ $marker_list2 = [];
             echo $coords[0][0];
             array_push($coords_puertos,[ "lat" => $lat_puerto, "long" => $lon_puerto]);
             array_push($marker_list2,[ "lat" => $lat_puerto, "long" => $lon_puerto]);
+            echo 'lat_puerto';
             echo $lat_puerto;
+            echo 'lon_puerto';
             echo $lon_puerto;
         }
 
