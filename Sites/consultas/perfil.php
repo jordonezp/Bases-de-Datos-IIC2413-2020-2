@@ -17,7 +17,9 @@ if ($_POST["pasaporte"] == ""){
     $pasaporte = $_SESSION["pasaporte"];
     $clave = $_SESSION["clave"];
 }
+echo 'clave';
 echo $clave;
+echo 'pasaporte';
 echo $pasaporte;
 
 
