@@ -123,7 +123,7 @@ $marker_list2 = [];
         // echo $start_date < $end_date;
     require('../../config/conection.php');
     
-    $query = "SELECT * FROM users_json WHERE id = {$userId};";
+    $query = "SELECT * FROM users_json WHERE id = $userId;";
     $result = $dbimp -> prepare($query);
     $result -> execute();
     $result_json = $result -> fetchAll();
@@ -131,7 +131,7 @@ $marker_list2 = [];
     $id_description = $result_json[0][3];
 
     
-    $query1 = "SELECT ic.pasaporte_rut FROM ids_cruzados ic WHERE ic.id = {$id_json};";
+    $query1 = "SELECT ic.pasaporte_rut FROM ids_cruzados ic WHERE ic.id = $id_json;";
     $result2 = $dbimp -> prepare($query1);
     $result2 -> execute();
     $result2_json = $result2 -> fetchAll();
@@ -147,7 +147,7 @@ $marker_list2 = [];
                         ON e.fid = f.fid
                         INNER JOIN puertos_completos pc
                         ON pc.pid = f.pid
-                        WHERE {$result2_json}= e.rut;";
+                        WHERE $result2_json= e.rut;";
         $result_jefe = $dbimp -> prepare($query_jefe);
         $result_jefe -> execute();
         $lat_long_jefe = $result_jefe -> fetchAll();
