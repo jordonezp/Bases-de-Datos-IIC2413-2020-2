@@ -24,7 +24,7 @@ $result -> execute();
 $data_verif = $result -> fetchAll();
 $clave_verif = $data_verif[0][0];
 
-if ($clave_verif != $clave) {
+if ($clave_verif !== $clave) {
     // header('Location:login.php');
     echo '<meta http-equiv="refresh" content="=0;URL=login.php" />';
 }
