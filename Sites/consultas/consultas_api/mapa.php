@@ -176,10 +176,12 @@ $marker_list2 = [];
         $result_capitan_2 -> execute();
         $puertos = $result_capitan_2 -> fetchAll();
 
+        echo $puertos;
+
         foreach ($puertos as $p) {
             echo $p;
         }
-        
+
     }
     
     ?>
