@@ -167,6 +167,7 @@ $marker_list2 = [];
         $patente = $patentes[0][0];
 
         echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA";
+        echo "patente: ";
         echo $patente;
 
         $query_capitan_2 = "SELECT p.punombre 
@@ -179,6 +180,7 @@ $marker_list2 = [];
         $result_capitan_2 -> execute();
         $puertos = $result_capitan_2 -> fetchAll();
 
+        echo "puertos: ";
         echo $puertos;
 
         foreach ($puertos as $p) {
