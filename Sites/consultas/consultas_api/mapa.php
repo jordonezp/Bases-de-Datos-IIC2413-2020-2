@@ -176,6 +176,7 @@ $marker_list2 = [];
                                    h.fecha <= '$start_date' AND
                                    h.puid = p.puid AND
                                    h.patente = '$patente';";
+        echo $query_capitan_2;
         $result_capitan_2 = $dbp -> prepare($query_capitan_2);
         $result_capitan_2 -> execute();
         $puertos = $result_capitan_2 -> fetchAll();
