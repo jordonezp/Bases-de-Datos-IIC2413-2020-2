@@ -166,6 +166,8 @@ $marker_list2 = [];
         $patentes = $result_capitan_1 -> fetchAll();
         $patente = $patentes[0][0];
 
+        echo $patente
+
         $query_capitan_2 = "SELECT p.punombre 
                             FROM historialatraque h, puerto p 
                              WHERE h.fecha_atraque >= '$end_date' AND
