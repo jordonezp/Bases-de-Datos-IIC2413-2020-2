@@ -155,25 +155,39 @@ $marker_list2 = [];
         $result_capitan_2 -> execute();
         $puertos = $result_capitan_2 -> fetchAll();
 
-        echo "puertos: ";
-        echo $puertos;
-        echo "puertos[0]: ";
-        echo $puertos[0];
+        // echo "puertos: ";
+        // echo $puertos;
+        // echo "puertos[0]: ";
+        // echo $puertos[0];
         // echo "puertos[0][0]: ";
         // echo $puertos[0][0];
 
+        $coords_puertos = [];
+
         foreach ($puertos as $p) {
-            echo "p: ";
-            echo $p;
-            echo "p[0]: ";
-            echo $p[0];
+            // echo "p: ";
+            // echo $p;
+            // echo "p[0]: ";
+            $puerto_nombre = $p[0];
+            echo $puerto_nombre;
+            $query_capitan_3 = "SELECT latitude, longitud FROM coordenadas_puertos WHERE puerto = $puerto_nombre";
+            echo $query_capitan_3;
+            $result_capitan_3 = $dbimp -> prepare($query_capitan_3);
+            $result_capitan_3 -> execute();
+            $coords = $result_capitan_3 -> fetchAll();
+            $lat_puerto = $coords[0];
+            $lon_puerto = $coords[1];
+            array_push($coords_puertos,[ "lat" => $lat_puerto, "long" => $lon_puerto]);
+            array_push($marker_list2,[ "lat" => $lat_puerto, "long" => $lon_puerto]);
+            echo $lat_puerto;
+            echo $lon_puerto;
         }
 
     }
     
     ?>
 
-<h2 class="title">Resultados</h2>
+<h2 class="title">Mensajes</h2>
 
 <table class="table">
         <thead>
