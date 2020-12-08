@@ -164,7 +164,7 @@ $marker_list2 = [];
         $result_capitan_1 = $dbp -> prepare($query_capitan_1);
         $result_capitan_1 -> execute();
         $patentes = $result_capitan_1 -> fetchAll();
-        $patente = $patentes[0];
+        $patente = $patentes[0][0];
 
         $query_capitan_2 = "SELECT p.punombre 
                             FROM historialatraque h, puerto p 
