@@ -9,14 +9,16 @@ $pasaporte = $_POST["pasaporte"];
 $clave = $_POST["clave"];
 
 if ($_POST["pasaporte"] == ""){
-$pasaporte = $_SESSION["pasaporte"];
-$clave = $_SESSION["clave"];
-}else{
-$_SESSION["pasaporte"] = $_POST["pasaporte"];
-$_SESSION["pass"] = $_POST["clave"];
-$pasaporte = $_SESSION["pasaporte"];
-$clave = $_SESSION["clave"];
+    $pasaporte = $_SESSION["pasaporte"];
+    $clave = $_SESSION["clave"];
+} else {
+    $_SESSION["pasaporte"] = $_POST["pasaporte"];
+    $_SESSION["clave"] = $_POST["clave"];
+    $pasaporte = $_SESSION["pasaporte"];
+    $clave = $_SESSION["clave"];
 }
+echo $clave;
+echo $pasaporte;
 
 
 
