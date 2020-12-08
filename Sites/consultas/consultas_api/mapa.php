@@ -172,7 +172,7 @@ $marker_list2 = [];
         echo "AAAAAAAAAAAAAAAAAAAAAAAAAAA";
         echo "patente: ";
         echo $patente;
-        
+
         echo "end_date_str: ";
         echo $end_date_str;
         echo "start_date_str: ";
@@ -180,8 +180,8 @@ $marker_list2 = [];
 
         $query_capitan_2 = "SELECT p.punombre 
                             FROM historialatraque h, puerto p 
-                             WHERE h.fecha_atraque >= '$end_date_str' AND
-                                   h.fecha <= '$start_date_str' AND
+                             WHERE h.fecha_atraque >= '$start_date_str' AND
+                                   h.fecha <= '$end_date_str' AND
                                    h.puid = p.puid AND
                                    h.patente = '$patente';";
         echo $query_capitan_2;
