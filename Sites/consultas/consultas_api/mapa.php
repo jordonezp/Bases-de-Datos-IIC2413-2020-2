@@ -210,6 +210,8 @@ $marker_list2 = [];
         //'L.marker([' . $marker["lat"] . ',' . $marker["long"] . '], {icon: greenIcon}).addTo(map);';
     //} 
     foreach($marker_list2 as $marker) {
+    echo $marker["lat"];
+    echo $marker["long"];
         echo 
         'L.marker([' . $marker["lat"] . ',' . $marker["long"] . ']).addTo(map);';
     }
