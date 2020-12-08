@@ -170,8 +170,12 @@ $marker_list2 = [];
         echo "patente: ";
         echo $patente;
 
-        $end_date_str = $end_date->format('Y-m-d H:i:s');
-        $start_date_str = $start_date->format('Y-m-d H:i:s');
+        $end_date_str = $end_date->format('Y-m-d');
+        $start_date_str = $start_date->format('Y-m-d');
+        echo "end_date_str: ";
+        echo $end_date_str;
+        echo "start_date_str: ";
+        echo $start_date_str;
 
         $query_capitan_2 = "SELECT p.punombre 
                             FROM historialatraque h, puerto p 
