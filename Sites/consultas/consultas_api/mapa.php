@@ -49,8 +49,8 @@ $jsonData = json_decode($result, JSON_INVALID_UTF8_IGNORE);
 
 
 
-$marker_list = []
-
+$marker_list = [];
+$marker_list2 = [];
 ?>
 <div class="container is-max-desktop">
     <br>
@@ -139,9 +139,8 @@ $marker_list = []
 
 
     echo $id_description;
-    $marker_list2 = [];
     if(strpos($id_description, "jefe") == true){
-        echo "Word Found!";
+        echo "Jefe Found!";
         $query_jefe = "SELECT pc.latitude, pc.longitud
                         FROM employees e 
                         INNER JOIN facilities f 
