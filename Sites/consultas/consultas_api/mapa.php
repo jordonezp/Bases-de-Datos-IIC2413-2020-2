@@ -165,7 +165,6 @@ $marker_list2 = [];
 </div>
 <?php 
 
-    $marker_list2 = [];
     $lat = -33.5;
     $long = -70.5;
     foreach ($jsonData as $m) {
