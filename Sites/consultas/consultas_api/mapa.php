@@ -205,11 +205,13 @@ $marker_list2 = [];
         shadowSize: [41, 41]
         });
 
-    <?php //foreach($marker_list as $marker) {
+    //<?php //foreach($marker_list as $marker) {
         //echo 
         //'L.marker([' . $marker["lat"] . ',' . $marker["long"] . '], {icon: greenIcon}).addTo(map);';
     //}
-
+<?php
+    echo "hola";
+    echo $marker_list2["lat"];
     foreach($marker_list2 as $marker) {
         echo $marker["lat"];
         echo $marker["long"];
