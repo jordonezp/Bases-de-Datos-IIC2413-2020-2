@@ -5,7 +5,6 @@
 
 <div class="container is-max-desktop">
     <?php include('../templates/footer.html'); ?>
-<div/>
 <?php
 require("../config/conection.php");
 

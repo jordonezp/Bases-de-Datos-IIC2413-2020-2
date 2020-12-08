@@ -17,6 +17,18 @@ if ($_POST["pasaporte"] == ""){
     $pasaporte = $_SESSION["pasaporte"];
     $clave = $_SESSION["clave"];
 }
+
+$query_session_verif = "SELECT password FROM usuarios WHERE pasaporte = '$pasaporte';";
+$result = $dbimp -> prepare($query_session_verif);
+$result -> execute();
+$data_verif = $result -> fetchAll();
+echo 'data_verif';
+echo $data_verif;
+echo 'data_verif[0]';
+echo $data_verif[0];
+echo 'data_verif[0][0]';
+echo $data_verif[0][0];
+
 echo 'clave';
 echo $clave;
 echo 'pasaporte';
